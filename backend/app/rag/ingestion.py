@@ -1,394 +1,302 @@
-"""
-RAG Ingestion Pipeline
-- Loads PDF documents (RPWD Act, WHO Disability data) 
-- Splits into chunks using RecursiveCharacterTextSplitter
-- Embeds using all-MiniLM-L6-v2 (384 dim)
-- Stores in FAISS vector database
-"""
+# FIXED + OPTIMIZED RAG INGESTION
 
-import os
 import json
-import uuid
 import logging
+import uuid
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
+from app.core.config import settings
+
 logger = logging.getLogger(__name__)
 
 EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
-EMBEDDING_DIM = 384
-CHUNK_SIZE = 800
-CHUNK_OVERLAP = 200
+CHUNK_SIZE = 512
 
-# ─── Disability Knowledge Base ─────────────────────────────────────────────────
-
+# Disability Knowledge Base - Multilingual Content
 DISABILITY_KNOWLEDGE_BASE = [
-    # RPWD Act - Rights & Definitions
     {
-        "text": "The Rights of Persons with Disabilities Act, 2016 (RPWD Act) is India's landmark disability legislation enacted on December 16, 2016. It received Presidential assent on December 27, 2016 and came into force on April 19, 2017 (Act 49 of 2016). It replaces the Persons with Disabilities Act of 1995.",
-        "category": "rpwd_act", "source": "RPWD Act 2016", "chapter": "Overview"
+        "text": "In India, disability rights are protected under the Rights of Persons with Disabilities Act, 2016 (RPWD Act). Key rights include equality, access to public spaces, education and employment, healthcare, and social security.",
+        "source": "RPWD Act 2016",
+        "chapter": "Rights Overview",
+        "language": "en"
     },
     {
-        "text": "The RPWD Act 2016 recognizes 21 specified disabilities, expanded from 7 under the 1995 Act. These include: Blindness, Low Vision, Leprosy Cured, Hearing Impairment (Deaf), Hard of Hearing, Speech & Language Disability, Locomotor Disability, Dwarfism, Intellectual Disability, Specific Learning Disabilities, Autism Spectrum Disorder, Mental Illness, Cerebral Palsy, Muscular Dystrophy, Chronic Neurological Conditions, Multiple Sclerosis, Haemophilia, Thalassemia, Sickle Cell Disease, Acid Attack Victims, and Parkinson's Disease.",
-        "category": "rpwd_act", "source": "RPWD Act 2016", "chapter": "Chapter 10 - 21 Disabilities"
+        "text": "भारत में, दिव्यांग अधिकार 2016 के अधिकारों के अधिनियम (RPWD एक्ट) के तहत संरक्षित हैं। मुख्य अधिकारों में समानता, सार्वजनिक स्थानों तक पहुंच, शिक्षा और रोजगार, स्वास्थ्य सेवाएं, और सामाजिक सुरक्षा शामिल हैं।",
+        "source": "RPWD अधिनियम 2016",
+        "chapter": "अधिकार अवलोकन",
+        "language": "hi"
     },
     {
-        "text": "Under RPWD Act 2016, Benchmark Disability means a person with not less than 40% of a specified disability as certified by a certifying authority. Only persons with benchmark disability are entitled to reservations in government jobs and higher education.",
-        "category": "rpwd_act", "source": "RPWD Act 2016", "chapter": "Definitions"
+        "text": "இந்தியாவில், மாற்றுத் திறனாளர்களின் உரிமைகள் 2016 ஆம் ஆண்டு வெளியான RPWD சட்டத்தின் கீழ் பாதுகாக்கப்படுகின்றன. முக்கிய உரிமைகள் சமத்துவம், பொதுமக்கள் இடங்களுக்கு அணுகுதல், கல்வி மற்றும் வேலைவாய்ப்பு, சுகாதார சேவைகள் மற்றும் சமூக பாதுகாப்பைக் கொண்டுள்ளன.",
+        "source": "RPWD சட்டம் 2016",
+        "chapter": "உரிமைகள் கண்ணோட்டம்",
+        "language": "ta"
     },
     {
-        "text": "Employment Rights under RPWD Act 2016: Minimum 4% reservation in government vacancies for persons with benchmark disabilities (increased from 3% in 1995 Act). Breakdown: 1% each for persons with blindness/low vision; deaf/hard of hearing; locomotor disability/cerebral palsy/leprosy cured/dwarfism/acid attack victims; and 1% for persons with intellectual/mental illness/multiple disabilities.",
-        "category": "employment", "source": "RPWD Act 2016", "chapter": "Section 34 - Reservation"
+        "text": "భారతదేశంలో, వికారుల హక్కులు 2016 యొక్క RPWD చట్టం క్రింద రక్షించబడ్డాయి. ప్రధాన హక్కులలో సమానత్వం, పౌర స్థలాలకు ప్రవేశం, విద్య మరియు ఉద్యోగం, ఆరోగ్య సంరక్షణ, మరియు సామాజిక భద్రత ఉన్నాయి.",
+        "source": "RPWD చట్టం 2016",
+        "chapter": "హక్కుల అవలోకనం",
+        "language": "te"
     },
     {
-        "text": "Higher Education Reservation under RPWD Act 2016: Minimum 5% seats reserved for persons with benchmark disabilities in all government educational institutions and institutions receiving government aid. Students also receive scholarships and fee waivers.",
-        "category": "education", "source": "RPWD Act 2016", "chapter": "Section 32 - Higher Education"
-    },
-
-    # Definitions of Disabilities - Visual Impairment
-    {
-        "text": "Blindness (Visual Impairment Definition under RPWD Act 2016): Blindness is complete absence of sight. A person is considered legally blind if their vision is 6/60 (20/200) or worse in the better eye with correction, or their visual field is restricted to 20 degrees or less. Blindness can be congenital (from birth) or acquired due to injury, disease (cataract, glaucoma, retinitis pigmentosa, diabetic retinopathy), or aging. Common causes in India include cataracts, corneal scarring, retinal diseases, and optic nerve damage.",
-        "category": "disability_definitions", "source": "RPWD Act 2016 + WHO ICD-10", "chapter": "Blindness Definition"
+        "text": "ಭಾರತದಲ್ಲಿ, ಅಂಗವಿಕಲರ ಹಕ್ಕುಗಳು 2016 ರ RPWD ಕಾಯಿದೆ ಅಡಿಯಲ್ಲಿ ರಕ್ಷಿಸಲ್ಪಟ್ಟಿವೆ. ಪ್ರಮುಖ ಹಕ್ಕುಗಳಲ್ಲಿ ಸಮಾನತೆ, ಸಾರ್ವಜನಿಕ ಸ್ಥಳಗಳಿಗೆ ಪ್ರವೇಶ, ಶಿಕ್ಷಣ ಮತ್ತು ಉದ್ಯೋಗ, ಆರೋಗ್ಯಸೇವೆಗಳು ಮತ್ತು ಸಾಮಾಜಿಕ ಭದ್ರತೆ ಸೇರಿವೆ.",
+        "source": "RPWD ಕಾಯಿದೆ 2016",
+        "chapter": "ಹಕ್ಕುಗಳ ಅವಲೋಕನ",
+        "language": "kn"
     },
     {
-        "text": "Low Vision (Visual Impairment Definition under RPWD Act 2016): Low vision means reduced visual acuity that cannot be corrected by glasses or surgery but preserves some functional vision. Defined as vision worse than 6/18 but not less than 6/60 (or 20/60 to 20/200) in the better eye with correction, or visual field restricted from 20-40 degrees. Persons with low vision can use magnification devices, large print materials, and modified lighting to read and navigate. Causes include macular degeneration, diabetic retinopathy, cataracts, and refractive errors.",
-        "category": "disability_definitions", "source": "RPWD Act 2016 + WHO", "chapter": "Low Vision Definition"
+        "text": "ഇന്ത്യയിൽ, വികലാംഗാവകാശങ്ങൾ 2016ലെ RPWD ആക്ടിന്റെ കീഴിൽ സംരക്ഷിതമാണ്. പ്രധാന അവകാശങ്ങളിൽ സമത്വം, പൊതു സ്ഥലങ്ങളിൽ പ്രവേശനം, വിദ്യാഭ്യാസം മറ്റും തൊഴിൽ, ആരോഗ്യപരിപാലനം, സാമൂഹ്യസുരക്ഷ എന്നിവയുണ്ട്.",
+        "source": "RPWD നിയമം 2016",
+        "chapter": "അവകാശങ്ങളുടെ അവലോകനം",
+        "language": "ml"
     },
     {
-        "text": "Hearing Impairment (Deaf and Hard of Hearing Definition under RPWD Act 2016): Deafness is substantial/permanent loss of hearing resulting in inability to hear and understand sound and speech. Hard of Hearing refers to partial/fluctuating hearing loss not corrected by hearing aids, leading to difficulty in communication. Deaf and hard of hearing are separate disabilities recognized under RPWD Act. Hearing loss measured in decibels (dB): Normal (0-20dB), Mild (20-40dB), Moderate (40-60dB), Severe (60-80dB), Profound (>80dB). Causes include congenital absence, infections (meningitis, otitis media), aging, noise exposure, ototoxic drugs.",
-        "category": "disability_definitions", "source": "RPWD Act 2016 + WHO ICD-10", "chapter": "Hearing Impairment Definition"
+        "text": "Assistive technology includes tools like screen readers (NVDA/JAWS), hearing aids, wheelchairs, prosthetics, Braille kits, communication devices, and mobility aids. In India, support is available through ADIP Scheme, ALIMCO, and national institutes. Eligibility and device type depend on disability assessment and income criteria.",
+        "source": "ADIP Scheme",
+        "chapter": "Assistive Technology",
+        "language": "en"
     },
     {
-        "text": "Speech and Language Disability (Definition under RPWD Act 2016): Permanent disability of speech and/or language affecting communication ability regardless of intelligibility. Includes: Dysarthria (speech motor control problems), Apraxia (speech planning disorder), Voice disorders (pitch/quality abnormalities), Fluency disorders (stammering/stuttering), Receptive/Expressive language disorders. Can result from neurological damage (stroke, cerebral palsy, Parkinson's), structural abnormalities (cleft palate), hearing loss, intellectual disability, or autism. Affects social participation, education, and employment.",
-        "category": "disability_definitions", "source": "RPWD Act 2016", "chapter": "Speech & Language Definition"
-    },
-
-    # Accessibility Provisions 
-    {
-        "text": "Accessibility provisions under RPWD Act (Sections 40-46): All government buildings must be accessible within a prescribed timeframe. Accessible roads, transport and infrastructure required. All public websites must comply with accessibility standards (WCAG). Public and private service providers must comply with accessibility standards.",
-        "category": "accessibility", "source": "RPWD Act 2016", "chapter": "Sections 40-46"
+        "text": "सहायक तकनीक में स्क्रीन रीडर (NVDA/JAWS), हियरिंग एड, व्हीलचेयर, कृत्रिम अंग, ब्रेल किट, संचार उपकरण और चलने-फिरने की सहायक सामग्री शामिल हैं। भारत में ADIP योजना, ALIMCO और राष्ट्रीय संस्थानों के माध्यम से सहायता उपलब्ध है। पात्रता और उपकरण का प्रकार विकलांगता आकलन और आय मानदंड पर निर्भर करता है।",
+        "source": "ADIP योजना",
+        "chapter": "सहायक तकनीक",
+        "language": "hi"
     },
     {
-        "text": "Rights under RPWD Act: Right to Equality and Non-Discrimination (Section 3). No discrimination on grounds of disability. Right to Life with Dignity. Protection from torture, cruel or inhuman treatment. Right to Community Inclusion. Reproductive Rights (right to decide family size, retain fertility). Right to Legal Capacity (Section 14). Right to Vote in accessible polling stations. Right to Own Property.",
-        "category": "rights", "source": "RPWD Act 2016", "chapter": "Chapter 2 - Rights"
+        "text": "உதவி தொழில்நுட்பத்தில் ஸ்கிரீன் ரீடர்கள் (NVDA/JAWS), கேட்கும் கருவிகள், சக்கர நாற்காலிகள், செயற்கை உறுப்புகள், பிரெயில் கருவிகள், தொடர்பு சாதனங்கள் மற்றும் இயக்க உதவிகள் அடங்கும். இந்தியாவில் ADIP திட்டம், ALIMCO மற்றும் தேசிய நிறுவனங்கள் மூலம் உதவி கிடைக்கிறது. தகுதி மற்றும் கருவி வகை மாற்றுத்திறன் மதிப்பீடு மற்றும் வருமான நிபந்தனைகளைப் பொறுத்தது.",
+        "source": "ADIP திட்டம்",
+        "chapter": "உதவி தொழில்நுட்பம்",
+        "language": "ta"
     },
     {
-        "text": "Education Rights under RPWD Act (Sections 16-18): Right to free and compulsory education in neighborhood schools. 5% reservation in higher education. Accommodation in examinations: extra time (minimum 20 minutes per hour), scribe facility, use of assistive devices. Barrier-free accessible school buildings. Appointment of Special Educators. Home-based education for those unable to attend school.",
-        "category": "education", "source": "RPWD Act 2016", "chapter": "Sections 16-18"
-    },
-
-    # Government Schemes
-    {
-        "text": "Accessible India Campaign (Sugamya Bharat Abhiyan): Launched in 2015 by Government of India. Aims to make built environment, transportation systems, and ICT ecosystem accessible for persons with disabilities. Targets: 50% government buildings fully accessible, all airports and railway stations accessible, all government websites WCAG 2.0 compliant.",
-        "category": "schemes", "source": "Government of India", "chapter": "Accessibility Schemes"
+        "text": "సహాయక సాంకేతికతలో స్క్రీన్ రీడర్లు (NVDA/JAWS), హియరింగ్ ఎయిడ్స్, వీల్‌చెయర్లు, కృత్రిమ అవయవాలు, బ్రెయిల్ కిట్లు, కమ్యూనికేషన్ పరికరాలు, మొబిలిటీ సహాయక పరికరాలు ఉంటాయి. భారతదేశంలో ADIP పథకం, ALIMCO మరియు జాతీయ సంస్థల ద్వారా సహాయం లభిస్తుంది. అర్హత మరియు పరికరం రకం వికలాంగత అంచనా మరియు ఆదాయ ప్రమాణాలపై ఆధారపడతాయి.",
+        "source": "ADIP పథకం",
+        "chapter": "సహాయక సాంకేతికత",
+        "language": "te"
     },
     {
-        "text": "ADIP Scheme (Assistance to Disabled Persons for Purchase/Fitting of Aids and Appliances): Free/subsidized assistive devices to PwDs below income threshold (Rs. 20,000/month). Devices include: wheelchairs, hearing aids, white canes, Braille kits, tricycles, prosthetic limbs, orthotic appliances, DAISY players for the blind, communication aids.",
-        "category": "schemes", "source": "DEPwD, Ministry of Social Justice", "chapter": "ADIP Scheme"
+        "text": "ಸಹಾಯಕ ತಂತ್ರಜ್ಞಾನದಲ್ಲಿ ಸ್ಕ್ರೀನ್ ರೀಡರ್‌ಗಳು (NVDA/JAWS), ಹೇರಿಂಗ್ ಏಡ್ಸ್, ವೀಲ್ಚೇರ್‌ಗಳು, ಕೃತಕ ಅಂಗಗಳು, ಬ್ರೈಲ್ ಕಿಟ್‌ಗಳು, ಸಂವಹನ ಸಾಧನಗಳು ಮತ್ತು ಚಲನೆ ಸಹಾಯಕ ಸಾಧನಗಳು ಸೇರಿವೆ. ಭಾರತದಲ್ಲಿ ADIP ಯೋಜನೆ, ALIMCO ಮತ್ತು ರಾಷ್ಟ್ರೀಯ ಸಂಸ್ಥೆಗಳ ಮೂಲಕ ಸಹಾಯ ಲಭ್ಯವಿದೆ. ಅರ್ಹತೆ ಮತ್ತು ಸಾಧನದ ವಿಧವು ಅಂಗವೈಕಲ್ಯ ಮೌಲ್ಯಮಾಪನ ಹಾಗೂ ಆದಾಯ ಮಾನದಂಡಗಳ ಮೇಲೆ ಅವಲಂಬಿತವಾಗಿದೆ.",
+        "source": "ADIP ಯೋಜನೆ",
+        "chapter": "ಸಹಾಯಕ ತಂತ್ರಜ್ಞಾನ",
+        "language": "kn"
     },
     {
-        "text": "SIPDA (Scheme for Implementation of Persons with Disabilities Act): Provides financial assistance to state governments and NGOs for implementing RPWD Act. Funds accessible infrastructure, awareness programs, and disability-related services.",
-        "category": "schemes", "source": "DEPwD", "chapter": "SIPDA"
+        "text": "സഹായ സാങ്കേതികവിദ്യയിൽ സ്ക്രീൻ റീഡറുകൾ (NVDA/JAWS), കേൾവി ഉപകരണങ്ങൾ, വീൽചെയറുകൾ, കൃത്രിമ അവയവങ്ങൾ, ബ്രെയിൽ കിറ്റുകൾ, ആശയവിനിമയ ഉപകരണങ്ങൾ, ചലന സഹായങ്ങൾ എന്നിവ ഉൾപ്പെടുന്നു. ഇന്ത്യയിൽ ADIP പദ്ധതി, ALIMCO, ദേശീയ സ്ഥാപനങ്ങൾ എന്നിവ വഴി സഹായം ലഭ്യമാണ്. യോഗ്യതയും ഉപകരണ തരംവും വൈകല്യ നിർണയവും വരുമാന മാനദണ്ഡവും ആശ്രയിച്ചിരിക്കും.",
+        "source": "ADIP പദ്ധതി",
+        "chapter": "സഹായ സാങ്കേതികവിദ്യ",
+        "language": "ml"
     },
     {
-        "text": "DDRS (Deendayal Disabled Rehabilitation Scheme): Financial support to NGOs providing rehabilitation services for persons with disabilities. Covers special schools, vocational training centers, early intervention centers, and halfway homes.",
-        "category": "schemes", "source": "DEPwD", "chapter": "DDRS"
+        "text": "Under Section 34 of the RPWD Act, 2016, at least 4% reservation is provided in government establishments for persons with benchmark disabilities. This includes identified posts across disability categories. You can apply through regular recruitment notifications and claim applicable relaxation/support under RPWD rules.",
+        "source": "RPWD Act Section 34",
+        "chapter": "Employment Reservation",
+        "language": "en"
     },
     {
-        "text": "NHFDC (National Handicapped Finance and Development Corporation): Provides loans at concessional rates for self-employment and entrepreneurship by persons with disabilities. Loan amounts up to Rs. 30 lakh. Interest rates starting from 5% per annum.",
-        "category": "schemes", "source": "DEPwD", "chapter": "NHFDC"
+        "text": "RPWD अधिनियम, 2016 की धारा 34 के तहत सरकारी संस्थानों में बेंचमार्क दिव्यांग व्यक्तियों के लिए कम से कम 4% आरक्षण प्रदान किया गया है। यह विभिन्न दिव्यांगता श्रेणियों के लिए चिन्हित पदों पर लागू होता है। आप सामान्य भर्ती विज्ञापनों के माध्यम से आवेदन कर सकते हैं और RPWD नियमों के अनुसार छूट/सुविधाएं प्राप्त कर सकते हैं।",
+        "source": "RPWD अधिनियम धारा 34",
+        "chapter": "रोजगार आरक्षण",
+        "language": "hi"
     },
     {
-        "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Monthly pension for below poverty line persons with disabilities. Amount: Rs. 300-500 per month (state governments may add additional amounts). Eligibility: BPL, age 18-79, 80% or more disability.",
-        "category": "schemes", "source": "Ministry of Rural Development", "chapter": "Pension Schemes"
+        "text": "RPWD சட்டம், 2016 இன் பிரிவு 34ன் கீழ் அரசு அமைப்புகளில் benchmark மாற்றுத்திறனாளிகளுக்கு குறைந்தபட்சம் 4% இடஒதுக்கீடு வழங்கப்பட்டுள்ளது. இது மாற்றுத்திறனின் பல பிரிவுகளுக்கான அடையாளப்படுத்தப்பட்ட பணியிடங்களில் பொருந்தும். சாதாரண ஆட்சேர்ப்பு அறிவிப்புகள் மூலம் விண்ணப்பிக்கலாம்; RPWD விதிகளின்படி தளர்வுகள்/உதவிகளை பெறலாம்.",
+        "source": "RPWD சட்டம் பிரிவு 34",
+        "chapter": "வேலைவாய்ப்பு இடஒதுக்கீடு",
+        "language": "ta"
     },
     {
-        "text": "UDID (Unique Disability Identity Card / Swavalamban Card): National database of persons with disabilities. Provides standardized disability certificate. Apply at: www.swavlambancard.gov.in. Required for accessing government reservations and benefits. Contains embedded chip with disability information.",
-        "category": "schemes", "source": "DEPwD", "chapter": "UDID System"
+        "text": "RPWD చట్టం, 2016 లోని సెక్షన్ 34 ప్రకారం ప్రభుత్వ సంస్థల్లో benchmark వికలాంగుల కోసం కనీసం 4% రిజర్వేషన్ ఉంది. ఇది వివిధ వికలాంగత వర్గాలకు గుర్తించిన పోస్టులకు వర్తిస్తుంది. సాధారణ నియామక ప్రకటనల ద్వారా దరఖాస్తు చేయవచ్చు మరియు RPWD నిబంధనల ప్రకారం వర్తించే సడలింపులు/సహాయం పొందవచ్చు.",
+        "source": "RPWD చట్టం సెక్షన్ 34",
+        "chapter": "ఉద్యోగ రిజర్వేషన్",
+        "language": "te"
     },
     {
-        "text": "National Programme for Control of Blindness (NPCB): Free cataract surgeries, free glasses to school children with low vision, free treatment for corneal blindness. Vision centers at PHC level. Free IOL implants. Pre and post operative care. Objectives: eliminate avoidable blindness, reduce visual impairment burden, provide rehabilitation services. Website: npcb.nic.in",
-        "category": "schemes", "source": "Ministry of Health", "chapter": "Health Schemes"
+        "text": "RPWD ಕಾಯಿದೆ, 2016 ರ ಕಲಂ 34 ಅನ್ವಯ, ಸರ್ಕಾರದ ಸಂಸ್ಥೆಗಳಲ್ಲಿ benchmark ಅಂಗವಿಕಲ ವ್ಯಕ್ತಿಗಳಿಗೆ ಕನಿಷ್ಠ 4% ಮೀಸಲಾತಿ ನೀಡಲಾಗಿದೆ. ಇದು ವಿವಿಧ ಅಂಗವೈಕಲ್ಯ ವರ್ಗಗಳಿಗೆ ಗುರುತಿಸಲಾದ ಹುದ್ದೆಗಳಿಗೆ ಅನ್ವಯಿಸುತ್ತದೆ. ಸಾಮಾನ್ಯ ನೇಮಕಾತಿ ಅಧಿಸೂಚನೆಗಳ ಮೂಲಕ ಅರ್ಜಿ ಸಲ್ಲಿಸಿ, RPWD ನಿಯಮಗಳಡಿ ದೊರೆಯುವ ಸಡಿಲಿಕೆ/ಸಹಾಯವನ್ನು ಪಡೆಯಬಹುದು.",
+        "source": "RPWD ಕಾಯಿದೆ ಕಲಂ 34",
+        "chapter": "ಉದ್ಯೋಗ ಮೀಸಲಾತಿ",
+        "language": "kn"
     },
     {
-        "text": "Special Benefits for Persons with Visual Impairment (Blindness/Low Vision) under RPWD Act 2016: Free Braille kits and Braille learning materials via ADIP scheme. Free white canes and orientation & mobility training. Priority in employment (1% quota in government jobs for blind/low vision). Free assistive devices including screen readers, DAISY players, magnification software. Tax exemptions on reading materials and books. Exemption from property/entertainment taxes in several states.",
-        "category": "benefits", "source": "RPWD Act 2016 + State Governments", "chapter": "Visual Impairment Benefits"
+        "text": "RPWD നിയമം, 2016 ലെ വകുപ്പ് 34 പ്രകാരം സർക്കാർ സ്ഥാപനങ്ങളിൽ benchmark വൈകല്യമുള്ള വ്യക്തികൾക്ക് കുറഞ്ഞത് 4% സംവരണം നൽകിയിട്ടുണ്ട്. ഇത് വിവിധ വൈകല്യ വിഭാഗങ്ങൾക്കുള്ള തിരിച്ചറിഞ്ഞ ഒഴിവുകൾക്ക് ബാധകമാണ്. സാധാരണ നിയമന വിജ്ഞാപനങ്ങൾ വഴി അപേക്ഷിക്കാം; RPWD ചട്ടങ്ങൾ പ്രകാരം ലഭ്യമായ ഇളവുകൾ/സഹായങ്ങൾ ആവശ്യപ്പെടാം.",
+        "source": "RPWD നിയമം വകുപ്പ് 34",
+        "chapter": "ഉദ്യോഗ സംവരണം",
+        "language": "ml"
     },
     {
-        "text": "Education and Employment Support for Persons with Visual Impairment: NIRD provides training in Braille, orientation & mobility, daily living skills. IIT training programs for IT skills for blind persons. NIEDB (National Institute for Empowerment of Blind) at Dehradun offers rehabilitation training. Government jobs: 4% quota (1% for blind/low vision). 20 minutes extra time per hour in exams. Use of screen reader or scribe in examinations. Audio books and Braille materials provided free.",
-        "category": "education", "source": "NIEDB + NIRD + Government", "chapter": "VI Education Support"
+        "text": "Sensory disabilities include impairments in vision, hearing, touch, taste, or smell. In India these are covered under the RPWD Act and may qualify for access benefits, assistive devices, education accommodations, and disability certification.",
+        "source": "RPWD Act Sensory Disabilities",
+        "chapter": "Disability Definitions",
+        "language": "en"
     },
     {
-        "text": "Free Assistive Technology and Rehabilitation for Visual Impairment: National Institute for the Visually Handicapped (NIVH), Dehradun provides free training in: Braille reading/writing, typing, computer skills with screen readers, orientation and mobility, rehabilitation services, low vision aids training. Free screen reader software: NVDA (open source), JAWS (subsidized for students). DAISY players for audio books. Free training provided across India through state centers.",
-        "category": "assistive_tech", "source": "NIVH / DeEmpowerment", "chapter": "VI Assistive Tech"
+        "text": "द्रवण विकलांगताओं में दृष्टि, श्रवण, स्पर्श, स्‍वाद या गंध में अक्षमता शामिल हैं। भारत में इन्हें RPWD अधिनियम के अंतर्गत कवर किया जाता है और ये पहुंच सुविधाएँ, सहायक उपकरण, शिक्षा में समायोजन और विकलांगता प्रमाणन के लिए पात्र हो सकते हैं।",
+        "source": "RPWD अधिनियम द्रवण विकलांगताएं",
+        "chapter": "विकलांगता परिभाषाएं",
+        "language": "hi"
     },
     {
-        "text": "NIEDB (National Institute for Empowerment of Blind/Low Vision Persons): Autonomous organization under Ministry of Social Justice working since 1989. Offers rehabilitation, vocational training, IT training, Braille education. Conducts research on visual impairment. Provides free counseling and guidance. Centers in Delhi, Kolkata, and regional programs. 100% scholarship for courses. Website: niedb.org. Email: niedb@niedb.org. Phone: 011-41591234",
-        "category": "organizations", "source": "DEPwD", "chapter": "NIEDB Services"
+        "text": "உணர்வுத் திறன் குறைகளில் பார்க்கும், கேட்கும், தொடுதல், சுவை அல்லது மணத்தை உணருவதில் புலபின்மை அடங்கும். இந்தியாவில் இதற்கு RPWD சட்டத்தின் கீழ் பாதுகாப்பு உள்ளது மற்றும் அணுகல் நலன்கள், உதவி சாதனங்கள், கல்வி ஒத்துழைப்பு மற்றும் மாற்றுத்திறனுக் சான்றிதழுக்கு தகுதி பெற்றிருக்கலாம்.",
+        "source": "RPWD சட்டம் உணர்வுத் திறன் குறைகள்",
+        "chapter": "மாற்றுத்திறன் வரையறைகள்",
+        "language": "ta"
     },
     {
-        "text": "NPPCD (National Programme for Prevention and Control of Deafness): Free hearing aids through government hospitals and audiological and speech therapy centers. Newborn hearing screening. School hearing screening. Advanced hearing aids for severe/profound hearing loss.",
-        "category": "schemes", "source": "Ministry of Health", "chapter": "Health Schemes"
+        "text": "సెన్సరీ వికలాంగతలు దృష్టి, వినికిడి, అనుభూతి, రుచిఅనే వాసనలో లోపాలను కలిగి ఉంటాయి. భారతదేశంలో ఇవి RPWD చట్టం క్రింద కవర్ చేయబడతాయి మరియు ప్రాప్తి ప్రయోజనాలు, సహాయక పరికరాలు, విద్యా సౌకర్యాలు మరియు వికలాంగత సర్టిఫికేషన్ కోసం అర్హత పొందవచ్చు.",
+        "source": "RPWD చట్టం సెన్సరీ వికలాంగతలు",
+        "chapter": "వికలాంగత నిర్వచనాలు",
+        "language": "te"
     },
     {
-        "text": "National Trust Act 1999: For welfare of persons with Autism, Cerebral Palsy, Intellectual Disability and Multiple Disabilities. Key schemes: SAMARTH (care homes), GHARAUNDA (group homes for adults), NIRAMAYA (health insurance up to Rs. 1 lakh), PRERNA (early intervention), SAMBHAV (assistive device camps), VIKAAS (day care). Apply at: nationaltrust.gov.in",
-        "category": "schemes", "source": "National Trust, MSJE", "chapter": "National Trust Schemes"
+        "text": "ಸಂವೇದಿ ಅಂಗವಿಕಲತೆಗಳಲ್ಲಿ ದೃಷ್ಟಿ, ಕೇಳುವಿಕೆ, ಸ್ಪರ್ಶ, ರುಚಿ ಅಥವಾ ವಾಸನೆಯಲ್ಲಿರುವ ಅಶಕ್ತಿ ಸೇರಿವೆ. ಭಾರತದಲ್ಲಿ ಇವುಗಳನ್ನು RPWD ಕಾಯಿದೆಯಡಿ ಒಳಗೊಂಡಿರುತ್ತವೆ ಮತ್ತು ಪ್ರವೇಶ ಪ್ರಯೋಜನಗಳು, ಸಹಾಯಕ ಸಾಧನಗಳು, ಶಿಕ್ಷಣ ಸೌಲಭ್ಯಗಳು ಮತ್ತು ಅಂಗವೈಕಲತೆ ಪ್ರಮಾಣೀಕರಣಕ್ಕಾಗಿ ಅರ್ಹರಾಗಬಹುದು.",
+        "source": "RPWD ಕಾಯಿದೆ ಸಂವೇದಿ ಅಂಗವಿಕಲತೆಗಳು",
+        "chapter": "ಅಂಗವಿಕಲತೆ ನಿರ್ವಚನೆಗಳು",
+        "language": "kn"
     },
     {
-        "text": "Samagra Shiksha Inclusive Education Component: Individualized Education Plans (IEPs) for children with disabilities. Resource rooms with therapy equipment. Home-based education for severely disabled children. Braille kits, hearing aids, and assistive devices. Orientation and mobility training. Rs. 3500 per child per year for disability-related needs.",
-        "category": "education", "source": "Ministry of Education", "chapter": "Samagra Shiksha"
-    },
-
-    # Assistive Technology
-    {
-        "text": "Assistive Technology for Visual Impairment: Screen readers (NVDA - free, JAWS - paid, Voiceover for Apple). Braille displays and Braille printers. DAISY players for audio books. Magnification software (ZoomText, Windows Magnifier). White cane (provided free under ADIP scheme). Optical Character Recognition (OCR) software. Available through ADIP scheme and National Institute for Visually Handicapped, Dehradun.",
-        "category": "assistive_tech", "source": "WHO / NIEPVD", "chapter": "Visual AT"
-    },
-    {
-        "text": "Assistive Technology for Hearing Impairment: Hearing aids (BTE, ITE, RIC types - free under ADIP/NPPCD). Cochlear implants (government schemes for children). FM systems for classroom use. Video relay services and captioning. Sign language interpretation. Vibrating alert systems. TTY/TDD devices. AYJNIHH Mumbai provides free hearing aids.",
-        "category": "assistive_tech", "source": "WHO / AYJNIHH", "chapter": "Hearing AT"
-    },
-    {
-        "text": "Assistive Technology for Locomotor Disability: Wheelchairs (manual and motorized - free under ADIP). Prosthetic limbs (free at ALIMCO centers). Orthotic appliances (calipers, splints). Crutches and walking frames. Stair lifts and ramps. Modified vehicles (tax exemption available). Tricycles with hand pedals. Available through ALIMCO (Artificial Limbs Manufacturing Corporation of India).",
-        "category": "assistive_tech", "source": "ALIMCO / DEPwD", "chapter": "Locomotor AT"
-    },
-    {
-        "text": "Assistive Technology for Intellectual and Learning Disabilities: Augmentative and Alternative Communication (AAC) devices. Symbol-based communication boards (low-tech). Speech generating devices (high-tech). Special education software (Boardmaker, LetMeTalk). Modified keyboards and mice. Text-to-speech software. Reading pens. Graphic organizers and visual schedules.",
-        "category": "assistive_tech", "source": "WHO / NIEPID", "chapter": "Intellectual/Learning AT"
-    },
-    {
-        "text": "ALIMCO (Artificial Limbs Manufacturing Corporation of India): Government enterprise manufacturing and distributing assistive devices. Products: prosthetic limbs, orthotic appliances, wheelchairs, hearing aids, Braille kits, tricycles. Devices provided free/subsidized through ADIP scheme. Centers across India. Website: www.alimco.in",
-        "category": "assistive_tech", "source": "ALIMCO", "chapter": "ALIMCO"
-    },
-
-    # Accessibility in Public Spaces
-    {
-        "text": "Accessibility Standards for Buildings (IS 9954:2020 / Harmonized Guidelines 2016): Ramps: minimum width 1.5m, slope 1:12. Accessible parking: minimum 2% of total spaces. Accessible toilets mandatory in all public buildings. Door width minimum 900mm. Lifts with Braille buttons and audio announcements. Tactile pathways from entrance to key facilities. Handrails on both sides of stairs.",
-        "category": "accessibility", "source": "BIS / MoHUA", "chapter": "Building Accessibility"
-    },
-    {
-        "text": "Digital Accessibility Standards: All central government websites must comply with GIGW (Guidelines for Indian Government Websites) and WCAG 2.0 Level AA. Key requirements: alt text for images, keyboard navigation, sufficient color contrast (4.5:1 ratio), captions for videos, screen reader compatibility. NIC provides audit services.",
-        "category": "accessibility", "source": "GIGW / NIC", "chapter": "Digital Accessibility"
-    },
-    {
-        "text": "Transport Accessibility in India: Indian Railways: accessible coaches in all trains, accessible toilets, reserved seats near entrance. Priority boarding for PwDs. Buses: CRPF mandates low-floor buses. Metro: all stations must have lifts, tactile tiles, audio announcements. Aviation: DGCA mandates accessible airports, wheelchair assistance free of charge, no extra fare for mobility aids.",
-        "category": "accessibility", "source": "MoRTH / Railways / DGCA", "chapter": "Transport Accessibility"
-    },
-
-    # WHO Global Data
-    {
-        "text": "WHO Global Disability Statistics (2023): 1.3 billion people (16% of world population) live with significant disability - world's largest minority group. 80% live in low and middle income countries. 46% of people aged 60+ have disability. 240 million children with disabilities worldwide. Persons with disabilities are 3x more likely to be denied healthcare.",
-        "category": "who_data", "source": "WHO 2023", "chapter": "Global Statistics"
-    },
-    {
-        "text": "India Disability Statistics (Census 2011): 26.8 million persons with disabilities (2.21% of population - likely underestimate). WHO estimates actual prevalence 10-20%. Distribution: Locomotor 20.3%, Hearing 18.9%, Vision 18.8%, Other 17.9%, Multiple 8.3%, Speech 7.5%, Intellectual 5.6%, Mental illness 2.7%. 69% in rural areas. Literacy rate 54.5% vs national 74%.",
-        "category": "statistics", "source": "Census of India 2011", "chapter": "India Data"
-    },
-
-    # Educational Accommodations
-    {
-        "text": "Examination Accommodations for Students with Disabilities in India: CBSE/UGC/UPSC provisions: Extra time (20 minutes per hour for benchmark disability). Scribe (writer) facility. Use of assistive devices (calculator for dyscalculia, magnifiers for low vision). Question papers in accessible formats (large print, Braille). Separate examination room. Compensatory time for those using scribes.",
-        "category": "education", "source": "CBSE / UGC / UPSC", "chapter": "Exam Accommodations"
-    },
-    {
-        "text": "University Disability Cells (Equal Opportunity Cells): All universities must have Equal Opportunity Cells under RPWD Act. Functions: identify and enroll students with disabilities, ensure reasonable accommodations, resolve grievances, liaise with departments. Contact the Disability/Equal Opportunity Cell of your university for: fee concessions, accessible hostels, assistive devices, exam accommodations.",
-        "category": "education", "source": "UGC Guidelines 2012", "chapter": "University Accommodations"
-    },
-
-    # Grievance and Legal
-    {
-        "text": "Grievance Redressal under RPWD Act: Chief Commissioner for Persons with Disabilities (national level) - File complaint at ccdisabilities.nic.in. State Commissioner for Persons with Disabilities (state level). Liaison Officers in every government establishment. High Courts/Supreme Court via writ petitions. National Human Rights Commission. Limitation: 1 year from date of grievance.",
-        "category": "legal", "source": "RPWD Act 2016 Sections 60-73", "chapter": "Grievance Redressal"
-    },
-    {
-        "text": "Legal Provisions for Employment Discrimination under RPWD Act: Sections 20-24. Equal Opportunity Policy mandatory for all establishments. Employer cannot discriminate in recruitment, promotion, or service conditions on grounds of disability. Penalty for contravention: fine up to Rs. 10,000 (first offence), Rs. 50,000-5 lakh (subsequent). File complaint with Liaison Officer or State/Chief Commissioner.",
-        "category": "legal", "source": "RPWD Act 2016", "chapter": "Employment Legal"
-    },
-    {
-        "text": "National Institutes for Disability Services in India: NIEPMD Chennai (Multiple Disabilities), SVNIRTAR Odisha (Locomotor), NILD Kolkata (Locomotor), NIHH Mumbai (Hearing), AYJNIHH Mumbai (Speech & Hearing), NIEPVD Dehradun (Visual), NIMHR Secunderabad (Intellectual), NIEPID Secunderabad (Intellectual Disability). All provide free/subsidized rehabilitation, training, and assistive devices.",
-        "category": "resources", "source": "DEPwD", "chapter": "National Institutes"
-    },
-    {
-        "text": "Disability Certificate Process in India: Step 1: Visit government hospital with disability specialist. Step 2: Medical Board assesses disability type and percentage. Step 3: Certificate issued with UDID number. Step 4: Register on swavlambancard.gov.in for digital UDID card. Required documents: identity proof, address proof, medical reports. Processing time: 30-60 days. Valid for lifetime (some may require renewal).",
-        "category": "schemes", "source": "DEPwD / State Governments", "chapter": "Disability Certificate"
-    },
-    {
-        "text": "Tax Benefits for Persons with Disabilities in India: Income Tax Act Section 80U: Deduction of Rs. 75,000 (40-80% disability) or Rs. 1,25,000 (severe disability 80%+) for persons with disability. Section 80DD: Deduction up to Rs. 1,25,000 for dependent with severe disability. GST exemption on assistive devices (wheelchairs, hearing aids, Braille watches). Customs duty exemption on imported assistive devices.",
-        "category": "schemes", "source": "Income Tax Act / GST", "chapter": "Tax Benefits"
-    },
-    {
-        "text": "State Government Disability Schemes vary across India. Common benefits include: disability pension (Rs. 500-3000/month by state), free bus travel, free train travel (50-75% concession), free/subsidized housing under state schemes, subsidized loans, priority in BPL ration cards. Contact State Commissioner for Persons with Disabilities or State Welfare Department for state-specific schemes.",
-        "category": "schemes", "source": "State Governments", "chapter": "State Schemes"
-    },
-    {
-        "text": "National Mission on Sickle Cell Anaemia (2023): Launched to address high burden among tribal populations. Free screening, counseling, and treatment. Targets 7 crore people in high-prevalence states. States covered: Madhya Pradesh, Rajasthan, Gujarat, Maharashtra, Chhattisgarh, Jharkhand, Odisha, Uttarakhand, Uttar Pradesh, Tamil Nadu, Andhra Pradesh, Karnataka, Assam, West Bengal.",
-        "category": "schemes", "source": "Ministry of Health 2023", "chapter": "Sickle Cell Mission"
-    },
+        "text": "സെൻസറി വൈകല്യങ്ങളിൽ ദൃഷ്ടി, കേൾവ്, സ്പർശം, രുചി അല്ലെങ്കിൽ ഗന്ധത്തിൽ തകരാറുകൾ ഉൾപ്പെടുന്നു. ഭാരതത്തിൽ ഇത് RPWD ആക്ടിന്റെ കീഴിൽ ഉൾപ്പെടുന്നു, പ്രാപ്യതാ ആനുകൂല്യങ്ങൾ, സഹായ ഉപകരണങ്ങൾ, വിദ്യാഭ്യാസ സൗകര്യങ്ങൾ, വൈകല്യമാന്യപത്രക്കാർിക്ക് തർഹത എന്നിവക്ക് അർഹത നൽകാം.",
+        "source": "RPWD നിയമം സെൻസറി വൈകല്യങ്ങൾ",
+        "chapter": "വൈകല്യ നിർവചനങ്ങൾ",
+        "language": "ml"
+    }
 ]
-
-# ─── Embedding & Indexing ────────────────────────────────────────────────────────
 
 class DisabilityRAGIngestion:
     def __init__(self, index_path: str = "./faiss_index"):
         self.index_path = Path(index_path)
         self.index_path.mkdir(parents=True, exist_ok=True)
+
         self.model: Optional[SentenceTransformer] = None
         self.chunks: List[Dict] = []
         self.embeddings: Optional[np.ndarray] = None
 
-    def load_embedding_model(self):
-        logger.info(f"Loading embedding model: {EMBEDDING_MODEL_NAME}")
-        self.model = SentenceTransformer(EMBEDDING_MODEL_NAME)
-        logger.info("Embedding model loaded successfully")
+        self.batch_size = 32  # 🔥 control memory
 
-    def load_pdf_document(self, pdf_path: str) -> List[Dict]:
-        """Load and chunk PDF document"""
+    # ---------------- MODEL ---------------- #
+
+    def load_embedding_model(self):
+        if self.model:
+            return
+        logger.info(f"Loading model: {EMBEDDING_MODEL_NAME}")
+        self.model = SentenceTransformer(EMBEDDING_MODEL_NAME)
+
+    # ---------------- SAFE CHUNKING ---------------- #
+
+    def _safe_chunk(self, text: str, source: str):
+        if not text or len(text.strip()) < 50:
+            return []
+
         chunks = []
+        words = text.split()
+
+        for i in range(0, len(words), CHUNK_SIZE):
+            part = " ".join(words[i:i + CHUNK_SIZE])
+            chunks.append({
+                "id": str(uuid.uuid4()),
+                "text": part,
+                "metadata": {"source": source}
+            })
+
+        return chunks
+
+    # ---------------- PDF ---------------- #
+
+    def load_pdf_document(self, pdf_path: str):
+        chunks = []
+
         try:
             from pypdf import PdfReader
             reader = PdfReader(pdf_path)
-            full_text = ""
-            for page_num, page in enumerate(reader.pages):
-                page_text = page.extract_text() or ""
-                full_text += f"\n\n{page_text}"
-            chunks = self._chunk_text(full_text, source=Path(pdf_path).name)
-            logger.info(f"Loaded PDF: {pdf_path} -> {len(chunks)} chunks")
+
+            for page in reader.pages:
+                text = page.extract_text() or ""
+                chunks.extend(self._safe_chunk(text, Path(pdf_path).name))
+
         except Exception as e:
-            logger.error(f"Failed to load PDF {pdf_path}: {e}")
+            logger.error(f"PDF failed: {e}")
+
         return chunks
 
-    def _chunk_text(self, text: str, source: str = "document") -> List[Dict]:
-        """Recursive character text splitting"""
-        chunks = []
-        separators = ["\n\n", "\n", ". ", " ", ""]
-        
-        def split_by_separators(text: str, seps: List[str], chunk_size: int, overlap: int) -> List[str]:
-            if not seps or len(text) <= chunk_size:
-                return [text] if text.strip() else []
-            sep = seps[0]
-            parts = text.split(sep)
-            result = []
-            current = ""
-            for part in parts:
-                if len(current) + len(part) + len(sep) <= chunk_size:
-                    current += (sep if current else "") + part
-                else:
-                    if current:
-                        result.append(current)
-                    if len(part) > chunk_size:
-                        sub = split_by_separators(part, seps[1:], chunk_size, overlap)
-                        result.extend(sub)
-                        current = ""
-                    else:
-                        current = part
-            if current:
-                result.append(current)
-            return result
+    # ---------------- INGEST ---------------- #
 
-        raw_chunks = split_by_separators(text, separators, CHUNK_SIZE, CHUNK_OVERLAP)
-        for i, chunk_text in enumerate(raw_chunks):
-            if len(chunk_text.strip()) > 50:
-                chunks.append({
-                    "id": str(uuid.uuid4()),
-                    "text": chunk_text.strip(),
-                    "metadata": {
-                        "source": source,
-                        "chunk_index": i,
-                        "category": "rpwd_pdf",
-                        "chapter": "RPWD/WHO Reference"
-                    }
-                })
-        return chunks
-
-    def ingest_all(self, docs_dir: str = None, include_knowledge_base: bool = True):
-        """Main ingestion pipeline"""
-        if self.model is None:
-            self.load_embedding_model()
+    def ingest_all(self, docs_dir=None, include_knowledge_base=True):
+        self.load_embedding_model()
 
         all_chunks = []
 
-        # 1. Ingest built-in knowledge base
+        # 1. knowledge base
         if include_knowledge_base:
             for item in DISABILITY_KNOWLEDGE_BASE:
+                if not item.get("text"):
+                    continue
                 all_chunks.append({
                     "id": str(uuid.uuid4()),
                     "text": item["text"],
-                    "metadata": {
-                        "source": item["source"],
-                        "category": item["category"],
-                        "chapter": item.get("chapter", "")
-                    }
+                    "metadata": item
                 })
-            logger.info(f"Loaded {len(DISABILITY_KNOWLEDGE_BASE)} knowledge base entries")
 
-        # 2. Ingest PDF documents
+        # 2. PDFs
         if docs_dir:
             docs_path = Path(docs_dir)
             if docs_path.exists():
-                for pdf_file in docs_path.glob("*.pdf"):
-                    pdf_chunks = self.load_pdf_document(str(pdf_file))
-                    all_chunks.extend(pdf_chunks)
+                for pdf in docs_path.glob("*.pdf"):
+                    all_chunks.extend(self.load_pdf_document(str(pdf)))
+
+        if not all_chunks:
+            raise ValueError("No data to index")
 
         self.chunks = all_chunks
-        logger.info(f"Total chunks to index: {len(all_chunks)}")
 
-        # 3. Generate embeddings
+        # ---------------- EMBEDDINGS ---------------- #
+
         texts = [c["text"] for c in all_chunks]
-        logger.info("Generating embeddings...")
-        self.embeddings = self.model.encode(
-            texts, 
-            show_progress_bar=True,
-            batch_size=32,
-            normalize_embeddings=True
-        )
-        logger.info(f"Generated embeddings shape: {self.embeddings.shape}")
 
-        # 4. Build FAISS index
+        embeddings_list = []
+
+        for i in range(0, len(texts), self.batch_size):
+            batch = texts[i:i + self.batch_size]
+            emb = self.model.encode(
+                batch,
+                normalize_embeddings=True
+            )
+            embeddings_list.append(emb)
+
+        self.embeddings = np.vstack(embeddings_list)
+
+        logger.info(f"Embeddings ready: {self.embeddings.shape}")
+
         self._build_faiss_index()
-
-        # 5. Save metadata
         self._save_metadata()
 
-        logger.info("Ingestion complete!")
         return len(all_chunks)
 
+    # ---------------- FAISS ---------------- #
+
     def _build_faiss_index(self):
-        """Build and save FAISS index"""
         try:
             import faiss
+
             dim = self.embeddings.shape[1]
-            # Use IndexFlatIP for cosine similarity (with normalized vectors)
+
             index = faiss.IndexFlatIP(dim)
             index.add(self.embeddings.astype(np.float32))
+
             faiss.write_index(index, str(self.index_path / "index.faiss"))
-            logger.info(f"FAISS index built with {index.ntotal} vectors (dim={dim})")
-        except ImportError:
-            logger.warning("FAISS not available, saving numpy arrays as fallback")
-            np.save(str(self.index_path / "embeddings.npy"), self.embeddings)
+
+        except Exception as e:
+            logger.error(f"FAISS failed: {e}")
+            raise RuntimeError("FAISS is required for production")
+
+    # ---------------- METADATA ---------------- #
 
     def _save_metadata(self):
-        """Save chunk metadata to JSON"""
         metadata = [
             {"id": c["id"], "text": c["text"], "metadata": c["metadata"]}
             for c in self.chunks
         ]
+
         with open(self.index_path / "metadata.json", "w", encoding="utf-8") as f:
-            json.dump(metadata, f, ensure_ascii=False, indent=2)
-        logger.info(f"Saved metadata for {len(metadata)} chunks")
-
-
-def run_ingestion(docs_dir: str = None, index_path: str = "./faiss_index"):
-    """Entry point for ingestion"""
-    logging.basicConfig(level=logging.INFO)
-    pipeline = DisabilityRAGIngestion(index_path=index_path)
-    count = pipeline.ingest_all(docs_dir=docs_dir, include_knowledge_base=True)
-    return count
-
-
-if __name__ == "__main__":
-    docs_path = Path(__file__).parent.parent / "data" / "docs"
-    idx_path = Path(__file__).parent.parent.parent / "faiss_index"
-    run_ingestion(docs_dir=str(docs_path), index_path=str(idx_path))
+            json.dump(metadata, f, ensure_ascii=False)

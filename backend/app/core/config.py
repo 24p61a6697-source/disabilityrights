@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     APP_VERSION: str = "1.0.0"
 
     # 🔥 MUST come from env
-    SECRET_KEY: str
+    SECRET_KEY: str = "your-secret-key-change-in-production"
 
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 * 7
