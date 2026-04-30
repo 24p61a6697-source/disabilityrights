@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useAuth } from "../../contexts/AuthContext";
-import { stopSpeech } from "../../utils/speechUtils";
+import { stopSpeech, detectLanguageFromText } from "../../utils/speechUtils";
 
 const isBrowser = typeof window !== "undefined";
 
@@ -111,8 +111,14 @@ export default function AccessibilityToolbar() {
 
     if (synth.speaking) synth.cancel();
 
+    // Detect language from text content itself, not just app preference
+    const detectedLang = detectLanguageFromText(toSpeak) || appLanguage || "en";
+
     const utter = new SpeechSynthesisUtterance(toSpeak);
-    utter.lang = getSpeechLocale(preferredLanguage);
+    utter.lang = getSpeechLocale(detectedLang);
+    utter.rate = 0.9;
+    utter.pitch = 1;
+    utter.volume = 1;
 
     utter.onend = () => setSpeaking(false);
     utter.onerror = () => setSpeaking(false);
@@ -121,7 +127,7 @@ export default function AccessibilityToolbar() {
     setSpeaking(true);
 
     synth.speak(utter);
-  }, [preferredLanguage, screenReaderEnabled]);
+  }, [appLanguage, screenReaderEnabled]);
 
   const stopSpeaking = () => {
     if (!isBrowser) return;
