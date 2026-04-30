@@ -1,0 +1,30 @@
+fastapi
+uvicorn[standard]
+python-multipart
+python-jose[cryptography]
+passlib[bcrypt]
+sqlalchemy
+pydantic
+email-validator
+pydantic-settings
+aiosqlite
+
+# RAG Stack
+langchain
+langchain-community
+sentence-transformers
+faiss-cpu
+pypdf
+huggingface-hub
+
+# Translation
+google-cloud-translate
+googletrans==4.0.0rc1
+deep-translator
+
+# Utils
+python-dotenv
+httpx
+numpy
+requests
+gTTS

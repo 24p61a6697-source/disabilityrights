@@ -1,0 +1,1686 @@
+[
+  {
+    "id": "8376db0e-3796-459e-9c43-780cab3da27e",
+    "text": "The Rights of Persons with Disabilities Act, 2016 (RPWD Act) is India's landmark disability legislation enacted on December 16, 2016. It received Presidential assent on December 27, 2016 and came into force on April 19, 2017 (Act 49 of 2016). It replaces the Persons with Disabilities Act of 1995.",
+    "metadata": {
+      "source": "RPWD Act 2016",
+      "category": "rpwd_act",
+      "chapter": "Overview"
+    }
+  },
+  {
+    "id": "64c34255-e97c-496b-871d-42bad95e3e71",
+    "text": "The RPWD Act 2016 recognizes 21 specified disabilities, expanded from 7 under the 1995 Act. These include: Blindness, Low Vision, Leprosy Cured, Hearing Impairment (Deaf), Hard of Hearing, Speech & Language Disability, Locomotor Disability, Dwarfism, Intellectual Disability, Specific Learning Disabilities, Autism Spectrum Disorder, Mental Illness, Cerebral Palsy, Muscular Dystrophy, Chronic Neurological Conditions, Multiple Sclerosis, Haemophilia, Thalassemia, Sickle Cell Disease, Acid Attack Victims, and Parkinson's Disease.",
+    "metadata": {
+      "source": "RPWD Act 2016",
+      "category": "rpwd_act",
+      "chapter": "Chapter 10 - 21 Disabilities"
+    }
+  },
+  {
+    "id": "64a684f2-0318-405c-906a-466ce1866ded",
+    "text": "Under RPWD Act 2016, Benchmark Disability means a person with not less than 40% of a specified disability as certified by a certifying authority. Only persons with benchmark disability are entitled to reservations in government jobs and higher education.",
+    "metadata": {
+      "source": "RPWD Act 2016",
+      "category": "rpwd_act",
+      "chapter": "Definitions"
+    }
+  },
+  {
+    "id": "a6194e56-57ea-458b-a809-3f8d5b6d8ff7",
+    "text": "Employment Rights under RPWD Act 2016: Minimum 4% reservation in government vacancies for persons with benchmark disabilities (increased from 3% in 1995 Act). Breakdown: 1% each for persons with blindness/low vision; deaf/hard of hearing; locomotor disability/cerebral palsy/leprosy cured/dwarfism/acid attack victims; and 1% for persons with intellectual/mental illness/multiple disabilities.",
+    "metadata": {
+      "source": "RPWD Act 2016",
+      "category": "employment",
+      "chapter": "Section 34 - Reservation"
+    }
+  },
+  {
+    "id": "078424bb-a643-4949-99f4-18afe08d8869",
+    "text": "Higher Education Reservation under RPWD Act 2016: Minimum 5% seats reserved for persons with benchmark disabilities in all government educational institutions and institutions receiving government aid. Students also receive scholarships and fee waivers.",
+    "metadata": {
+      "source": "RPWD Act 2016",
+      "category": "education",
+      "chapter": "Section 32 - Higher Education"
+    }
+  },
+  {
+    "id": "7d54a364-021e-417c-bc9b-9f750c7069a1",
+    "text": "Blindness (Visual Impairment Definition under RPWD Act 2016): Blindness is complete absence of sight. A person is considered legally blind if their vision is 6/60 (20/200) or worse in the better eye with correction, or their visual field is restricted to 20 degrees or less. Blindness can be congenital (from birth) or acquired due to injury, disease (cataract, glaucoma, retinitis pigmentosa, diabetic retinopathy), or aging. Common causes in India include cataracts, corneal scarring, retinal diseases, and optic nerve damage.",
+    "metadata": {
+      "source": "RPWD Act 2016 + WHO ICD-10",
+      "category": "disability_definitions",
+      "chapter": "Blindness Definition"
+    }
+  },
+  {
+    "id": "9f363c9c-65b2-48c0-8d61-35419f694586",
+    "text": "Low Vision (Visual Impairment Definition under RPWD Act 2016): Low vision means reduced visual acuity that cannot be corrected by glasses or surgery but preserves some functional vision. Defined as vision worse than 6/18 but not less than 6/60 (or 20/60 to 20/200) in the better eye with correction, or visual field restricted from 20-40 degrees. Persons with low vision can use magnification devices, large print materials, and modified lighting to read and navigate. Causes include macular degeneration, diabetic retinopathy, cataracts, and refractive errors.",
+    "metadata": {
+      "source": "RPWD Act 2016 + WHO",
+      "category": "disability_definitions",
+      "chapter": "Low Vision Definition"
+    }
+  },
+  {
+    "id": "ea35f907-7221-4c6d-85e5-496f84626cff",
+    "text": "Hearing Impairment (Deaf and Hard of Hearing Definition under RPWD Act 2016): Deafness is substantial/permanent loss of hearing resulting in inability to hear and understand sound and speech. Hard of Hearing refers to partial/fluctuating hearing loss not corrected by hearing aids, leading to difficulty in communication. Deaf and hard of hearing are separate disabilities recognized under RPWD Act. Hearing loss measured in decibels (dB): Normal (0-20dB), Mild (20-40dB), Moderate (40-60dB), Severe (60-80dB), Profound (>80dB). Causes include congenital absence, infections (meningitis, otitis media), aging, noise exposure, ototoxic drugs.",
+    "metadata": {
+      "source": "RPWD Act 2016 + WHO ICD-10",
+      "category": "disability_definitions",
+      "chapter": "Hearing Impairment Definition"
+    }
+  },
+  {
+    "id": "9e345bd1-e25b-459e-87d9-83b5965371f5",
+    "text": "Speech and Language Disability (Definition under RPWD Act 2016): Permanent disability of speech and/or language affecting communication ability regardless of intelligibility. Includes: Dysarthria (speech motor control problems), Apraxia (speech planning disorder), Voice disorders (pitch/quality abnormalities), Fluency disorders (stammering/stuttering), Receptive/Expressive language disorders. Can result from neurological damage (stroke, cerebral palsy, Parkinson's), structural abnormalities (cleft palate), hearing loss, intellectual disability, or autism. Affects social participation, education, and employment.",
+    "metadata": {
+      "source": "RPWD Act 2016",
+      "category": "disability_definitions",
+      "chapter": "Speech & Language Definition"
+    }
+  },
+  {
+    "id": "2ca19ecb-cbb0-459c-a6c5-3df9ca748dce",
+    "text": "Accessibility provisions under RPWD Act (Sections 40-46): All government buildings must be accessible within a prescribed timeframe. Accessible roads, transport and infrastructure required. All public websites must comply with accessibility standards (WCAG). Public and private service providers must comply with accessibility standards.",
+    "metadata": {
+      "source": "RPWD Act 2016",
+      "category": "accessibility",
+      "chapter": "Sections 40-46"
+    }
+  },
+  {
+    "id": "5892edad-1735-4215-8a0b-ec58485166a2",
+    "text": "Rights under RPWD Act: Right to Equality and Non-Discrimination (Section 3). No discrimination on grounds of disability. Right to Life with Dignity. Protection from torture, cruel or inhuman treatment. Right to Community Inclusion. Reproductive Rights (right to decide family size, retain fertility). Right to Legal Capacity (Section 14). Right to Vote in accessible polling stations. Right to Own Property.",
+    "metadata": {
+      "source": "RPWD Act 2016",
+      "category": "rights",
+      "chapter": "Chapter 2 - Rights"
+    }
+  },
+  {
+    "id": "7aa1e405-a216-4cff-988a-e368828a851e",
+    "text": "Education Rights under RPWD Act (Sections 16-18): Right to free and compulsory education in neighborhood schools. 5% reservation in higher education. Accommodation in examinations: extra time (minimum 20 minutes per hour), scribe facility, use of assistive devices. Barrier-free accessible school buildings. Appointment of Special Educators. Home-based education for those unable to attend school.",
+    "metadata": {
+      "source": "RPWD Act 2016",
+      "category": "education",
+      "chapter": "Sections 16-18"
+    }
+  },
+  {
+    "id": "22d67a4e-5dc3-486f-ada3-ee02d1882881",
+    "text": "Accessible India Campaign (Sugamya Bharat Abhiyan): Launched in 2015 by Government of India. Aims to make built environment, transportation systems, and ICT ecosystem accessible for persons with disabilities. Targets: 50% government buildings fully accessible, all airports and railway stations accessible, all government websites WCAG 2.0 compliant.",
+    "metadata": {
+      "source": "Government of India",
+      "category": "schemes",
+      "chapter": "Accessibility Schemes"
+    }
+  },
+  {
+    "id": "15612229-31bb-4229-a543-87b0958b233d",
+    "text": "ADIP Scheme (Assistance to Disabled Persons for Purchase/Fitting of Aids and Appliances): Free/subsidized assistive devices to PwDs below income threshold (Rs. 20,000/month). Devices include: wheelchairs, hearing aids, white canes, Braille kits, tricycles, prosthetic limbs, orthotic appliances, DAISY players for the blind, communication aids.",
+    "metadata": {
+      "source": "DEPwD, Ministry of Social Justice",
+      "category": "schemes",
+      "chapter": "ADIP Scheme"
+    }
+  },
+  {
+    "id": "510f921c-90ae-4259-98d0-d55fd1024d1a",
+    "text": "SIPDA (Scheme for Implementation of Persons with Disabilities Act): Provides financial assistance to state governments and NGOs for implementing RPWD Act. Funds accessible infrastructure, awareness programs, and disability-related services.",
+    "metadata": {
+      "source": "DEPwD",
+      "category": "schemes",
+      "chapter": "SIPDA"
+    }
+  },
+  {
+    "id": "daa504e7-52c1-45b6-bbe0-d721adf27c89",
+    "text": "DDRS (Deendayal Disabled Rehabilitation Scheme): Financial support to NGOs providing rehabilitation services for persons with disabilities. Covers special schools, vocational training centers, early intervention centers, and halfway homes.",
+    "metadata": {
+      "source": "DEPwD",
+      "category": "schemes",
+      "chapter": "DDRS"
+    }
+  },
+  {
+    "id": "d7c570f3-dd36-4cdb-a32e-345b4bab1dac",
+    "text": "NHFDC (National Handicapped Finance and Development Corporation): Provides loans at concessional rates for self-employment and entrepreneurship by persons with disabilities. Loan amounts up to Rs. 30 lakh. Interest rates starting from 5% per annum.",
+    "metadata": {
+      "source": "DEPwD",
+      "category": "schemes",
+      "chapter": "NHFDC"
+    }
+  },
+  {
+    "id": "aefaa6e1-670c-40e1-b3ab-d1165f7574cf",
+    "text": "Indira Gandhi National Disability Pension Scheme (IGNDPS): Monthly pension for below poverty line persons with disabilities. Amount: Rs. 300-500 per month (state governments may add additional amounts). Eligibility: BPL, age 18-79, 80% or more disability.",
+    "metadata": {
+      "source": "Ministry of Rural Development",
+      "category": "schemes",
+      "chapter": "Pension Schemes"
+    }
+  },
+  {
+    "id": "5b6dceec-3e61-44b0-b2c7-c6ac6c8969f9",
+    "text": "UDID (Unique Disability Identity Card / Swavalamban Card): National database of persons with disabilities. Provides standardized disability certificate. Apply at: www.swavlambancard.gov.in. Required for accessing government reservations and benefits. Contains embedded chip with disability information.",
+    "metadata": {
+      "source": "DEPwD",
+      "category": "schemes",
+      "chapter": "UDID System"
+    }
+  },
+  {
+    "id": "57c798ad-3287-4b32-8840-bc4ae943c5ba",
+    "text": "National Programme for Control of Blindness (NPCB): Free cataract surgeries, free glasses to school children with low vision, free treatment for corneal blindness. Vision centers at PHC level. Free IOL implants. Pre and post operative care. Objectives: eliminate avoidable blindness, reduce visual impairment burden, provide rehabilitation services. Website: npcb.nic.in",
+    "metadata": {
+      "source": "Ministry of Health",
+      "category": "schemes",
+      "chapter": "Health Schemes"
+    }
+  },
+  {
+    "id": "7bb26264-057c-4ed4-906c-1dd519685967",
+    "text": "Special Benefits for Persons with Visual Impairment (Blindness/Low Vision) under RPWD Act 2016: Free Braille kits and Braille learning materials via ADIP scheme. Free white canes and orientation & mobility training. Priority in employment (1% quota in government jobs for blind/low vision). Free assistive devices including screen readers, DAISY players, magnification software. Tax exemptions on reading materials and books. Exemption from property/entertainment taxes in several states.",
+    "metadata": {
+      "source": "RPWD Act 2016 + State Governments",
+      "category": "benefits",
+      "chapter": "Visual Impairment Benefits"
+    }
+  },
+  {
+    "id": "7f71ad51-5001-4b32-9060-55a798dc04e3",
+    "text": "Education and Employment Support for Persons with Visual Impairment: NIRD provides training in Braille, orientation & mobility, daily living skills. IIT training programs for IT skills for blind persons. NIEDB (National Institute for Empowerment of Blind) at Dehradun offers rehabilitation training. Government jobs: 4% quota (1% for blind/low vision). 20 minutes extra time per hour in exams. Use of screen reader or scribe in examinations. Audio books and Braille materials provided free.",
+    "metadata": {
+      "source": "NIEDB + NIRD + Government",
+      "category": "education",
+      "chapter": "VI Education Support"
+    }
+  },
+  {
+    "id": "04bee9ac-cca6-4a54-9287-53220bd3c513",
+    "text": "Free Assistive Technology and Rehabilitation for Visual Impairment: National Institute for the Visually Handicapped (NIVH), Dehradun provides free training in: Braille reading/writing, typing, computer skills with screen readers, orientation and mobility, rehabilitation services, low vision aids training. Free screen reader software: NVDA (open source), JAWS (subsidized for students). DAISY players for audio books. Free training provided across India through state centers.",
+    "metadata": {
+      "source": "NIVH / DeEmpowerment",
+      "category": "assistive_tech",
+      "chapter": "VI Assistive Tech"
+    }
+  },
+  {
+    "id": "f67f4ce3-0911-4b76-81ea-626ec9da0f9b",
+    "text": "NIEDB (National Institute for Empowerment of Blind/Low Vision Persons): Autonomous organization under Ministry of Social Justice working since 1989. Offers rehabilitation, vocational training, IT training, Braille education. Conducts research on visual impairment. Provides free counseling and guidance. Centers in Delhi, Kolkata, and regional programs. 100% scholarship for courses. Website: niedb.org. Email: niedb@niedb.org. Phone: 011-41591234",
+    "metadata": {
+      "source": "DEPwD",
+      "category": "organizations",
+      "chapter": "NIEDB Services"
+    }
+  },
+  {
+    "id": "09490fbd-5278-4c4e-bfa7-fa20318d848c",
+    "text": "NPPCD (National Programme for Prevention and Control of Deafness): Free hearing aids through government hospitals and audiological and speech therapy centers. Newborn hearing screening. School hearing screening. Advanced hearing aids for severe/profound hearing loss.",
+    "metadata": {
+      "source": "Ministry of Health",
+      "category": "schemes",
+      "chapter": "Health Schemes"
+    }
+  },
+  {
+    "id": "a3873222-a1ba-402d-a477-818590bb1e07",
+    "text": "National Trust Act 1999: For welfare of persons with Autism, Cerebral Palsy, Intellectual Disability and Multiple Disabilities. Key schemes: SAMARTH (care homes), GHARAUNDA (group homes for adults), NIRAMAYA (health insurance up to Rs. 1 lakh), PRERNA (early intervention), SAMBHAV (assistive device camps), VIKAAS (day care). Apply at: nationaltrust.gov.in",
+    "metadata": {
+      "source": "National Trust, MSJE",
+      "category": "schemes",
+      "chapter": "National Trust Schemes"
+    }
+  },
+  {
+    "id": "7980cfe4-531b-476f-be7b-c152c4d8b8fd",
+    "text": "Samagra Shiksha Inclusive Education Component: Individualized Education Plans (IEPs) for children with disabilities. Resource rooms with therapy equipment. Home-based education for severely disabled children. Braille kits, hearing aids, and assistive devices. Orientation and mobility training. Rs. 3500 per child per year for disability-related needs.",
+    "metadata": {
+      "source": "Ministry of Education",
+      "category": "education",
+      "chapter": "Samagra Shiksha"
+    }
+  },
+  {
+    "id": "6cc38587-e09f-4c49-b830-e8caff9ddfc7",
+    "text": "Assistive Technology for Visual Impairment: Screen readers (NVDA - free, JAWS - paid, Voiceover for Apple). Braille displays and Braille printers. DAISY players for audio books. Magnification software (ZoomText, Windows Magnifier). White cane (provided free under ADIP scheme). Optical Character Recognition (OCR) software. Available through ADIP scheme and National Institute for Visually Handicapped, Dehradun.",
+    "metadata": {
+      "source": "WHO / NIEPVD",
+      "category": "assistive_tech",
+      "chapter": "Visual AT"
+    }
+  },
+  {
+    "id": "57dcc3a3-55d9-43a3-b358-b386ecf2b1d7",
+    "text": "Assistive Technology for Hearing Impairment: Hearing aids (BTE, ITE, RIC types - free under ADIP/NPPCD). Cochlear implants (government schemes for children). FM systems for classroom use. Video relay services and captioning. Sign language interpretation. Vibrating alert systems. TTY/TDD devices. AYJNIHH Mumbai provides free hearing aids.",
+    "metadata": {
+      "source": "WHO / AYJNIHH",
+      "category": "assistive_tech",
+      "chapter": "Hearing AT"
+    }
+  },
+  {
+    "id": "a921b0e9-3cbf-4bd3-a6be-c1e9a4f0b20c",
+    "text": "Assistive Technology for Locomotor Disability: Wheelchairs (manual and motorized - free under ADIP). Prosthetic limbs (free at ALIMCO centers). Orthotic appliances (calipers, splints). Crutches and walking frames. Stair lifts and ramps. Modified vehicles (tax exemption available). Tricycles with hand pedals. Available through ALIMCO (Artificial Limbs Manufacturing Corporation of India).",
+    "metadata": {
+      "source": "ALIMCO / DEPwD",
+      "category": "assistive_tech",
+      "chapter": "Locomotor AT"
+    }
+  },
+  {
+    "id": "f4c5364f-5446-421d-8da4-6ac3b36381df",
+    "text": "Assistive Technology for Intellectual and Learning Disabilities: Augmentative and Alternative Communication (AAC) devices. Symbol-based communication boards (low-tech). Speech generating devices (high-tech). Special education software (Boardmaker, LetMeTalk). Modified keyboards and mice. Text-to-speech software. Reading pens. Graphic organizers and visual schedules.",
+    "metadata": {
+      "source": "WHO / NIEPID",
+      "category": "assistive_tech",
+      "chapter": "Intellectual/Learning AT"
+    }
+  },
+  {
+    "id": "cf6cbd82-7709-42a9-bc88-79431df077cb",
+    "text": "ALIMCO (Artificial Limbs Manufacturing Corporation of India): Government enterprise manufacturing and distributing assistive devices. Products: prosthetic limbs, orthotic appliances, wheelchairs, hearing aids, Braille kits, tricycles. Devices provided free/subsidized through ADIP scheme. Centers across India. Website: www.alimco.in",
+    "metadata": {
+      "source": "ALIMCO",
+      "category": "assistive_tech",
+      "chapter": "ALIMCO"
+    }
+  },
+  {
+    "id": "ac732a34-52a8-4d3e-8b26-815bc903fcef",
+    "text": "Accessibility Standards for Buildings (IS 9954:2020 / Harmonized Guidelines 2016): Ramps: minimum width 1.5m, slope 1:12. Accessible parking: minimum 2% of total spaces. Accessible toilets mandatory in all public buildings. Door width minimum 900mm. Lifts with Braille buttons and audio announcements. Tactile pathways from entrance to key facilities. Handrails on both sides of stairs.",
+    "metadata": {
+      "source": "BIS / MoHUA",
+      "category": "accessibility",
+      "chapter": "Building Accessibility"
+    }
+  },
+  {
+    "id": "fae4a924-4a03-4564-8d80-a6a70953970a",
+    "text": "Digital Accessibility Standards: All central government websites must comply with GIGW (Guidelines for Indian Government Websites) and WCAG 2.0 Level AA. Key requirements: alt text for images, keyboard navigation, sufficient color contrast (4.5:1 ratio), captions for videos, screen reader compatibility. NIC provides audit services.",
+    "metadata": {
+      "source": "GIGW / NIC",
+      "category": "accessibility",
+      "chapter": "Digital Accessibility"
+    }
+  },
+  {
+    "id": "cef45d60-05ff-46ed-a069-067d4fa2b5fc",
+    "text": "Transport Accessibility in India: Indian Railways: accessible coaches in all trains, accessible toilets, reserved seats near entrance. Priority boarding for PwDs. Buses: CRPF mandates low-floor buses. Metro: all stations must have lifts, tactile tiles, audio announcements. Aviation: DGCA mandates accessible airports, wheelchair assistance free of charge, no extra fare for mobility aids.",
+    "metadata": {
+      "source": "MoRTH / Railways / DGCA",
+      "category": "accessibility",
+      "chapter": "Transport Accessibility"
+    }
+  },
+  {
+    "id": "0a24f3da-585b-4098-9447-86bda9189fa0",
+    "text": "WHO Global Disability Statistics (2023): 1.3 billion people (16% of world population) live with significant disability - world's largest minority group. 80% live in low and middle income countries. 46% of people aged 60+ have disability. 240 million children with disabilities worldwide. Persons with disabilities are 3x more likely to be denied healthcare.",
+    "metadata": {
+      "source": "WHO 2023",
+      "category": "who_data",
+      "chapter": "Global Statistics"
+    }
+  },
+  {
+    "id": "a225d62d-e8f7-4b77-b44a-fc663290db2c",
+    "text": "India Disability Statistics (Census 2011): 26.8 million persons with disabilities (2.21% of population - likely underestimate). WHO estimates actual prevalence 10-20%. Distribution: Locomotor 20.3%, Hearing 18.9%, Vision 18.8%, Other 17.9%, Multiple 8.3%, Speech 7.5%, Intellectual 5.6%, Mental illness 2.7%. 69% in rural areas. Literacy rate 54.5% vs national 74%.",
+    "metadata": {
+      "source": "Census of India 2011",
+      "category": "statistics",
+      "chapter": "India Data"
+    }
+  },
+  {
+    "id": "eaf20051-c937-431a-8d97-a5ce20853f56",
+    "text": "Examination Accommodations for Students with Disabilities in India: CBSE/UGC/UPSC provisions: Extra time (20 minutes per hour for benchmark disability). Scribe (writer) facility. Use of assistive devices (calculator for dyscalculia, magnifiers for low vision). Question papers in accessible formats (large print, Braille). Separate examination room. Compensatory time for those using scribes.",
+    "metadata": {
+      "source": "CBSE / UGC / UPSC",
+      "category": "education",
+      "chapter": "Exam Accommodations"
+    }
+  },
+  {
+    "id": "367eeee2-d936-491c-98e0-077e11580810",
+    "text": "University Disability Cells (Equal Opportunity Cells): All universities must have Equal Opportunity Cells under RPWD Act. Functions: identify and enroll students with disabilities, ensure reasonable accommodations, resolve grievances, liaise with departments. Contact the Disability/Equal Opportunity Cell of your university for: fee concessions, accessible hostels, assistive devices, exam accommodations.",
+    "metadata": {
+      "source": "UGC Guidelines 2012",
+      "category": "education",
+      "chapter": "University Accommodations"
+    }
+  },
+  {
+    "id": "949b94e4-62a9-4ef6-b9e8-4bcacb89811d",
+    "text": "Grievance Redressal under RPWD Act: Chief Commissioner for Persons with Disabilities (national level) - File complaint at ccdisabilities.nic.in. State Commissioner for Persons with Disabilities (state level). Liaison Officers in every government establishment. High Courts/Supreme Court via writ petitions. National Human Rights Commission. Limitation: 1 year from date of grievance.",
+    "metadata": {
+      "source": "RPWD Act 2016 Sections 60-73",
+      "category": "legal",
+      "chapter": "Grievance Redressal"
+    }
+  },
+  {
+    "id": "becb5480-8d24-4246-aaae-5f2319e68036",
+    "text": "Legal Provisions for Employment Discrimination under RPWD Act: Sections 20-24. Equal Opportunity Policy mandatory for all establishments. Employer cannot discriminate in recruitment, promotion, or service conditions on grounds of disability. Penalty for contravention: fine up to Rs. 10,000 (first offence), Rs. 50,000-5 lakh (subsequent). File complaint with Liaison Officer or State/Chief Commissioner.",
+    "metadata": {
+      "source": "RPWD Act 2016",
+      "category": "legal",
+      "chapter": "Employment Legal"
+    }
+  },
+  {
+    "id": "9ba2d365-988e-41b3-a47a-8649742e57fa",
+    "text": "National Institutes for Disability Services in India: NIEPMD Chennai (Multiple Disabilities), SVNIRTAR Odisha (Locomotor), NILD Kolkata (Locomotor), NIHH Mumbai (Hearing), AYJNIHH Mumbai (Speech & Hearing), NIEPVD Dehradun (Visual), NIMHR Secunderabad (Intellectual), NIEPID Secunderabad (Intellectual Disability). All provide free/subsidized rehabilitation, training, and assistive devices.",
+    "metadata": {
+      "source": "DEPwD",
+      "category": "resources",
+      "chapter": "National Institutes"
+    }
+  },
+  {
+    "id": "d240cf1d-7cc7-40ce-9a91-49d12ea2ee01",
+    "text": "Disability Certificate Process in India: Step 1: Visit government hospital with disability specialist. Step 2: Medical Board assesses disability type and percentage. Step 3: Certificate issued with UDID number. Step 4: Register on swavlambancard.gov.in for digital UDID card. Required documents: identity proof, address proof, medical reports. Processing time: 30-60 days. Valid for lifetime (some may require renewal).",
+    "metadata": {
+      "source": "DEPwD / State Governments",
+      "category": "schemes",
+      "chapter": "Disability Certificate"
+    }
+  },
+  {
+    "id": "0d5ff2a7-7a05-443d-945c-b6eb1cc13fad",
+    "text": "Tax Benefits for Persons with Disabilities in India: Income Tax Act Section 80U: Deduction of Rs. 75,000 (40-80% disability) or Rs. 1,25,000 (severe disability 80%+) for persons with disability. Section 80DD: Deduction up to Rs. 1,25,000 for dependent with severe disability. GST exemption on assistive devices (wheelchairs, hearing aids, Braille watches). Customs duty exemption on imported assistive devices.",
+    "metadata": {
+      "source": "Income Tax Act / GST",
+      "category": "schemes",
+      "chapter": "Tax Benefits"
+    }
+  },
+  {
+    "id": "fd528f8d-e8e4-4055-bbfb-fd2dc6fd1ce9",
+    "text": "State Government Disability Schemes vary across India. Common benefits include: disability pension (Rs. 500-3000/month by state), free bus travel, free train travel (50-75% concession), free/subsidized housing under state schemes, subsidized loans, priority in BPL ration cards. Contact State Commissioner for Persons with Disabilities or State Welfare Department for state-specific schemes.",
+    "metadata": {
+      "source": "State Governments",
+      "category": "schemes",
+      "chapter": "State Schemes"
+    }
+  },
+  {
+    "id": "b2c83353-d9e0-47bb-969f-5681a4dfb3df",
+    "text": "National Mission on Sickle Cell Anaemia (2023): Launched to address high burden among tribal populations. Free screening, counseling, and treatment. Targets 7 crore people in high-prevalence states. States covered: Madhya Pradesh, Rajasthan, Gujarat, Maharashtra, Chhattisgarh, Jharkhand, Odisha, Uttarakhand, Uttar Pradesh, Tamil Nadu, Andhra Pradesh, Karnataka, Assam, West Bengal.",
+    "metadata": {
+      "source": "Ministry of Health 2023",
+      "category": "schemes",
+      "chapter": "Sickle Cell Mission"
+    }
+  },
+  {
+    "id": "7ddc64cf-1114-4bdc-9151-db678ddff186",
+    "text": "DISABILITY: A COMPREHENSIVE\n STUDY\n \n WHO Global Data & India's RPWD Act 2016\n A Thesis Reference Document\n \nDocument Type\nThesis Reference / Literature Review\nSubject\nDisability Studies – Global & Indian Perspectives\nPrimary Sources\nWHO World Report on Disability, RPWD Act 2016\nYear of Data\n2011–2024 (Most recent available)\nPrepared For\nAcademic Thesis Research\nNote: This document synthesizes data from WHO publications, RPWD Act 2016 (India), and related research\nfor academic thesis use. All statistics are sourced from official WHO, UN, and Government of India documents.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 0,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "6e4f1e5d-b01b-4980-884e-c9cb96f74fc6",
+    "text": "TABLE OF CONTENTS\n1.\nIntroduction to Disability\n3\n2.\nWHO – Global Disability Overview\n5\n3.\nWHO Key Statistics & Epidemiology\n8\n4.\nTypes and Classifications of Disability (WHO/ICF)\n11\n5.\nWHO: Health Inequities and Barriers Faced by PwDs\n15\n6.\nWHO Global Report on Disability – Key Findings\n18\n7.\nWHO Recommendations and Action Framework\n22\n8.\nIndia's Disability Landscape – Census & Data\n25\n9.\nRPWD Act 2016 – Overview and Background\n28\n10.\nRPWD Act 2016 – The 21 Recognized Disabilities\n31\n11.\nRPWD Act 2016 – Rights, Entitlements & Provisions\n38\n12.\nRPWD Act 2016 – Implementation & Challenges\n43\n13.\nDisability & Education in India\n46\n14.\nDisability & Employment – India & Global\n49\n15.\nConclusion & Research Gaps\n52\nReferences & Bibliography\n55",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 1,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "c5e3cac7-2663-4f98-8b7c-b08d395fe0d8",
+    "text": "CHAPTER 1: INTRODUCTION TO DISABILITY\n1.1 Defining Disability\nDisability is a complex and multidimensional phenomenon that reflects the interaction\nbetween features of a person's body and the physical and social environment in which they\nlive. It is not merely a medical condition or an individual deficit, but rather a dynamic\ninteraction between health conditions and contextual factors – both personal and\nenvironmental. The understanding of disability has evolved significantly over the past few\ndecades, shifting from a purely medical model to a biopsychosocial and human\nrights-based model.\nThe World Health Organization (WHO), in its landmark World Report on Disability (2011),\ndefines disability as follows:\n\"Disability is part of the human condition. Almost everyone will be temporarily",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 2,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "798ce667-d478-4823-8b77-28fb1af85aee",
+    "text": "or permanently \" \"impaired at some point in life, and those who survive to old\nage will experience increasing \" \"difficulties in functioning. Most extended\nfamilies have a disabled member, and many non-disabled \" \"people take\nresponsibility for supporting and caring for their relatives and friends with\ndisabilities.\"\n1.2 Models of Disability\nHistorically, disability has been understood through different conceptual models, each with\nits own implications for policy and practice:\n Medical Model: Treats disability as a problem located within the individual, caused by\ndisease, trauma, or other health conditions. The focus is on 'curing' or 'normalizing' the\nindividual.\n Social Model: Views disability as created by the social and physical environment that",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 3,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "a3b267af-f39f-4e26-aa35-262097e4509b",
+    "text": "fails to accommodate people with impairments. Disability is a form of oppression\ncaused by social barriers.\n Biopsychosocial Model (WHO/ICF): Combines both medical and social perspectives.\nDisability arises from the interaction between an individual's health condition and\ncontextual factors (environmental and personal). This is the basis of the International\nClassification of Functioning, Disability and Health (ICF).\n Human Rights Model: Views people with disabilities as rights holders. Disability is a\nmatter of human rights, not charity. This model underpins the UN Convention on the\nRights of Persons with Disabilities (UNCRPD) and India's RPWD Act 2016.\n1.3 The International Classification of Functioning (ICF)",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 4,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "10015c9c-fbd6-4421-8d84-2334d3cb4686",
+    "text": "The International Classification of Functioning, Disability and Health (ICF), developed by\nWHO in 2001, represents the most comprehensive framework for understanding disability.\nIt provides a standard language and framework for describing health and health-related\nstates. The ICF classifies disability across three dimensions:\nICF Component\nDefinition\nExample\nBody Functions &\nStructures\nPhysiological functions of body systems\nand anatomical parts\nParalysis, visual impairment,\nhearing loss, limb absence\nActivities\nExecution of a task or action by an\nindividual\nDifficulty walking, reading,\nor communicating\nParticipation\nInvolvement in a life situation\nUnable to attend school,\nwork, or community events\nEnvironmental\nFactors\nPhysical and social context that\nimpact functioning",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 5,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "0a2cb266-5c4c-44d9-95b9-d93f132f06de",
+    "text": "Accessible buildings, policy\nsupport, social attitudes\nPersonal Factors\nIndividual background not part of\nhealth condition\nAge, gender, education,\nlifestyle choices\n1.4 Why Disability Matters: A Global Imperative\nDisability is a global health and social issue of enormous magnitude. With approximately\n1.3 billion people – roughly 16% of the world's population – living with some form of\ndisability, it represents the world's largest minority group. People with disabilities\nexperience disproportionate rates of poverty, social exclusion, and poor health outcomes.\nDespite this, disability often remains invisible in national data systems, policy frameworks,\nand development agendas. Addressing disability is therefore central to achieving the",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 6,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "504d2215-b3e8-4855-a38d-701e7f0dffa2",
+    "text": "Sustainable Development Goals (SDGs) and upholding universal human rights.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 7,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "3b437b74-f81c-4823-be79-a26decef8456",
+    "text": "CHAPTER 2: WHO – GLOBAL DISABILITY\nOVERVIEW\n2.1 WHO's Role in Disability Policy\nThe World Health Organization plays a central role in shaping global disability policy,\nproviding technical guidance, generating evidence, and supporting countries to build\ninclusive health systems. WHO's work on disability is organized under its Department of\nNoncommunicable Diseases, Sensory Functions, Disability and Rehabilitation.\nKey WHO milestones on disability include:\n 1976: First International Classification of Impairments, Disabilities and Handicaps\n(ICIDH) introduced.\n 2001: International Classification of Functioning, Disability and Health (ICF) published.\n 2006: UN Convention on the Rights of Persons with Disabilities (UNCRPD) adopted;\nWHO was a key technical contributor.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 8,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "049bb355-381c-4993-b9c2-1ae3dc695421",
+    "text": " 2011: World Report on Disability – the first comprehensive global analysis of disability,\npublished jointly by WHO and the World Bank.\n 2015: WHO Global Disability Action Plan 2014–2021 launched to improve the health of\npersons with disabilities.\n 2021: WHO Rehabilitation 2030 Initiative to scale up rehabilitation services globally.\n 2022: WHO Global Report on Health Equity for Persons with Disabilities published, the\nmost recent major WHO flagship report.\n2.2 The WHO World Report on Disability (2011)\nThe World Report on Disability (WRD) was the first comprehensive global report on\ndisability. It was jointly produced by WHO and the World Bank, drawing on evidence from\nover 100 countries. The report was launched at the United Nations headquarters in New",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 9,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "b1d35819-51dc-4ddd-b541-c7a9b42fffdf",
+    "text": "York on 9 June 2011 and received widespread media and policy attention globally.\nThe WRD examined disability across multiple domains, including healthcare, rehabilitation,\nassistance and support, enabling environments, education, employment, and social\nprotection. It documented the circumstances of persons with disabilities across the world\nand explored measures to promote their social participation.\nKey Findings of the WRD (2011):\n✓ Approximately 15% of the world's population – over 1 billion people – lives with\ndisability.\n✓ Between 110 million and 190 million adults experience significant difficulties in\nfunctioning.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 10,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "653b71ad-4ae0-4c54-8cba-af20a95df12a",
+    "text": "✓ People with disabilities face significant barriers to accessing healthcare, education, and\nemployment.\n✓ Disability prevalence is higher in developing countries.\n✓ Women with disabilities are particularly vulnerable to discrimination and violence.\n✓ Children with disabilities are less likely to attend school or receive healthcare.\n✓ People with disabilities experience higher rates of poverty than non-disabled persons.\n✓ Majority of barriers faced by persons with disabilities are avoidable.\n2.3 WHO Global Report on Health Equity for Persons with\nDisabilities (2022)\nIn December 2022, WHO released its most recent flagship publication on disability – the\nGlobal Report on Health Equity for Persons with Disabilities. This report focused",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 11,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "b5bb18b2-1d7a-4471-8cbe-b456c6494ffd",
+    "text": "specifically on health disparities and called for urgent action to close the health gap\nbetween people with and without disabilities.\nThe 2022 report highlighted that persons with disabilities:\n Are twice as likely to have inadequate healthcare skills in their providers.\n Are nearly three times more likely to be denied healthcare.\n Are four times more likely to report being treated badly in healthcare settings.\n Are more than twice as likely to find health-care providers' skills inadequate.\n Experience 50% higher unmet healthcare needs compared to non-disabled persons.\n Are more likely to experience catastrophic out-of-pocket health expenditures.\n Face systematic exclusion from health promotion programs.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 12,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "7c7dc453-2608-4a39-af1e-6bb82c55f4ee",
+    "text": "CHAPTER 3: WHO KEY STATISTICS &\nEPIDEMIOLOGY\n3.1 Global Prevalence\nThe scale of disability globally is staggering. According to the most recent WHO estimates\n(2023), approximately 1.3 billion people – or 16% of the global population – experience\nsignificant disability. This figure has grown significantly from WHO's earlier 1970s estimate\nof 10%, and even from the 2011 estimate of 15%. This growth is attributed to aging\npopulations, the rise of chronic diseases, and improvements in measurement\nmethodologies.\nStatistic\nValue\nSource/Year\nGlobal population with disability\n~1.3 billion (16%)\nWHO, 2023\nAdults with significant disability\n110–190 million\nWHO, 2011 WRD\nPeople with vision impairment\n2.2 billion\nWHO, 2019\nPeople with hearing loss\n1.5 billion (430M disabling)\nWHO, 2021",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 13,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "5610896b-07dd-4d95-bd9a-f6be9108e607",
+    "text": "People with mental disorders\n1 billion+\nWHO, 2022\nPeople needing rehab services\n2.4 billion\nWHO, 2021\nPwDs in low & middle income countries\n>80% of total PwDs\nWHO/World Bank\nDisability prevalence in older adults\n~46% (aged 60+)\nWHO, 2011\nChildren with disabilities worldwide\n~240 million (10%)\nUNICEF, 2021\nPwDs living in poverty\nDisproportionately higher\nWHO/World Bank\n3.2 Disability Prevalence by Region\nDisability prevalence varies significantly across regions, with low- and middle-income\ncountries bearing a disproportionate burden due to poorer health infrastructure, higher\nrates of disease, injury, malnutrition, and inadequate access to rehabilitation services.\nRegion\nEstimated Disability Prevalence\nNotes\nSub-Saharan Africa\n15–20%\nHigh infectious disease burden; limited data",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 14,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "2285ae55-4d85-4f85-8fa2-1ef61ab337fc",
+    "text": "South Asia (incl. India)\n15–20%\nCensus data often underestimates\nEast Asia & Pacific\n10–15%\nAging populations driving increase\nLatin America & Caribbean\n12–18%\nRoad traffic injury a major factor\nHigh-income countries\n10–15%\nMore comprehensive data systems\nGlobally (overall)\n~16%\nWHO 2023 estimate\n3.3 Disability and Age",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 15,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "d21e4147-f649-4f05-a822-2d21cd633f50",
+    "text": "Disability is strongly correlated with age. The WHO estimates that approximately 46% of\npeople aged 60 years and older have some form of disability, compared to about 15% of\nthe general population. This pattern has major implications for healthcare systems as\nglobal populations age rapidly, particularly in low- and middle-income countries.\n3.4 Disability and Gender\nDisability disproportionately affects women. Women with disabilities face double\ndiscrimination – first as women in patriarchal societies, and second as persons with\ndisabilities in an inaccessible world. Key gender-related disability statistics include:\n Women with disabilities are more likely to experience gender-based violence than\nnon-disabled women.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 16,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "715aaaa1-e314-4a45-bdd3-fbfc455f2e94",
+    "text": " Women with disabilities have higher rates of unmet healthcare needs, including\nreproductive health.\n In many countries, girls with disabilities are less likely to attend school.\n In India, female PwDs face compounded disadvantage in employment and marriage.\n WHO data shows women face unique barriers in rehabilitation service access.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 17,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "09d5eee6-7100-45c0-a3cd-9855d3b97fa1",
+    "text": "CHAPTER 4: TYPES AND CLASSIFICATIONS OF\nDISABILITY (WHO/ICF)\nThe WHO, through the International Classification of Functioning, Disability and Health\n(ICF), provides a comprehensive taxonomy of disability categories. These classifications\nare used globally by health systems, policy makers, and researchers.\n4.1 Physical / Locomotor Disabilities\nPhysical disabilities affect mobility, motor functions, and the overall ability to move and\nperform physical tasks. They may be congenital or acquired through illness, injury, or\naging.\nLocomotor Disability\nImpairment of limbs or musculoskeletal system affecting movement. Includes conditions\nsuch as paraplegia, quadriplegia, polio, cerebral palsy, clubfoot, and amputation. WHO\nestimates over 450 million people have musculoskeletal conditions globally.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 18,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "9bbfb9f4-b80c-4f23-a294-7230a8a2ffe3",
+    "text": "Cerebral Palsy\nA group of non-progressive neurological disorders affecting movement, muscle tone, and\nmotor skills. Caused by damage to the brain before, during, or shortly after birth.\nPrevalence: 2–3 per 1,000 live births globally.\nMuscular Dystrophy\nA group of genetic diseases causing progressive muscle weakness and degeneration.\nOver 30 types are recognized. Duchenne MD is the most common, affecting approximately\n1 in 3,500 male births.\nDwarfism\nCharacterized by short stature resulting from genetic or medical conditions.\nAchondroplasia is the most common cause, occurring in approximately 1 in 25,000 births.\nAcid Attack Injuries\nPermanent physical disability resulting from intentional acid attacks. Disfiguration, vision\nloss, and mobility impairments are common consequences.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 19,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "c7435a02-2026-4603-891b-dc9dee6787dc",
+    "text": "4.2 Sensory Disabilities\nBlindness\nComplete loss of vision. Globally, approximately 43 million people are blind (WHO, 2019).\nLeading causes include cataract (51%), glaucoma (8%), age-related macular degeneration\n(5%), corneal opacity (4%), and diabetic retinopathy (1%). About 80% of global blindness\nis avoidable.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 20,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "c55ec092-f0f5-4ee1-820f-227fc28e76bc",
+    "text": "Low Vision\nVisual impairment not correctable to normal vision with standard glasses. Approximately\n2.2 billion people have near or distance vision impairment, of whom at least 1 billion have\nimpairment that could have been prevented. Low vision includes tunnel vision, central\nvision loss, and contrast sensitivity impairment.\nHearing Impairment (Deaf)\nProfound hearing loss of 70dB or more in the better ear. WHO (2021) estimates 1.5 billion\npeople have some hearing loss, with 430 million having disabling hearing loss. By 2050,\nover 700 million people may experience disabling hearing loss. Key causes: noise\nexposure, infections, aging.\nHard of Hearing\nModerate to severe hearing loss (60–70 dB). These individuals can communicate through",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 21,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "71428aa0-62f2-497f-874d-16d6bda3347f",
+    "text": "spoken language with or without hearing aids. Early detection and intervention are critical\nto language development in children.\nSpeech and Language Disability\nImpairment in communication, language, or speech production. Includes stuttering,\naphasia, dysarthria, and voice disorders. Approximately 5% of children have a speech or\nlanguage disorder by age 8.\n4.3 Intellectual and Developmental Disabilities\nIntellectual Disability\nCharacterized by significant limitations in both intellectual functioning (reasoning, learning,\nproblem solving) and adaptive behavior. IQ below 70. Global prevalence estimated at\n1–3%. Previously termed 'mental retardation'; now replaced with 'intellectual disability' in\nmost legislation including RPWD Act 2016.\nAutism Spectrum Disorder (ASD)",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 22,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "7c931985-253c-4f85-a8b2-2da4c11fb436",
+    "text": "A developmental disorder affecting social interaction, communication, and behavior. WHO\nestimates 1 in 100 children globally has autism. Recent US CDC data suggests 1 in 36\nchildren. Male:female ratio is approximately 4:1.\nSpecific Learning Disabilities (SLD)\nA heterogeneous group of disorders including dyslexia (reading), dyscalculia\n(mathematics), and dysgraphia (writing). Affect 5–15% of school-age children globally. Not\nrelated to intellectual ability.\nDown Syndrome\nA chromosomal condition caused by trisomy 21. Associated with intellectual disability and\nphysical features. Prevalence: approximately 1 in 1,000 live births globally (higher with",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 23,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "003ff886-e175-4277-80c9-756de9b3f6f2",
+    "text": "4.4 Mental Health Disabilities\nWHO recognizes mental disorders as significant causes of disability. The Global Burden of\nDisease study consistently ranks mental disorders among the leading causes of disability\nworldwide. Depression is the single largest cause of disability globally.\nMental Illness\nIncludes substantial disorders of thinking, mood, perception, and behavior that impair\njudgment and daily functioning. WHO (2022) estimates 1 in 8 people globally lives with a\nmental disorder. Major types include depression, bipolar disorder, schizophrenia, and\nanxiety disorders.\nDepression\nAffects 280 million people globally (WHO, 2021). Leading cause of disability worldwide.\nCharacterized by persistent sadness, loss of interest, sleep disturbance, and impaired",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 25,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "c07ac7f4-27e3-45ac-945f-4702ef72444a",
+    "text": "concentration. Treatable but grossly undertreated, especially in LMICs.\nSchizophrenia\nAffects approximately 24 million people globally (WHO). Characterized by hallucinations,\ndelusions, and disorganized thinking. Significantly impacts social and occupational\nfunctioning. Major cause of psychiatric disability.\nBipolar Disorder\nAffects approximately 45 million people globally. Characterized by alternating episodes of\nmania and depression. Can cause severe disruption to work and relationships.\nAnxiety Disorders\nMost prevalent mental disorders globally. Affect approximately 301 million people\nworldwide (WHO, 2019). Include generalized anxiety disorder, panic disorder, social\nanxiety, PTSD, and OCD.\n4.5 Neurological Disabilities\nMultiple Sclerosis (MS)",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 26,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "25491f4b-ad60-49ed-ac0f-0d66a20a7634",
+    "text": "A chronic, inflammatory, demyelinating disease of the central nervous system. Affects\napproximately 2.8 million people worldwide. Can cause progressive disability including\nmobility problems, visual disturbance, fatigue, and cognitive changes.\nParkinson's Disease\nA progressive neurological disorder affecting movement, with tremors, rigidity, and\nbradykinesia. Affects over 8.5 million people globally (WHO, 2022). Second most common\nneurodegenerative disease after Alzheimer's.\nEpilepsy",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 27,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "04c5561b-fd7d-41ca-b204-70cc1fa6cc4e",
+    "text": "Characterized by recurrent seizures. Approximately 50 million people have epilepsy\nglobally (WHO). Around 80% live in low- and middle-income countries. A significant cause\nof disability and social stigma.\nChronic Neurological Conditions\nIncludes a range of conditions such as motor neurone disease (ALS), Huntington's\ndisease, and other neurodegenerative disorders causing progressive physical and\ncognitive disability.\n4.6 Blood Disorders as Disabilities\nIndia's RPWD Act 2016 uniquely includes three blood disorders as recognized disabilities,\nreflecting the high burden of these conditions in the Indian population:\nHaemophilia\nAn inherited bleeding disorder in which blood doesn't clot properly due to deficiency of",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 28,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "4cba8359-af6d-40dd-8c51-4f4e7fb5039a",
+    "text": "clotting factors (VIII or IX). Affects approximately 1 in 10,000 births globally. Can cause\nspontaneous bleeding, joint damage, and chronic disability.\nThalassemia\nA group of inherited blood disorders causing abnormal hemoglobin production. Over\n300,000 affected births annually worldwide, with India having the highest burden. Severe\nforms cause chronic anemia, organ damage, and developmental disability.\nSickle Cell Disease\nAn inherited disorder affecting the shape of red blood cells, causing pain crises, anemia,\nand organ damage. Affects over 20 million people globally, with significant burden in tribal\npopulations across India.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 29,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "c15dd4da-fbb4-4bb3-bd3a-2f9398f5962a",
+    "text": "CHAPTER 5: WHO – HEALTH INEQUITIES &\nBARRIERS FACED BY PwDs\n5.1 Healthcare Access\nAccording to WHO, persons with disabilities face significant and systematic barriers to\naccessing health services. These barriers manifest across multiple levels – from physical\ninaccessibility of healthcare facilities to discriminatory attitudes of healthcare providers.\nBarrier/Disparity\nData Point\nComparison\nUnable to afford healthcare\n50% of PwDs\n33% of non-disabled\nDenied healthcare\nNearly 3x more likely\nvs. non-disabled persons\nTreated badly in healthcare\n4x more likely\nvs. non-disabled persons\nInadequate provider skills\n>2x more likely to report\nvs. non-disabled persons\nCatastrophic health expenditure\nSignificantly higher\nWHO 2022 Report\nUnmet rehabilitation needs\n>50% globally\nWHO Rehab 2030",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 30,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "42db4cd7-d7c2-482d-b135-dec59853042f",
+    "text": "Mental health service gap\nTreatment gap >70%\nIn low-income countries\n5.2 Types of Barriers (WHO Classification)\n Physical/Environmental Barriers: Inaccessible buildings, transport, information, and\ncommunication. Lack of ramps, lifts, accessible toilets, and tactile pathways.\n Attitudinal Barriers: Negative stereotypes, stigma, discrimination, and low expectations\nfrom family, community, employers, and healthcare providers.\n Institutional Barriers: Policies, procedures, and organizational structures that fail to\naccommodate persons with disabilities. Absence of reasonable accommodation.\n Communication Barriers: Lack of sign language interpreters, Braille materials,\neasy-read information, and accessible digital content.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 31,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "58c17b83-9a39-44b2-9f3b-149fc1834aea",
+    "text": " Financial Barriers: High cost of assistive devices, healthcare, and transport. Low\nincome due to employment exclusion creates a 'disability poverty trap.'\n Information Barriers: Lack of awareness among PwDs about their rights, available\nservices, and how to navigate health and social systems.\n5.3 Disability and Poverty – The Vicious Cycle\nWHO and World Bank data consistently show that disability and poverty are closely linked\nin a self-reinforcing cycle. Disability can cause poverty through reduced employment,\nincreased medical costs, reduced productivity, and social exclusion. Conversely, poverty\ncan cause disability through poor nutrition, exposure to disease, unsafe living conditions,\nand limited access to healthcare.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 32,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "fd1912a5-24fa-45ac-bc8f-f07271e80a2f",
+    "text": "Key findings on disability and poverty:\n→ In OECD countries, the employment rate of PwDs (44%) is barely half that of\nnon-disabled (75%).\n→ People with disabilities earn 30–40% less than non-disabled workers in many\ncountries.\n→ Households with a disabled member spend more on healthcare and support.\n→ In India, 69% of PwDs reside in rural areas with minimal service access.\n→ The 'extra cost of disability' (assistive devices, caregiving, transport) deepens poverty.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 33,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "de45dbd4-71ea-48db-bdb0-e828141ac703",
+    "text": "CHAPTER 6: WHO WORLD REPORT ON\nDISABILITY – KEY CHAPTER FINDINGS\n6.1 Rehabilitation Services\nRehabilitation is defined by WHO as 'a set of interventions designed to optimize functioning\nand reduce disability in individuals with health conditions in interaction with their\nenvironment.' Despite its critical importance, rehabilitation remains severely underfunded\nand underutilized globally.\n An estimated 2.4 billion people currently need rehabilitation services globally (WHO,\n2021).\n Only 1 in 3 people who need rehabilitation access it globally.\n In low-income countries, the gap is far worse – over 90% of needs remain unmet.\n Rehabilitation reduces hospitalization duration by 25–30% and improves functional\noutcomes.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 34,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "1e363ef5-a860-4a3f-ac30-8b99cd215a6d",
+    "text": " Key rehabilitation services include physiotherapy, occupational therapy, speech therapy,\nprosthetics and orthotics, and psychosocial rehabilitation.\n6.2 Assistive Technology\nAssistive technology (AT) enables persons with disabilities to live independent, productive\nlives. WHO estimates that over 1 billion people need assistive technology, but fewer than\n10% have access globally. This gap is particularly severe in low-income countries.\nAssistive Device\nEstimated Need\nCurrent Access\nHearing Aids\n466 million people\n~17% have access\nWheelchairs\n70+ million people\n<5% in LMICs\nWhite canes/visual aids\n253 million (vision impaired)\nLow access in LMICs\nCommunication devices (AAC)\nMillions with comm. disability\nVery limited globally\nProsthetics/Orthotics\n30+ million amputees\n3–10% in LMICs",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 35,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "25e6fb14-4e2a-4f43-8624-b111abedd43a",
+    "text": "6.3 Education\nEducation is a fundamental right and a key determinant of life outcomes. However, children\nwith disabilities face significant barriers to education, despite progress in inclusive\neducation policies worldwide.\n Children with disabilities are less likely to attend school than non-disabled children in\nevery country studied by WHO.\n In Bolivia, 98% of non-disabled children attend school but under 40% of disabled\nchildren do.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 36,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "35399ed9-97f0-48cd-9c65-d1eebc506d6b",
+    "text": " In Indonesia, over 80% of non-disabled children attend school, but less than 25% of\ndisabled children do.\n Education completion gaps persist across all age groups, with the pattern more\npronounced in poorer countries.\n Globally, there are approximately 240 million children with disabilities; most lack\nadequate educational support.\n Lack of trained teachers, accessible schools, and adapted curricula are the main\nbarriers.\n6.4 Employment\nEmployment is critical for economic independence and social inclusion. However, persons\nwith disabilities face systematic exclusion from the labor market, both in formal and\ninformal sectors.\n In OECD countries, employment rate of PwDs is 44% vs 75% for non-disabled persons.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 37,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "f7add8de-74e7-424f-84e6-01fea336e069",
+    "text": " In developing countries, the employment gap is wider, with many PwDs engaged only in\nsubsistence activities.\n Persons with intellectual, psychosocial, or multiple disabilities face the greatest\nemployment barriers.\n Workplace discrimination, inaccessible environments, and employer prejudice are major\nbarriers.\n Supported employment models have shown significant success in integrating PwDs into\ncompetitive employment.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 38,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "b8f67d69-6e7b-40a7-b855-89cf0f5a87cd",
+    "text": "CHAPTER 7: WHO RECOMMENDATIONS AND\nACTION FRAMEWORK\n7.1 WHO Global Disability Action Plan 2014–2021\nThe WHO Global Disability Action Plan (GDAP) 2014–2021 provided a framework for\ncountries to improve health and well-being for persons with disabilities. It was built on three\nintersecting objectives:\n Objective 1: Remove barriers and improve access to health services and programmes.\n Objective 2: Strengthen and extend rehabilitation, habilitation, assistive technology,\nassistance and support services, and community-based rehabilitation.\n Objective 3: Strengthen collection of relevant and internationally comparable data on\ndisability and support research on disability and related services.\n7.2 Nine Cross-Cutting WHO Recommendations",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 39,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "97589fc3-d0a6-470f-9fa1-52961a03c945",
+    "text": "The World Report on Disability (2011) highlighted nine cross-cutting recommendations\napplicable to all sectors and governments:\n1. Enable access to all mainstream systems and services.\n2. Invest in specific programmes and services for people with disabilities.\n3. Adopt a national disability strategy and plan of action.\n4. Involve people with disabilities.\n5. Improve human resource capacity.\n6. Provide adequate funding and improve affordability.\n7. Increase public awareness and understanding of disability.\n8. Improve data collection on disability.\n9. Strengthen and support research on disability.\n7.3 WHO Rehabilitation 2030\nIn 2017, WHO launched the Rehabilitation 2030 initiative to address the growing global",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 40,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "e70c5c0b-5960-45a0-9b2f-fca6b4ba1758",
+    "text": "unmet need for rehabilitation. The initiative calls for strong national rehabilitation systems\nand sustainable rehabilitation service delivery integrated into health systems. Key\nstrategies include:\n→ Strengthening leadership and governance for rehabilitation at national level.\n→ Developing a sufficient, well-trained, and equitably distributed rehabilitation workforce.\n→ Ensuring financing for rehabilitation through health insurance and social protection.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 41,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "f29fd556-3f4a-4a9f-af08-42ae2a2ceccc",
+    "text": "→ Integrating rehabilitation into all levels of health systems (primary, secondary, tertiary).\n→ Implementing community-based rehabilitation (CBR) approaches.\n→ Expanding access to quality assistive products in countries.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 42,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "624d2b9b-d40b-4689-ac10-64e1deb33d40",
+    "text": "CHAPTER 8: INDIA'S DISABILITY LANDSCAPE –\nCENSUS & DATA\n8.1 Disability Prevalence in India\nIndia is home to one of the largest populations of persons with disabilities in the world.\nAccording to the Census of India 2011 – the most recent national census with disability\ndata – approximately 26.8 million people (2.21% of the total population) reported having\nsome form of disability. However, this figure is widely acknowledged to be a significant\nunderestimate, due to definitional limitations, stigma, lack of awareness, and non-inclusion\nof many disability types.\nNote: WHO estimates that disability prevalence in India could be as high as 10–20%,\nconsistent with global norms. The significant gap between the Census 2011 figure (2.21%)",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 43,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "5536d135-69a5-4b12-b313-009b108c6976",
+    "text": "and WHO estimates is a subject of ongoing academic and policy debate.\nDisability Type\nNumber (Census 2011)\n% of PwD Population\nIn Seeing (Vision)\n50,30,828\n18.8%\nIn Hearing\n50,70,914\n18.9%\nIn Speech\n19,98,341\n7.5%\nIn Movement (Locomotor)\n54,36,459\n20.3%\nMental Retardation (Intellectual)\n15,05,624\n5.6%\nMental Illness\n7,22,826\n2.7%\nMultiple Disability\n22,26,075\n8.3%\nAny Other Disability\n47,85,807\n17.9%\nTOTAL\n2,68,10,557\n100%\n8.2 Demographic Characteristics of PwDs in India\nCharacteristic\nData/Statistic\nGender distribution\nMale: 56% / Female: 44%\nRural vs Urban\nRural: 69.4% / Urban: 30.6%\nLiteracy rate (PwDs)\n54.5% (vs. national 74%)\nMain worker rate (PwDs)\n34.4% (vs. 39.8% general)\nChildren with disability (0–14 yrs)\n~5.3 million\nPwDs receiving disability pension",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 44,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "ec6af4c2-0592-45f1-ae42-f06e6fdd6dc0",
+    "text": "Very low coverage (under 20%)\n8.3 Disability in India – Key Policy Context\nIndia's disability policy landscape has evolved significantly over the past three decades.\nThe key milestones include:",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 45,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "e33a7df5-5469-4068-a9dc-0538015c6af7",
+    "text": " 1992: National Policy for Persons with Disabilities drafted.\n 1995: Persons with Disabilities (Equal Opportunities, Protection of Rights and Full\nParticipation) Act enacted. Recognized 7 types of disability.\n 1999: National Trust Act – for persons with autism, cerebral palsy, intellectual disability,\nand multiple disabilities.\n 2007: India ratified the UN Convention on Rights of Persons with Disabilities (UNCRPD).\n 2012: National Policy on Disability finalized.\n 2015: Accessible India Campaign (Sugamya Bharat Abhiyan) launched by Government\nof India.\n 2016: Rights of Persons with Disabilities Act (RPWD Act) enacted, replacing 1995 Act.\nExpanded to 21 disability categories.\n 2017: RPWD Act came into effect (April 19, 2017).",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 46,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "ec222df6-2286-44c0-a6cd-a9a5ac23c6f1",
+    "text": "CHAPTER 9: RPWD ACT 2016 – OVERVIEW AND\nBACKGROUND\n9.1 Introduction to the RPWD Act 2016\nThe Rights of Persons with Disabilities Act, 2016 (RPWD Act / RPwD Act) is a landmark\npiece of legislation enacted by the Indian Parliament on December 16, 2016. It received\nPresidential assent on December 27, 2016, was notified in the Gazette of India on\nDecember 28, 2016, and came into force on April 19, 2017. The Act is also officially\nreferred to as 'Act 49 of 2016.'\nThe RPWD Act replaces the earlier Persons with Disabilities (Equal Opportunities,\nProtection of Rights and Full Participation) Act of 1995 (PwD Act, 1995), which was\nconsidered inadequate and out of step with contemporary understandings of disability\nrights.\n9.2 Purpose and Objective",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 47,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "b588fe15-e5e5-4f21-b4b4-ae07655054c6",
+    "text": "The primary objective of the RPWD Act 2016 is to give effect to the United Nations\nConvention on the Rights of Persons with Disabilities (UNCRPD, 2006), which India signed\non March 30, 2007, and ratified on October 1, 2007. The Act aims to:\n✓ Ensure that every person with a disability can live their life with dignity, without\ndiscrimination, and with equal opportunity.\n✓ Promote, protect, and ensure the full and equal enjoyment of all human rights by\npersons with disabilities.\n✓ Promote respect for their inherent dignity.\n✓ Ensure non-discrimination on the basis of disability.\n✓ Enable full and effective participation in all spheres of society.\n✓ Provide for reasonable accommodation in education and employment.\n9.3 Structure of the Act",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 48,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "b64f9338-616d-418a-8396-42ce15033cea",
+    "text": "The RPWD Act 2016 is a comprehensive legislation consisting of 102 sections organized\nacross 17 chapters, plus a Schedule listing the 21 specified disabilities.\nChapter\nTitle\nKey Sections\nChapter 1\nPreliminary – Definitions\nSec. 1–2 (Definitions)\nChapter 2\nRights & Entitlements\nSec. 3–23 (Non-discrimination, healthcare, education, etc.)\nChapter 3\nDuties of Gov. Establishments\nSec. 20–22 (Employment, equal opportunity)\nChapter 4\nEducation\nSec. 16–18 (Inclusive education)\nChapter 5\nEmployment\nSec. 19–24 (Reservation, grievance)",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 49,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "374a7f09-3206-4c57-af76-352170a5e324",
+    "text": "Chapter 6\nSocial Security, Health, Rehab\nSec. 24–30 (Schemes, insurance)\nChapter 7\nCommunity & Recreational Life\nSec. 30 (Access to culture, sports)\nChapter 8\nLegal Capacity & Guardianship\nSec. 14–15 (District Court guardianship)\nChapter 9–11\nRegistration, Certification\nUnique Disability ID (UDID)\nChapter 12–13\nRegulatory & Advisory Bodies\nChief Commissioner, Advisory Boards\nChapter 14–15\nNational & State Fund\nSec. 86–90 (Financial provisions)\nChapter 16\nOffences & Penalties\nSec. 91–95 (Criminal provisions)\nChapter 17\nMiscellaneous\nSec. 96–102",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 50,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "abcefe43-77f7-47be-a1df-ce44e0172799",
+    "text": "CHAPTER 10: RPWD ACT 2016 – THE 21\nRECOGNIZED DISABILITIES\nA landmark feature of the RPWD Act 2016 is the expansion of recognized disabilities from\n7 (under the 1995 Act) to 21 specified disabilities. The Central Government is also\nempowered to add more types by notification. These 21 disabilities are organized into five\nbroad categories.\n10.1 Overview of 21 Disabilities\n#\nDisability\nCategory\nBrief Description\n1\nBlindness\nPhysical/Sensory\nVisual acuity <3/60 in better eye after correction\n2\nLow Vision\nPhysical/Sensory\nVisual acuity 6/18 to 3/60 or field <40 degrees\n3\nLeprosy Cured\nPhysical\nCured of leprosy but with residual disabilities\n4\nHearing Impairment (Deaf)\nPhysical/Sensory\nHearing loss 70dB+ in better ear\n5\nHard of Hearing\nPhysical/Sensory\nHearing loss 60–70dB in better ear\n6",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 51,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "88b37a0e-acf2-4919-8ff8-f38069450354",
+    "text": "Speech & Language Disability\nPhysical/Sensory\nImpairment of speech/language/voice (new in 2016)\n7\nLocomotor Disability\nPhysical\nBones/joints/muscles impairment affecting movement\n8\nDwarfism\nPhysical\nMedical/genetic condition causing short stature\n9\nIntellectual Disability\nIntellectual/Developmental\nSignificant limitation in intellectual functioning\n10\nSpecific Learning Disabilities\nIntellectual/Developmental\nDyslexia, dyscalculia, dysgraphia (new in 2016)\n11\nAutism Spectrum Disorder\nIntellectual/Developmental\nSocial/communication impairment\n12\nMental Illness\nMental Health\nSubstantial disorder of thinking/mood/behavior\n13\nCerebral Palsy\nNeurological\nNeurological condition affecting movement/posture\n14\nMuscular Dystrophy\nNeurological/Physical",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 52,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "7eac38d7-0222-4a28-83e0-6f35bd16e4dd",
+    "text": "Progressive muscle weakness (new as separate category)\n15\nChronic Neurological Conditions\nNeurological\nMS, motor neurone disease, etc.\n16\nSpecific Learning Disabilities\nNeurological/Cognitive\nLearning impairment from neurological basis\n17\nMultiple Sclerosis\nNeurological\nDemyelinating CNS disease\n18\nHaemophilia\nBlood Disorders\nHereditary bleeding disorder (new in 2016)\n19\nThalassemia\nBlood Disorders\nHereditary blood disorder (new in 2016)\n20\nSickle Cell Disease\nBlood Disorders\nHereditary red blood cell disorder (new in 2016)\n21\nAcid Attack Victims\nPhysical/Acquired\nPermanent disability from acid attack (new in 2016)\n10.2 New Additions Compared to 1995 Act\n✦ Speech and Language Disability (First time added in 2016)",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 53,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "a61dc577-dab0-4999-9c26-6f9f0dca405d",
+    "text": "✦ Specific Learning Disabilities – Dyslexia, Dyscalculia, Dysgraphia (First time added)\n✦ Acid Attack Victims (First time included – recognizing acquired disability from violence)",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 54,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "1341f36a-1ac9-4bdc-b310-748f19addc35",
+    "text": "✦ Dwarfism – included as a separate and independent category\n✦ Muscular Dystrophy – recognized as a distinct disability category\n✦ Thalassemia, Haemophilia, Sickle Cell Disease – Three blood disorders added\n✦ Chronic Neurological Conditions – broad category for neurological disorders\n✦ Parkinson's Disease – recognized separately",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 55,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "3f8f4d4f-adf5-4f9e-82c4-b70ae2d5b3e1",
+    "text": "10.3 Detailed Profiles of Each Disability Under RPWD Act\n1. BLINDNESS\nDefinition under RPWD Act: A condition where a person has any of the following\nconditions: (a) total absence of sight; (b) visual acuity not exceeding 3/60 or 10/200\n(Snellen) in the better eye with best possible spectacle correction; (c) limitation of field of\nvision subtending an angle of less than 10 degrees.\nCauses: Cataract (most common in India), glaucoma, diabetic retinopathy, trachoma,\nretinitis pigmentosa, corneal opacity, vitamin A deficiency.\nIndia Data: Over 12 million persons are blind in India. India accounts for nearly 20% of the\nglobal blind population. National Programme for Control of Blindness (NPCB) is the key\ngovernment initiative.\n2. LOW VISION",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 56,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "e18ad069-dc40-425c-94b7-cbec2ed27296",
+    "text": "Definition: A condition where a person has any of the following conditions after best\ncorrection: (a) visual acuity not exceeding 6/18 or less than 10/60 up to 3/60; (b) limitation\nof field of vision between 10 and 40 degrees.\nLow vision requires specialized rehabilitation including optical devices (magnifiers,\ntelescopes), non-optical aids, and environmental modifications. Unlike blindness, low\nvision can often be functionally improved with proper aids.\n3. LEPROSY CURED\nLeprosy (Hansen's Disease) is caused by Mycobacterium leprae. Despite being cured\nmedically, many individuals retain permanent disabilities including clawing of fingers,\nabsorption of digits, foot drop, lagophthalmos (inability to close eyes), and skin changes.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 57,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "3e979696-dd89-46f4-8a4d-7af57b092385",
+    "text": "India Context: India accounts for approximately 60% of global new leprosy cases annually.\nThe RPWD Act explicitly protects persons cured of leprosy from discrimination, a\nsignificant step as they face severe social stigma.\n4 & 5. HEARING IMPAIRMENT\nHearing Impairment in RPWD Act covers two sub-categories:  Deaf: 70 dB or more\nhearing loss in the better ear in conversational range of frequencies.  Hard of Hearing:\n60–70 dB hearing loss in the better ear.\nCauses: Congenital (maternal rubella, birth asphyxia), infections (meningitis, chronic ear\ninfections), noise-induced, ototoxic drugs, aging.\nIndia Data: ~50.7 lakh persons with hearing impairment (Census 2011). National\nProgramme for Prevention and Control of Deafness (NPPCD) provides free hearing aids.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 58,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "a07b42f3-35c4-4020-b0bd-4ca9a46720a9",
+    "text": "6. SPEECH AND LANGUAGE DISABILITY\nNew in RPWD 2016. Defined as a permanent disability arising out of conditions such as\nlaryngectomy or aphasia affecting one or more components of speech and language due\nto organic or neurological causes.\nTypes: Aphasia (language disorder after brain injury), dysarthria (motor speech disorder),\nstuttering, voice disorders (dysphonia, laryngectomy).\nThis was added recognizing that inability to communicate effectively is a significant\ndisability impacting education, employment, and social participation.\n7. LOCOMOTOR DISABILITY\nDefined as a person's inability to execute distinctive activities associated with moving\noneself and objects resulting from affliction of musculoskeletal or nervous system.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 59,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "4bdcf33f-72f6-480d-b99a-13d1972d718b",
+    "text": "India Census 2011: Largest disability group – ~54.36 lakh persons (20.3% of all PwDs).\nCauses: Polio (historically major in India; now near-elimination post-eradication), paralysis,\nstroke, spinal cord injury, accidents, congenital conditions, arthritis/bone disorders.\nThis category also includes partial or complete loss of limbs (amputation).\n8. DWARFISM\nDefined as a medical or genetic condition resulting in an adult height of 4 feet 10 inches\n(147 cm) or less. More than 200 medical conditions can cause dwarfism. Achondroplasia is\nthe most common (approximately 70% of cases). Average height of a person with\nachondroplasia is 4 feet (122 cm). The inclusion recognizes unique mobility, healthcare,\nand social challenges.\n9. INTELLECTUAL DISABILITY",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 60,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "b8bfcc9e-ebdc-4915-9377-d5126fe92949",
+    "text": "Defined as a condition characterized by significant limitation in both intellectual functions\n(reasoning, learning, problem solving) and adaptive behavior (conceptual, social and\npractical skills) that originate before the age of 18 years.\nTypes under RPWD Act: (a) Specific intellectual disability; (b) Autism Spectrum Disorder.\nCauses: Genetic (Down syndrome, Fragile X), prenatal infections, birth complications,\nsevere malnutrition, lead poisoning, meningitis.\nIndia Data: ~15 lakh persons (Census 2011), significant underestimate.\n10. SPECIFIC LEARNING DISABILITIES (SLD)",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 61,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "eb3519b1-56e2-43d0-b584-6dccb3f15416",
+    "text": "New in RPWD 2016. A heterogeneous group of conditions wherein there is a deficit in\nprocessing language, spoken or written, that may manifest itself as a difficulty to\ncomprehend, speak, read, write, spell, or to do mathematical calculations and includes\nsuch conditions as perceptual disabilities, dyslexia, dyscalculia, dysgraphia, dyspraxia, and\ndevelopmental aphasia.\nKey Types: Dyslexia (reading/writing), Dyscalculia (math), Dysgraphia (writing), Dyspraxia\n(movement coordination).\nIndia: Estimated 10–15% of school children may have some form of SLD.\n11. AUTISM SPECTRUM DISORDER (ASD)\nA neuro-developmental condition characterized by challenges with social interaction,\ncommunication, and restricted/repetitive behaviors. Spectrum ranges from mildly affected\nto severely disabled.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 62,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "d8d41141-8e6e-4650-a969-dbb56cf0ee0a",
+    "text": "RPWD Act recognizes ASD as a distinct disability eligible for all protections including\nreservation in education and employment. This was a significant advance over the 1995\nAct.\n12. MENTAL ILLNESS\nDefined as a substantial disorder of thinking, mood, perception, orientation, or memory that\ngrossly impairs judgment, behavior, capacity to recognize reality or ability to meet the\nordinary demands of life, but does not include retardation which is a condition of arrested\nor incomplete development of mind.\nKey conditions: Schizophrenia, major depression, bipolar disorder, severe anxiety\ndisorders, OCD, PTSD, personality disorders.\nIndia: ~150 million people need active mental health interventions (NMHS 2015–16). Only\n3–4 psychiatrists per million population (WHO norm: 10+).\n13. CEREBRAL PALSY",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 63,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "e0773f95-f0ba-4d12-8865-a486c344fc8c",
+    "text": "A group of permanent disorders of the development of movement and posture, causing\nactivity limitations attributed to non-progressive disturbances in the developing fetal or\ninfant brain.\nTypes: Spastic (most common), Athetoid/Dyskinetic, Ataxic, Mixed.\nIndia: Prevalence ~3 per 1,000 live births. Approximately 25 lakh children in India have\ncerebral palsy. Closely linked to birth asphyxia (hypoxic ischaemic encephalopathy).\n18. HAEMOPHILIA",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 64,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "38728946-eb9b-4fd5-a0d5-b0cc450d6156",
+    "text": "An inherited bleeding disorder caused by deficiency of clotting factor VIII (Haemophilia A)\nor factor IX (Haemophilia B). Causes spontaneous or trauma-induced bleeding into joints\nand muscles, leading to chronic joint disease and locomotor disability.\nIndia: ~1 in 10,000 males affected. The Haemophilia Federation of India estimates ~1.5\nlakh individuals with haemophilia in India, though many are undiagnosed.\n19. THALASSEMIA\nAn inherited hemoglobin disorder caused by mutations affecting globin chain production.\nBeta-thalassemia major requires lifelong blood transfusions causing chronic disability.\nIndia Context: India has the highest number of thalassemia major patients globally (~1 lakh\nchildren). 10,000–15,000 children with thalassemia major born in India annually. An",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 65,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "2964fb76-2a3a-4918-9de3-d18864d65494",
+    "text": "estimated 4.4 crore Indians are carriers (thalassemia trait/minor).\n20. SICKLE CELL DISEASE\nAn inherited hemoglobin disorder where red blood cells become sickle-shaped, causing\nvaso-occlusive crises, severe pain, chronic anemia, and organ damage.\nIndia: High prevalence in tribal populations of Central India (Maharashtra, MP, Odisha,\nChhattisgarh, Jharkhand, Gujarat). National Mission on Sickle Cell Anaemia launched\n2023. Estimated 20 million carriers and 2 lakh patients in India.\n21. ACID ATTACK VICTIMS\nPersons who are disfigured due to violent assaults by throwing of acid on their faces or\nbody. The RPWD Act 2016 uniquely includes acid attack victims recognizing the\npermanent physical, sensory (vision loss, hearing loss), and psychological disabilities they\nacquire.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 66,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "5b3ce1e0-c305-4723-8948-03dcaaa85532",
+    "text": "India Context: India has one of the highest rates of acid attacks globally. 300+ cases\nreported annually (National Crime Records Bureau), with significant underreporting.\nSupreme Court has directed stricter regulation of acid sale.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 67,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "8b88d274-30a9-45da-b4e7-0ba35b749ff3",
+    "text": "CHAPTER 11: RPWD ACT 2016 – RIGHTS,\nENTITLEMENTS & PROVISIONS\n11.1 Fundamental Rights Provided\n Right to Equality and Non-Discrimination (Sec. 3): No person with disability shall be\ndiscriminated on ground of disability unless the act is a proportionate means of\nachieving a legitimate aim. Women and children with disabilities shall have equal\nrights.\n Right to Life with Dignity: Appropriate Government shall ensure PwDs enjoy right to\nequality, life with dignity and respect for integrity equally with others.\n Protection from Cruelty and Inhuman Treatment: No PwD shall be subject to torture\nor cruel, inhuman or degrading treatment. Protection from abuse, violence and\nexploitation.\n Right to Community Inclusion: Appropriate Government to take steps to enable PwDs",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 68,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "6783afe5-f8db-4d27-8db3-d735b61c02fa",
+    "text": "to live in the community. This includes access to housing, social services, and support.\n Reproductive Rights: PwDs have right to decide freely the number, spacing, and timing\nof children. Right to retain fertility. This was a landmark recognition in India.\n Right to Legal Capacity: PwDs have legal capacity on equal basis with others in all\naspects of life (Sec. 14). District Court may appoint limited guardian only as last resort.\n Right to Vote: Election Commission to ensure all polling stations are accessible.\nFacilities for voting to be provided including assistance.\n Right to Own Property: PwDs have right to equal ownership of property and right to\ninherit movable and immovable property.\n11.2 Education – Key Provisions (Sec. 16–18)",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 69,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "8968c552-1ed8-4156-a00f-7785458aaee3",
+    "text": "→ Right to free and compulsory education for children with disabilities in neighborhood\nschool.\n→ Special schools to be established for those who cannot be accommodated in\nmainstream.\n→ Reservation of seats in higher educational institutions (minimum 5% seats).\n→ Scholarship to students with benchmark disabilities in higher education.\n→ Appointment of 'Special Educators' in schools.\n→ Accommodation in examinations – extra time, scribe, assistive devices.\n→ Barrier-free accessible school buildings mandated.\n→ Home-based education option for those unable to attend school.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 70,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "4ac9d3b1-0ce4-4544-9384-30a74a8ea1c9",
+    "text": "→ Recognition and promotion of sign language; development of curriculum in sign\nlanguage.\n11.3 Employment – Key Provisions (Sec. 19–24)\nProvision\nDetails\nReservation in Government Jobs\nMinimum 4% of total vacancies reserved for PwDs\n(increased from 3% under 1995 Act)\nBenchmark Disability\nThreshold of 40% disability for eligibility for reservations\nEqual Opportunity Policy\nEvery employer to prepare & notify Equal Opportunity Policy\nGrievance Redressal\nAppointment of Liaison Officer by all establishments\nTraining Programs\nVocational training and self-employment schemes\nPrivate Sector Incentives\nGovernment to provide incentives to private employers\nhiring PwDs\nUDID Requirement\nUnique Disability ID required for job reservation benefits\n11.4 Social Security and Healthcare",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 71,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "f73e0bb6-05cf-4e23-8a91-801fb999c3ec",
+    "text": " PwDs with benchmark disability to be given insurance scheme (Sec. 24).\n Rehabilitation Council of India to maintain minimum standards in rehabilitation services.\n Early intervention services for children with disabilities.\n Comprehensive rehabilitation services in government hospitals.\n Reproductive healthcare and birth spacing for women with disabilities.\n National and State Funds for PwD welfare and financial assistance.\n Indira Gandhi National Disability Pension Scheme for below poverty line PwDs.\n11.5 Accessibility Provisions (Sec. 40–46)\nThe RPWD Act places strong emphasis on accessibility as a prerequisite for inclusion.\nThese provisions align with the Accessible India Campaign (Sugamya Bharat Abhiyan)\nlaunched by the Government of India in 2015.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 72,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "8a6a9769-9c73-4b71-a632-37721604932d",
+    "text": "→ Physical accessibility standards for all government buildings within prescribed\ntimeframe.\n→ Accessible roads, transport, and infrastructure.\n→ Accessible information and communication including websites, documents, and\nsignage.\n→ All public and private service providers must comply with accessibility standards.\n→ Access to judiciary – accessible courts and legal processes.\n→ Development and implementation of Standards for Accessibility.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 73,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "f91dea54-13df-4d57-b0b9-770cb5ac5ad5",
+    "text": "CHAPTER 12: RPWD ACT 2016 –\nIMPLEMENTATION & CHALLENGES\n12.1 Institutional Mechanisms\nThe RPWD Act establishes a multi-level institutional framework for implementation:\n Chief Commissioner for PwDs (National): Regulatory and grievance redressal body.\nMonitors implementation; hears complaints from PwDs. To be supported by 2\nCommissioners and an Advisory Committee.\n State Commissioners for PwDs: Equivalent body at the state level. Monitor state\nimplementation, address local grievances.\n District Level Committees: Address local concerns; constituted by State Governments.\n Central Advisory Board on Disability: Apex policy body with representatives from\nministries, experts, disabled persons' organizations.\n State Advisory Boards: Equivalent bodies at state level for policy guidance.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 74,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "3a145c6a-70be-4192-84d1-94c90ecd8125",
+    "text": " National and State Funds: Financial mechanisms to support PwD welfare programs.\nExisting funds subsumed under the new National Fund.\n12.2 Unique Disability ID (UDID)\nA major implementation initiative is the Unique Disability ID (UDID) card system, a national\ndatabase of persons with disabilities. UDID provides:\n Standardized disability certificate across the country.\n Digital database enabling tracking of benefits and services.\n Technology-enabled monitoring of implementation.\n Prevention of duplicate certificates and fraudulent claims.\n Smart card with embedded chip containing disability information.\n12.3 Challenges and Gaps in Implementation\nDespite the progressive provisions of the RPWD Act 2016, implementation has faced",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 75,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "55869679-cd10-4971-98ed-97aeab602b51",
+    "text": "numerous challenges. The Supreme Court of India, in Seema Girija Lal & Anr Vs Union of\nIndia & Ors (2022–2023), expressed strong disappointment at inadequate implementation\nacross states including Andhra Pradesh, Chhattisgarh, Uttar Pradesh, Punjab, Tripura, and\nUT of Chandigarh.\n■ Data Deficit: Census 2011 (the most recent national disability data) significantly\nunderestimates disability prevalence. New census and specialized disability survey\nneeded.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 76,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "6c4ad4f6-bb08-4a72-8cf7-d8516e420f44",
+    "text": "■ Rural-Urban Gap: 69% of PwDs reside in rural areas where services, assistive\ndevices, rehabilitation centers, and awareness are severely lacking.\n■ Inadequate Funding: SIPDA (Scheme for Implementation of Persons with Disabilities\nAct) budget increased by less than 9% over five years (2016–2021) despite growing\nneed.\n■ Pension Inadequacy: Indira Gandhi National Disability Pension of Rs. 300–500/month\nis grossly insufficient given inflation.\n■ Limited Private Sector Compliance: Reservations in private sector employment are\nvoluntary. Most private employers do not implement accessibility or equal opportunity\npolicies.\n■ State Inaction: Many states have not constituted District-Level Committees, Advisory\nBoards, or State Funds as mandated by the Act.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 77,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "ce57c38f-6650-481a-9c23-d4ad94a9ef25",
+    "text": "■ Social Audit Gap: Section 48 mandating social audit of disability schemes has not\nbeen implemented on priority basis.\n■ Coordination Failure: Non-receipt of Utilization Certificates from states results in\nnon-release of central funds for disability initiatives.\n■ Awareness Deficit: Majority of PwDs and their families are unaware of their rights,\nentitlements, and available schemes under RPWD Act 2016.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 78,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "1e4d3892-0cd5-4c95-a31a-45eac0318a02",
+    "text": "CHAPTER 13: DISABILITY AND EDUCATION IN\nINDIA\n13.1 Education Policy and Disability\nEducation is both a fundamental right (Article 21A of the Constitution) and a key pathway\nto social inclusion for persons with disabilities. India's disability-education landscape is\ngoverned by multiple policy frameworks including the RPWD Act 2016, Right to Education\nAct 2009, National Education Policy 2020 (NEP 2020), and Samagra Shiksha scheme.\n13.2 Key Education Statistics for PwDs in India\nIndicator\nStatistic\nComparison (General)\nLiteracy rate of PwDs\n54.5%\nNational: 74.04%\nSchool enrollment (disabled children)\nLow – significant out-of-school population\nRTE guarantees universal enrollment\nDropout rate\nHigher than national average\nParticularly after Class 5\nAccess to mainstream school",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 79,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "cb79e8b0-74f8-4b98-8b74-481f47d44c0d",
+    "text": "Improving but barriers remain\nMajority prefer integrated education\nHigher education enrollment of PwDs\nLess than 1% of total enrollment\n5% reservation mandated\nSpecial schools (NIOS, State run)\nLimited in number and geographic reach\nUrban concentration\n13.3 National Education Policy (NEP) 2020 and Disability\nThe National Education Policy 2020 emphasizes inclusive education for children with\ndisabilities. Key provisions include:\n Foundational literacy and numeracy programs adapted for all learners including PwDs.\n National Curriculum Framework to include disability-inclusive content.\n Teacher education programs to include compulsory module on inclusive education.\n Universal Design for Learning (UDL) to be adopted across educational institutions.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 80,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "27d06855-c7c3-415f-b578-52acb28da5dc",
+    "text": " NIOS (National Institute of Open Schooling) to be strengthened for PwDs.\n Sign Language as a language of learning to be promoted.\n Assistive technology in education to be expanded.\n13.4 Samagra Shiksha and Inclusive Education\nSamagra Shiksha (2018) is the flagship integrated school education scheme that includes\na strong inclusive education component. Under Samagra Shiksha:\n→ Assessment camps and Individualized Education Plans (IEPs) for children with\ndisabilities.\n→ Resource rooms and home-based education programs.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 81,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "5a4d2c04-c479-4ee1-af67-f5a2c80290ae",
+    "text": "→ Therapeutic and corrective equipment and aids to children with disabilities.\n→ Orientation and mobility training; Braille kits for visually impaired.\n→ Appointment of special educators in cluster resource centers.\n→ Teacher sensitization and training on inclusive education.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 82,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "0476e35c-78a6-45c5-b052-cad34378b96c",
+    "text": "CHAPTER 14: DISABILITY AND EMPLOYMENT –\nINDIA & GLOBAL\n14.1 Global Employment Scenario\nEmployment is critical for economic independence, self-worth, and social inclusion of\npersons with disabilities. However, globally, PwDs face significant labor market exclusion.\nEmployment Indicator\nPwDs\nNon-disabled\nEmployment rate (OECD avg.)\n44%\n75%\nPart-time employment\nDisproportionately higher\nLower\nAverage earnings\n30–40% lower\nBaseline\nWorking poverty rate\nHigher\nLower\nInformal employment\nMuch higher in LMICs\nLower proportion\n14.2 Employment in India – RPWD Act Provisions and Reality\nThe RPWD Act 2016 mandates 4% reservation in government jobs for PwDs (up from 3%\nunder 1995 Act). Despite this legal provision, actual employment of PwDs in government\nestablishments remains far below targets.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 83,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "bd04d4e1-8196-4b55-a3ae-016388391a0e",
+    "text": " Only 34.4% of PwDs are 'main workers' vs 39.8% in general population (Census 2011).\n Employment opportunities in rural areas for PwDs are predominantly limited to\nagriculture.\n Government has introduced National Career Service Centres (NCSCs) for PwDs.\n Vocational rehabilitation centers (VRCs) established under MSJE to provide training.\n NHFDC (National Handicapped Finance and Development Corporation) provides loans\nfor self-employment.\n Scheme for Rehabilitation of Persons with Disability (under DDRS) provides training.\n Corporate sector has begun to hire PwDs under ESG mandates – still early-stage.\n Mental illness and intellectual disability face the highest barriers to employment.\n14.3 Supported Employment and Best Practices",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 84,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "2f538505-03c0-4222-98ec-f39a14e64a0f",
+    "text": "International evidence strongly supports the 'supported employment' model as the most\neffective approach to integrating PwDs – especially those with intellectual disabilities and\npsychosocial conditions – into competitive employment.\n Job Matching: Careful assessment of individual's skills and interests matched to\nappropriate jobs.\n Job Coach Support: Intensive on-site job coaching during initial employment period.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 85,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "8d5b0c26-f3cc-448b-a098-585c4ba59743",
+    "text": " Employer Sensitization: Training and support for employers to create inclusive\nworkplaces.\n Natural Supports: Building peer support networks in workplace.\n Follow-Along Support: Long-term, as-needed support after initial placement.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 86,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "5cbd8584-b4e9-4dc7-a98d-ef3d2ad57e9c",
+    "text": "CHAPTER 15: CONCLUSION AND RESEARCH\nGAPS\n15.1 Summary of Key Findings\nThis comprehensive reference document has synthesized data from WHO global\npublications and India's RPWD Act 2016 framework. The following key themes emerge:\n✓ Disability is a universal human experience affecting approximately 1.3 billion people\nglobally (16% of the world's population).\n✓ The WHO's biopsychosocial and human rights-based frameworks have fundamentally\ntransformed how disability is understood and addressed.\n✓ India, with one of the world's largest disability populations, has made significant\nlegislative progress through the RPWD Act 2016.\n✓ The expansion from 7 to 21 recognized disabilities under RPWD Act 2016 is a major\nadvancement aligned with international standards.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 87,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "b1b49f66-3359-4519-a0a6-80d246d93722",
+    "text": "✓ Healthcare, education, and employment disparities for PwDs persist globally and in\nIndia, requiring sustained multi-sectoral interventions.\n✓ Implementation gaps – financial, institutional, and attitudinal – remain the primary\nchallenge in translating rights into reality.\n✓ Data quality and availability on disability in India remain critical barriers to effective\npolicy and program monitoring.\n15.2 Identified Research Gaps\nFor thesis purposes, the following research gaps represent significant opportunities for\noriginal contribution to the disability studies field in India:\n→ Up-to-date national disability prevalence data (Census 2011 is over a decade old; new\ncensus data awaited).\n→ Impact evaluation of RPWD Act 2016 on actual outcomes for PwDs across the 21\ndisability categories.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 88,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "98923efb-1e73-48a2-8e1b-d5d8db2c0c4f",
+    "text": "→ Comparative analysis of implementation across different states – gaps and success\nfactors.\n→ Specific outcome data on newly recognized disabilities (SLD, ASD, blood disorders)\nunder RPWD.\n→ Gender-disaggregated analysis of RPWD Act implementation – women with\ndisabilities.\n→ Effectiveness of UDID (Unique Disability ID) system in service delivery.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 89,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "af2cd202-7cda-42ca-80ec-7813ae16551d",
+    "text": "→ Mental health and psychosocial disability – the most neglected category under RPWD\nimplementation.\n→ Intersectionality of disability with caste, class, and geography in India.\n→ Private sector compliance with RPWD Act provisions and reasons for low adoption.\n→ Community-based rehabilitation effectiveness in rural Indian settings.\n15.3 Policy Recommendations\n Conduct a dedicated National Disability Survey to update prevalence data (not\ndependent on census).\n Implement RPWD Act Section 48 – mandatory social audit of all disability schemes.\n Increase SIPDA budget allocation commensurate with scale of disability burden.\n Strengthen National and State Advisory Boards on Disability with time-bound action\nplans.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 90,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "434cad25-915a-46c8-8e51-ff3ca32ab7a0",
+    "text": " Expand rural disability services through integrated community health and rehabilitation\nworkers.\n Mandate disability-disaggregated data collection in all government schemes and reports.\n Develop awareness campaigns targeting families, communities, employers, and\nhealthcare providers.\n Introduce disability-competency training in all healthcare professional curricula.\n Enforce accessibility standards through third-party audits and public reporting.\n Establish a National Disability Data Observatory for real-time monitoring.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 91,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "78824b5f-0de4-4578-9c18-52d9688fcb03",
+    "text": "REFERENCES AND BIBLIOGRAPHY\nPrimary Sources\n1. World Health Organization & World Bank. (2011). World Report on Disability. Geneva: WHO Press. ISBN\n978 92 4 156418 2.\n2. World Health Organization. (2022). Global Report on Health Equity for Persons with Disabilities. Geneva:\nWHO.\n3. World Health Organization. (2021). World Report on Hearing. Geneva: WHO.\n4. World Health Organization. (2019). World Report on Vision. Geneva: WHO.\n5. World Health Organization. (2021). Rehabilitation 2030: Meeting the Needs. Geneva: WHO.\n6. World Health Organization. (2023). Disability Fact Sheet. Geneva: WHO.\n[https://www.who.int/news-room/fact-sheets/detail/disability-and-health]\n7. Government of India. (2016). The Rights of Persons with Disabilities Act, 2016 (Act No. 49 of 2016). New",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 92,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "e676c6b0-ff99-40e7-b7b7-ec28582d99ec",
+    "text": "Delhi: Ministry of Law and Justice.\n8. Ministry of Social Justice & Empowerment, Government of India. (2016). The Rights of Persons with\nDisabilities Act – Gazette Notification, December 28, 2016.\n9. Office of the Registrar General & Census Commissioner, India. (2011). Census of India 2011 – Disabled\nPopulation Data. New Delhi: Government of India.\n10. Ministry of Health & Family Welfare, Government of India. (2015-16). National Mental Health Survey of\nIndia. New Delhi: GoI.\n11. UN General Assembly. (2006). Convention on the Rights of Persons with Disabilities (CRPD). New York:\nUnited Nations.\nSecondary Sources\n1. Bhargava, G., & Saxena, S. (2017). The Rights of Persons with Disabilities Act, 2016: Does it address the",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 93,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "cf65fd17-6807-478a-a885-09adcc310c43",
+    "text": "needs of persons with mental illness and their families? Indian Journal of Psychiatry, 59(1), 17–22.\n2. Mitra, S., & Sambamoorthi, U. (2014). Disability prevalence among adults: Estimates for 54 countries and\nprogress toward a global estimate. Disability and Rehabilitation, 36(11), 940–947.\n3. Shogren, K. A., et al. (2017). Supported Decision-Making: Theory, Research and Practice. Washington:\nAmerican Association on Intellectual and Developmental Disabilities.\n4. Saxena, S., et al. (2007). Resources for mental health: Scarcity, inequity, and inefficiency. The Lancet,\n370(9590), 878–889.\n5. Deshpande, S. (2019). Disability and Caste in India. Economic and Political Weekly, 54(36), 23–27.\n6. National Centre for Promotion of Employment for Disabled People (NCPEDP). (2023). Annual Report on",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 94,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "e3ae6f56-a862-4a7a-ab21-c8c4df54b5ab",
+    "text": "Disability Employment in India. New Delhi: NCPEDP.\n7. UNICEF. (2021). Seen, Counted, Included: Using data to shed light on the well-being of children with\ndisabilities. New York: UNICEF.\n8. International Labour Organization (ILO). (2015). Disability-inclusive policies and programmes in the world of\nwork: A collection of good practices. Geneva: ILO.\n9. Department of Empowerment of Persons with Disabilities (DEPwD). (2021). Annual Report 2020-21. New\nDelhi: MSJE.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 95,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "c7de4786-aa12-484a-a00f-41d3f8f01cea",
+    "text": "10. National Trust Act, 1999 (Act No. 44 of 1999) – for welfare of persons with Autism, Cerebral Palsy, Mental\nRetardation and Multiple Disabilities. Government of India.\nOnline Resources\n1. WHO Disability Homepage: https://www.who.int/health-topics/disability\n2. WHO ICF Browser: https://icd.who.int/dev11\n3. Department of Empowerment of Persons with Disabilities (DEPwD): https://depwd.gov.in\n4. Unique Disability ID (UDID) Portal: https://www.swavlambancard.gov.in\n5. National Trust for Welfare of Persons with Autism, CP, ID & Multiple Disabilities:\nhttps://thenationaltrust.gov.in\n6. Rights of Persons with Disabilities Act Full Text: https://disabilityaffairs.gov.in\n7. Chief Commissioner for Persons with Disabilities: https://ccdisabilities.nic.in",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 96,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "10ac57e7-6f80-4df5-a8a0-17e1320fa448",
+    "text": "8. Rehabilitation Council of India: https://www.rehabcouncil.nic.in\n9. National Handicapped Finance & Development Corporation: https://nhfdc.nic.in\n10. WHO World Report on Disability Full PDF: https://www.who.int/publications/i/item/9789241564182",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 97,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "b1da7c27-cda6-4c3b-a9f9-d652dc6510c1",
+    "text": "APPENDIX A: CASE STUDIES IN DISABILITY\nINCLUSION\nA.1 Case Study: Disability Inclusion in Primary Healthcare –\nKerala\nKerala is widely regarded as India's best-performing state in disability inclusion, driven by\nits high literacy, strong public health infrastructure, and progressive welfare policies. The\nKerala Social Security Mission (KSSM) and Kerala Viklangam Welfare Corporation have\nbeen instrumental in implementing disability rights.\nKey Features of Kerala's Disability Inclusion Model:\n Comprehensive disability database maintained at Panchayat level.\n Door-to-door identification and enrollment of PwDs in welfare schemes.\n Kanivu – a rehabilitation scheme providing free assistive devices and therapy.\n Accessible healthcare facilities across all government hospitals.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 98,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "638ab837-cc15-4622-9430-995a1c10c5cf",
+    "text": " Disability pension linked to Aadhaar for direct benefit transfer.\n Special schools and rehabilitation centers in every district.\n Strong disabled persons' organizations (DPOs) participating in governance.\nOutcome Indicators for Kerala (vs. national average):\nIndicator\nKerala\nNational Average\nDisability literacy rate\n~72%\n54.5%\nAccess to disability pension\nRelatively comprehensive\nUnder 20% nationally\nAssistive device access\nHigher through Kanivu scheme\nLow (especially rural)\nSchool enrollment (disabled children)\nHigher than national average\nSignificant out-of-school population\nHealthcare access for PwDs\nBetter infrastructure\nSignificant barriers\nA.2 Case Study: Autism Spectrum Disorder – Policy and Practice\nin India",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 99,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "d3e92303-c66f-4d9a-beb5-313f3c425888",
+    "text": "ASD was first formally recognized in India through the National Trust Act 1999, which\nincluded autism among its four target disabilities alongside cerebral palsy, intellectual\ndisability, and multiple disabilities. Its inclusion in the RPWD Act 2016 further strengthened\nlegal protections.\n→ India has no national epidemiological survey on ASD prevalence. Small-scale studies\nsuggest 1–1.5% prevalence.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 100,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "44603ddb-267e-40f4-81e9-fd5a8ba4643a",
+    "text": "→ Services for ASD are concentrated in urban areas and private sector, creating access\ninequities.\n→ National Trust provides SAMARTH scheme – early intervention and respite care for\nchildren with ASD.\n→ Government has established National Institute of Mental Health & Neurosciences\n(NIMHANS) as a national referral center.\n→ RPWD Act 2016 guarantees education, employment, and social security for persons\nwith ASD.\n→ Research gap: Population-based ASD survey in India urgently needed.\n→ Parent organizations like Action for Autism and AAPC play critical advocacy roles.\nA.3 Case Study: Thalassemia – India's Blood Disorder Challenge\nIndia faces the world's highest burden of thalassemia, making its inclusion in RPWD Act",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 101,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "1a0b65f6-1b77-4967-b6c8-b29ba8d97b68",
+    "text": "2016 particularly significant. The human, economic, and social impact of thalassemia in\nIndia underscores the need for integrated disability, prevention, and treatment policies.\n India has approximately 100,000 children living with thalassemia major.\n 10,000–15,000 new thalassemia major children are born each year in India.\n Approximately 4.4 crore (44 million) Indians carry the thalassemia trait – the highest\nglobally.\n Regular blood transfusions (every 2–4 weeks) are required for thalassemia major\npatients.\n Bone marrow transplant is the only cure but is expensive (Rs. 10–15 lakh) and not\nuniversally accessible.\n Chelation therapy (iron removal) is required alongside transfusions, adding to cost\nburden.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 102,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "82130577-915d-49db-a5c5-c40e48931b0f",
+    "text": " RPWD Act recognition means thalassemia patients now have access to 4% reservation\nin government employment.\n Thalassemia India and Thalassemia International Federation advocate for universal\nneonatal screening.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 103,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "9e944fb0-4ea3-41f5-943c-e5e9d802e7a2",
+    "text": "APPENDIX B: KEY GLOBAL CONVENTIONS AND\nFRAMEWORKS\nB.1 UN Convention on Rights of Persons with Disabilities\n(UNCRPD)\nThe UNCRPD (2006) is the most comprehensive international human rights treaty on\ndisability. It entered into force on May 3, 2008, and has been signed by 164 countries and\nratified by 185 parties (as of 2023). India ratified the UNCRPD on October 1, 2007.\nKey Articles of the UNCRPD Relevant to India's RPWD Act:\nArticle\nSubject\nCorresponding RPWD Provision\nArticle 3\nGeneral Principles (dignity, non-discrimination, inclusion)\nPreamble & Sec. 3\nArticle 5\nEquality and Non-discrimination\nSec. 3 (Non-discrimination)\nArticle 9\nAccessibility\nSec. 40–46 (Accessibility)\nArticle 12\nEqual recognition before the law\nSec. 14 (Legal Capacity)\nArticle 13\nAccess to justice",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 104,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "27776884-e3a3-4d70-ae59-39985d5acbb1",
+    "text": "Sec. 12 (Access to Justice)\nArticle 19\nLiving independently in the community\nSec. 5 (Community Inclusion)\nArticle 24\nEducation\nSec. 16–18 (Inclusive Education)\nArticle 27\nWork and employment\nSec. 19–24 (Employment)\nArticle 28\nAdequate standard of living & social protection\nSec. 24–30 (Social Security)\nArticle 33\nNational implementation and monitoring\nSec. 60–73 (Chief Commissioner)\nB.2 Sustainable Development Goals (SDGs) and Disability\nThe 2030 Agenda for Sustainable Development (SDGs) explicitly includes persons with\ndisabilities through the principle of 'leave no one behind.' Disability is mentioned explicitly\nin 11 of the 17 SDGs.\nSDG\nGoal Title\nDisability Relevance\nSDG 1\nNo Poverty\nPwDs disproportionately in poverty\nSDG 3\nGood Health\nHealth equity for PwDs; rehabilitation\nSDG 4",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 105,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "1f8255b1-f721-4d3a-9cb8-434071e7fe87",
+    "text": "Quality Education\nInclusive and equitable education\nSDG 8\nDecent Work\nEmployment for PwDs (target 8.5)\nSDG 10\nReduced Inequalities\nNon-discrimination (target 10.2)\nSDG 11\nSustainable Cities\nAccessible urban environments\nSDG 16\nPeace, Justice, Institutions\nAccess to justice for PwDs\nSDG 17\nPartnerships\nDisability-inclusive data systems",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 106,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "a4752176-d430-4a55-9919-1e19225a0d23",
+    "text": "B.3 Incheon Strategy 2013–2022\nThe Incheon Strategy 'Make the Right Real' for Persons with Disabilities in Asia and the\nPacific (2013–2022) provided a regional disability policy framework for the Asia-Pacific\nregion, including India. It set 10 disability-specific goals with measurable targets.\n Goal 1: Reduce poverty and enhance work and employment prospects.\n Goal 2: Promote participation in political processes and decision-making.\n Goal 3: Enhance access to the physical environment, public transportation, knowledge,\nand communications.\n Goal 4: Strengthen social protection.\n Goal 5: Expand early intervention and education.\n Goal 6: Ensure gender equality and women's empowerment.\n Goal 7: Ensure disability-inclusive disaster risk reduction.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 107,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "3f10affd-d34f-4f72-af35-fb6effefb045",
+    "text": " Goal 8: Improve reliability and comparability of disability data.\n Goal 9: Accelerate the ratification and implementation of UNCRPD.\n Goal 10: Advance regional and international cooperation.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 108,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "f45eed9c-96cf-42de-a2cf-571172c69194",
+    "text": "APPENDIX C: MAJOR GOVERNMENT SCHEMES\nFOR PwDs IN INDIA\nC.1 Central Government Schemes\nScheme\nMinistry/Department\nKey Benefit\nAccessible India Campaign\n(Sugamya Bharat Abhiyan)\nMSJE/DEPwD\nPhysical and digital accessibility in public buildings, transport, websites\nADIP Scheme\n(Assistance to Disabled for\nPurchase of Devices)\nDEPwD\nFree/subsidized assistive devices to PwDs below income threshold\nSIPDA\n(Scheme for Implementation\nof PwD Act)\nDEPwD\nFunds to states for implementing RPWD Act provisions\nDDRS\n(Deendayal Disabled\nRehabilitation Scheme)\nDEPwD\nFinancial support to NGOs providing vocational rehabilitation\nNHFDC\n(National Handicapped\nFinance Corporation)\nDEPwD\nLoans for self-employment and entrepreneurship\nNPCB\n(National Programme for\nControl of Blindness)\nMoHFW",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 109,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "23018846-ca64-48bf-ad7e-b7ed66ad313a",
+    "text": "Eye health services; detection and treatment of cataract\nNPPCD\n(National Programme for\nPrevention & Control of Deafness)\nMoHFW\nFree hearing aids; newborn hearing screening\nNational Mental Health Programme\nMoHFW\nMental health services; District Mental Health Programme\nNational Trust\nMSJE\nServices for autism, cerebral palsy, intellectual disability, multiple disabilities\nIndira Gandhi National Disability\nPension Scheme (IGNDPS)\nMinistry of Rural Development\nMonthly pension of Rs. 300–500 for BPL PwDs\nUDID\n(Unique Disability ID)\nDEPwD\nDigital disability certificates; single database for tracking\nSamagra Shiksha\nMinistry of Education\nInclusive education – special educators, aids, devices, accessible schools\nPM Accessible India (ongoing)\nDEPwD",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 110,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "bb24b412-c5d0-4375-abea-b0cc738367d6",
+    "text": "Making airports, railway stations, tourist sites accessible\nNational Mission on Sickle Cell Anaemia\nMoHFW\nScreening, prevention, treatment of sickle cell disease\nNote: MSJE = Ministry of Social Justice & Empowerment; DEPwD = Department of Empowerment of Persons with\nDisabilities; MoHFW = Ministry of Health and Family Welfare; BPL = Below Poverty Line.\nC.2 National Institutes Under DEPwD\nThe Department of Empowerment of Persons with Disabilities operates several National\nInstitutes for training, research, and service delivery across specific disability categories:\nInstitute\nLocation\nFocus Area",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 111,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "6640e321-c334-4895-854c-0bab76fc6891",
+    "text": "NIEPMD (National Institute for Empowerment of Persons with Multiple Disabilities)\nChennai\nMultiple disabilities\nSVNIRTAR (Swami Vivekanand National Institute of Rehabilitation Training and Research)\nOlatpur, Odisha\nLocomotor/multiple disabilities\nNILD (National Institute for Locomotor Disabilities)\nKolkata\nLocomotor disability\nNIHH (National Institute for the Hearing Handicapped)\nMumbai\nHearing impairment\nNAB (National Association for the Blind)\nNew Delhi\nVisual impairment\nAYJNIHH (Ali Yavar Jung National Institute of Speech and Hearing Disabilities)\nMumbai & regional\nSpeech, hearing impairment\nNIEPVD (National Institute for Empowerment of Persons with Visual Disabilities)\nDehradun\nVisual impairment\nNIMHR (National Institute for Mentally Handicapped)\nSecunderabad\nIntellectual disability",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 112,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "f35a8b44-a35f-4f3c-bff3-97a34597b3d2",
+    "text": "NIEPID (National Institute for Empowerment of Persons with Intellectual Disabilities)\nSecunderabad\nIntellectual disability",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 113,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "eb5ad65b-0269-4946-b914-3e9343087de6",
+    "text": "APPENDIX D: GLOSSARY OF KEY TERMS\nAccessibility: The degree to which an environment, product, or service is available and\nusable by people with disabilities without barriers. Governed by universal design principles.\nAdaptive Behavior: Conceptual, social, and practical skills learned and performed by\npeople in everyday life. Used in diagnosing intellectual disability.\nAssistive Technology (AT): Any device, software, or equipment that helps people with\ndisabilities perform functions that might otherwise be difficult or impossible.\nBenchmark Disability: Under RPWD Act 2016 – a person with not less than 40% of a\nspecified disability as certified by a medical authority.\nCommunity-Based Rehabilitation (CBR): A strategy within community development for",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 114,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "5713638c-69ff-4715-9f65-07cefc2b9cee",
+    "text": "rehabilitation, equalization of opportunities, poverty reduction, and social inclusion of\npeople with disabilities.\nDisability: Under RPWD Act 2016 – a person with long-term physical, mental, intellectual\nor sensory impairment which, in interaction with barriers, hinders full and effective\nparticipation in society equally with others.\nDisabled Persons Organizations (DPOs): Organizations controlled by persons with\ndisabilities (at least 51% of membership) advocating for disability rights and inclusion.\nDurable Functional Limitation: A long-term or permanent limitation in physical, mental, or\nsensory functioning.\nEqual Opportunity Policy (EOP): A document required from all government\nestablishments under RPWD Act specifying measures for employment of PwDs.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 115,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "5328a073-9c5e-4888-a67a-c7758cffcc1d",
+    "text": "Habilitation: Helping a person with disability develop skills and abilities they were never\nable to perform (vs. rehabilitation which restores abilities).\nICF (International Classification of Functioning, Disability and Health): WHO's\nuniversal framework for describing health and disability, using a biopsychosocial approach.\nInclusion: The process of improving the terms of participation in society for people who\nare disadvantaged. In disability – ensuring PwDs are part of mainstream society.\nLocomotor Disability: Disability resulting from affliction of musculoskeletal or nervous\nsystem affecting movement, strength, endurance, mobility, or coordination.\nParticipation Restriction: Problems a person with disability may experience when\ninvolved in life situations.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 116,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "ab195521-92e4-4be6-89db-ec25d5b0c26a",
+    "text": "Reasonable Accommodation: Necessary and appropriate modifications to ensure\npersons with disabilities can enjoy equal rights on an equal basis.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 117,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "2074421e-8ee4-4175-9676-7477537627d3",
+    "text": "Rehabilitation: A set of interventions designed to optimize functioning and reduce\ndisability in individuals with health conditions in interaction with their environment.\nRPWD Act 2016: Rights of Persons with Disabilities Act 2016 (Act 49 of 2016) – India's\nlandmark disability legislation enacted December 2016, in force April 2017.\nSpecified Disability: One of the 21 disabilities listed in the Schedule to the RPWD Act\n2016 that are legally recognized disabilities in India.\nUDID: Unique Disability Identity Card – a government-issued digital disability certificate in\nIndia under the Swavalamban Card scheme.\nUNCRPD: United Nations Convention on the Rights of Persons with Disabilities (2006) –\nthe international human rights treaty on disability rights.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 118,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "579b944e-6aa2-49c6-a9de-7e80a7b3746d",
+    "text": "Universal Design: Design of products, environments, programs, and services usable by\nall people to the greatest extent possible, without need for adaptation.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 119,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "d91e3059-9d37-4f6e-b0b0-54aa3bfb2b11",
+    "text": "APPENDIX E: SUPPLEMENTARY DATA TABLES\nE.1 WHO Global Burden of Disease – Top Disability Causes\nThe Global Burden of Disease (GBD) study, co-led by WHO and IHME, provides the most\ncomprehensive data on causes of disability-adjusted life years (DALYs) globally.\nRank\nCondition\nDALYs (millions)\nCategory\n1\nLow back pain\n84.7 million\nMusculoskeletal\n2\nMajor depressive disorder\n76.4 million\nMental health\n3\nIron deficiency anaemia\n74.4 million\nNutritional\n4\nNeck pain\n42.0 million\nMusculoskeletal\n5\nHearing loss\n36.0 million\nSensory\n6\nMigraine\n35.7 million\nNeurological\n7\nDiabetes mellitus (type 2)\n33.4 million\nNCD\n8\nFalls\n25.0 million\nInjury\n9\nAnxiety disorders\n24.7 million\nMental health\n10\nChronic obstructive pulmonary disease\n22.1 million\nRespiratory\n11\nVision loss (age-related)\n20.6 million",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 120,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "73f0bdc8-4180-482e-aee0-2d42a8c0aeec",
+    "text": "Sensory\n12\nIschemic stroke\n18.2 million\nNeurological\n13\nAsthma\n17.4 million\nRespiratory\n14\nBipolar disorder\n14.2 million\nMental health\n15\nSchizophrenia\n13.3 million\nMental health\nE.2 Comparison: PwD Act 1995 vs RPWD Act 2016\nProvision\nPwD Act 1995\nRPWD Act 2016\nDisabilities recognized\n7\n21 (expandable)\nJob reservation (govt.)\n3%\n4%\nHigher education reservation\n3%\n5%\nLegal basis\nESCAP Proclamation (regional)\nUNCRPD (international)\nLegal capacity of PwDs\nNot recognized\nRecognized (Sec. 14)\nReproductive rights\nNot covered\nExplicitly covered\nAcid attack victims\nNot included\nIncluded\nMental illness\nBasic mention\nComprehensive provisions\nChief Commissioner's role\nLimited\nStrengthened (2 Commissioners)\nPrivate sector obligations\nMinimal\nIncentives + Equal Opp. Policy\nPenalties for violations\nWeak",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 121,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "69f58ee3-8f14-41ef-b296-bb2377b30432",
+    "text": "Stronger criminal provisions\nNational Fund\nNot mandatory\nMandatory National & State Fund",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 122,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "29b41af5-ba9c-47dc-a3bf-4b778f6710e4",
+    "text": "UDID system\nAbsent\nMandated\nSocial audit\nAbsent\nSec. 48 – social audit required\nAccessibility standards\nLimited\nComprehensive Sec. 40–46",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 123,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "c22cb98f-9674-4211-917a-8b2ca9ac6d4e",
+    "text": "E.3 State-Wise Disability Statistics – India (Census 2011 Top 10\nStates)\nState\nTotal PwD Population\n% of State Pop.\nLargest Disability Type\nUttar Pradesh\n41,56,100\n2.16%\nLocomotor\nMaharashtra\n29,05,955\n2.65%\nLocomotor\nRajasthan\n20,87,001\n2.87%\nLocomotor\nAndhra Pradesh\n19,54,598\n2.37%\nLocomotor\nBihar\n19,09,421\n1.86%\nLocomotor\nWest Bengal\n17,85,569\n1.97%\nLocomotor\nMadhya Pradesh\n17,42,371\n2.46%\nLocomotor\nKarnataka\n15,64,823\n2.58%\nLocomotor\nTamil Nadu\n15,38,730\n2.13%\nLocomotor\nGujarat\n12,57,617\n2.14%\nLocomotor\nIndia (Total)\n2,68,10,557\n2.21%\nLocomotor (20.3%)\nSource: Census of India 2011, Office of Registrar General. Note: Data represents persons who reported disability at\nthe time of census. WHO estimates actual disability prevalence in India is significantly higher (10–20% using",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 124,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "e2c30d59-375a-421e-97c4-a70accbab94b",
+    "text": "ICF-based methodology).\nE.4 WHO Disability and Health – Selected Fast Facts (2023)\nWHO Fast Fact\nData\nPeople with disability globally\n1.3 billion (16% of world population)\nPeople in poverty AND disability\nHighest overlap in low-income countries\nPwDs who cannot afford healthcare\n50% (vs 33% non-disabled)\nPwDs denied healthcare\n3x more likely than non-disabled\nGlobal hearing loss burden\n1.5 billion with hearing loss\nPeople with vision impairment\n2.2 billion globally\nPersons needing mental health care\n1 in 8 people globally\nRehabilitation unmet need\n2.4 billion need rehabilitation services\nAssistive technology access\n<10% of those needing AT globally\nDisability in elderly (60+)\n~46% have some form of disability\nChildren with disability\n~240 million children (10% globally)",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 125,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "34ca15fe-1e21-45b6-88e3-25f5cabd60fc",
+    "text": "Low-income country AT access\n<3% have access to needed AT\nTreatment gap – mental health\n>75% in low-income countries\nGlobal cost of vision loss\n$411 billion annually (WHO)\nPwDs out of labor market (OECD)\n56% compared to 25% non-disabled",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 126,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  },
+  {
+    "id": "5031728e-f85e-46a5-a479-c49b4fc18a84",
+    "text": "This document was compiled for academic thesis research purposes. Data sourced from WHO publications, Government of\n India official documents, and peer-reviewed academic literature. Last data reference: 2023–2024.",
+    "metadata": {
+      "source": "Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+      "chunk_index": 127,
+      "category": "rpwd_pdf",
+      "chapter": "RPWD/WHO Reference"
+    }
+  }
+]
