@@ -185,13 +185,40 @@ export default function AccessibilityToolbar() {
     document.documentElement.classList.toggle("high-contrast", highContrast);
   }, [highContrast]);
 
+  // Read single word under cursor when hover is enabled
+  useEffect(() => {
+    if (!screenReaderEnabled || !hoverEnabled || !isBrowser) return;
+
+    const handler = (e) => {
+      const now = Date.now();
+      if (now - cursorThrottleRef.current < 300) return;
+      cursorThrottleRef.current = now;
+
+      // ignore events originating from the toolbar itself
+      const toolbarEl = document.querySelector('[data-accessibility-toolbar]');
+      if (toolbarEl && toolbarEl.contains(e.target)) return;
+
+      const word = getWordUnderCursor(e);
+      if (!word) return;
+
+      const clean = word.replace(/\s+/g, " ").trim();
+      if (!clean || clean === lastSpokenRef.current) return;
+
+      try { stopSpeech(); } catch (err) {}
+      speakText(clean);
+    };
+
+    document.addEventListener('mousemove', handler);
+    return () => document.removeEventListener('mousemove', handler);
+  }, [screenReaderEnabled, hoverEnabled, speakText]);
+
   const readPage = () => {
     const text = document.body.innerText || "";
     speakText(text.slice(0, 2000));
   };
 
   return (
-    <div style={styles.toolbar}>
+    <div data-accessibility-toolbar style={styles.toolbar}>
       <button onClick={toggleScreenReader} style={styles.btn}>
         {screenReaderEnabled ? "🔊 ON" : "🔇 OFF"}
       </button>
