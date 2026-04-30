@@ -161,6 +161,22 @@ def translate_text_with_google(text: str, target_language: str) -> Optional[str]
         return None
     except ImportError:
         logger.debug("googletrans not available, translation skipped")
+        # Fallback: perform a best-effort term-replacement using known disability terms
+        try:
+            fallback = text
+            for term_key, mapping in DISABILITY_TERMS_TRANSLATIONS.items():
+                eng = mapping.get("en")
+                tgt = mapping.get(target_language)
+                if eng and tgt:
+                    # Replace whole-word occurrences (case-insensitive)
+                    import re
+                    pattern = re.compile(r"\b" + re.escape(eng) + r"\b", flags=re.IGNORECASE)
+                    fallback = pattern.sub(tgt, fallback)
+            if fallback != text:
+                logger.info(f"Performed term-based fallback translation to {target_language}")
+                return fallback
+        except Exception as e:
+            logger.debug(f"Fallback term-replacement translation failed: {e}")
         return None
     except Exception as e:
         logger.error(f"Translation failed unexpectedly: {e}")
@@ -210,15 +226,8 @@ def language_code_to_google_code(lang_code: str) -> str:
         "hi": "hi",
         "ta": "ta",
         "te": "te",
-        "bn": "bn",
-        "mr": "mr",
-        "gu": "gu",
         "kn": "kn",
         "ml": "ml",
-        "pa": "pa",
-        "or": "or",
-        "as": "as",
-        "ur": "ur",
         "en": "en",
     }
     return mapping.get(lang_code, lang_code)
