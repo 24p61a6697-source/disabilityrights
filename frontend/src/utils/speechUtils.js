@@ -12,6 +12,24 @@ const LANGUAGE_CODES = {
 };
 
 /**
+ * Get speech locale from language code
+ */
+export const getSpeechLocale = (lang = "en") => {
+  const short = (lang || "en").toLowerCase().split("-")[0];
+  return LANGUAGE_CODES[short] || "en-US";
+};
+
+/**
+ * Check voice availability for a language
+ */
+export const getVoiceAvailability = (lang = "en") => {
+  if (!window.speechSynthesis) return false;
+  const locale = getSpeechLocale(lang);
+  const voices = window.speechSynthesis.getVoices();
+  return voices.some(v => v.lang.startsWith(locale.split("-")[0]));
+};
+
+/**
  * Detect language from text script
  * Returns language code (en, hi, ta, te, kn, ml) based on Unicode ranges
  */
@@ -56,7 +74,7 @@ export const speakTextInLanguage = (text, language = "en", options = {}) => {
 
   // Get language code (en, hi, ta, te, kn, ml)
   const detectedLang = detectLanguageFromText(text) || language || "en";
-  const webSpeechLang = LANGUAGE_CODES[detectedLang] || LANGUAGE_CODES["en"];
+  const webSpeechLang = getSpeechLocale(detectedLang);
 
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = webSpeechLang;
