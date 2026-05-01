@@ -1,13 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "start": "npm-run-all --parallel start:backend start:frontend",
-    "quick:start": "powershell -ExecutionPolicy Bypass -File .\\start-all.ps1",
-    "quick:backend": "powershell -ExecutionPolicy Bypass -File .\\start-backend.ps1",
-    "quick:backend:reload": "powershell -ExecutionPolicy Bypass -File .\\start-backend.ps1 -Reload",
+    "start": "node ./start-all.js",
+    "quick:start": "node ./start-all.js",
+    "quick:backend": "node ./start-backend.js",
+    "quick:backend:reload": "node ./start-backend.js --reload",
     "start:frontend": "node -e \"process.env.REACT_APP_API_URL='http://localhost:3001'; require('child_process').execSync('npm --prefix ./frontend start', {stdio:[0,1,2]});\"",
-    "start:backend": "cd backend && ..\\.venv\\Scripts\\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 3001",
-    "start:backend:reload": "cd backend && ..\\.venv\\Scripts\\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 3001 --reload --reload-dir app",
+    "start:backend": "node ./start-backend.js",
+    "start:backend:reload": "node ./start-backend.js --reload",
     "venv:python": ".\\.venv\\Scripts\\python.exe --version",
     "install:frontend": "npm --prefix ./frontend install"
   },

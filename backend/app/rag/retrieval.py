@@ -11,6 +11,19 @@ import logging
 import os
 import math
 import re
+import sys
+import warnings
+
+# ─── Suppress Unwanted Logs & Warnings ───────────────────────────────────────────
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+os.environ["TQDM_DISABLE"] = "true"
+os.environ["DISABLE_TQDM"] = "1"
+warnings.filterwarnings("ignore", category=FutureWarning, module="tqdm")
+warnings.filterwarnings("ignore", category=FutureWarning, module="sentence_transformers")
+
 from collections import defaultdict
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
@@ -27,11 +40,11 @@ from app.rag.translation import (
 )
 
 # Silence specialized library logs and prevent unnecessary Hub checks
-os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
-os.environ["TOKENIZERS_PARALLELISM"] = "false"
 logging.getLogger("httpx").setLevel(logging.WARNING)
 logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
-logging.getLogger("transformers.modeling_utils").setLevel(logging.ERROR)
+logging.getLogger("transformers").setLevel(logging.ERROR)
+logging.getLogger("sentence_transformers").setLevel(logging.ERROR)
+logging.getLogger("faiss").setLevel(logging.ERROR)
 
 logger = logging.getLogger(__name__)
 _ollama_available = True
@@ -42,15 +55,19 @@ EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 # ─── Category-based query expansion ─────────────────────────────────────────────
 
 QUERY_EXPANSIONS = {
-    "rights": ["legal rights disability India", "RPWD Act entitlements", "disability discrimination"],
-    "scheme": ["government schemes disability", "benefits disabled persons India", "welfare programs"],
-    "job": ["employment reservation disability", "4% reservation government jobs", "disability quota"],
-    "education": ["education disability India", "5% reservation college", "exam accommodation disability"],
-    "technology": ["assistive technology disability", "screen reader", "wheelchair"],
-    "certificate": ["disability certificate India", "UDID card", "benchmark disability"],
-    "pension": ["disability pension India", "IGNDPS", "financial assistance"],
-    "accessibility": ["accessible building India", "ramp standard", "WCAG accessibility"],
-    "health": ["healthcare disability India", "rehabilitation services", "NPCB NPPCD"],
+    "rights": ["RPWD Act 2016 rights", "legal entitlements persons with disabilities", "Section 3 RPWD Act"],
+    "scheme": ["government schemes for disability India", "ADIP scheme eligibility", "DDRS benefits"],
+    "job": ["Section 34 RPWD Act reservation", "4% reservation government jobs", "employment for benchmark disability"],
+    "education": ["Section 32 education reservation", "5% seats higher education", "right to free education disability"],
+    "blindness": ["RPWD Act blindness", "definition of blindness", "visual impairment blindness"],
+    "vision": ["blindness and low vision", "visual impairment RPWD Act", "vision disability definition"],
+    "sensory": ["sensory disability blind vision", "definitions of sensory impairment", "visual impairment disability"],
+    "technology": ["assistive devices ADIP scheme", "screen readers hearing aids wheelchairs", "ALIMCO assistive technology"],
+    "certificate": ["UDID card application process", "how to get disability certificate", "benchmark disability 40%"],
+    "pension": ["Indira Gandhi National Disability Pension Scheme", "disability pension eligibility India", "state pension for PwD"],
+    "accessibility": ["Sugamya Bharat Campaign", "accessible infrastructure standards", "web accessibility GIGW"],
+    "health": ["Section 25 healthcare rights", "free health care for PwD", "disability rehabilitation services"],
+    "complaint": ["file complaint Chief Commissioner for Persons with Disabilities", "Grievance redressal RPWD Act", "State Commissioner PwD"],
 }
 
 def expand_query(query: str) -> List[str]:
@@ -90,10 +107,25 @@ class DisabilityRAGRetriever:
         self.faiss_index = None
         self.metadata: List[Dict] = []
         self._loaded = False
+        self._metadata_mtime = None
+
+    def _metadata_changed(self) -> bool:
+        meta_path = self.index_path / "metadata.json"
+        if not meta_path.exists():
+            return False
+        try:
+            mtime = meta_path.stat().st_mtime
+            return self._metadata_mtime is None or mtime != self._metadata_mtime
+        except Exception:
+            return False
 
     def load(self):
-        if self._loaded:
+        if self._loaded and not self._metadata_changed():
             return
+        if self._loaded:
+            logger.info("FAISS metadata changed on disk; reloading retriever")
+
+        self.model = None
         try:
             from sentence_transformers import SentenceTransformer
             # Use local_files_only if the model is already downloaded to speed up startup
@@ -104,8 +136,8 @@ class DisabilityRAGRetriever:
             # Warm up embedding inference so first user query is not penalized.
             self.model.encode(["warmup"], normalize_embeddings=True)
         except Exception as e:
-            logger.error(f"Failed to load embedding model: {e}")
-            raise
+            logger.warning(f"Embedding model unavailable; falling back to keyword search: {e}")
+            self.model = None
 
         meta_path = self.index_path / "metadata.json"
         if meta_path.exists():
@@ -125,15 +157,19 @@ class DisabilityRAGRetriever:
                 self.embeddings_np = np.load(str(emb_path))
 
         self._loaded = True
+        meta_path = self.index_path / "metadata.json"
+        if meta_path.exists():
+            try:
+                self._metadata_mtime = meta_path.stat().st_mtime
+            except Exception:
+                self._metadata_mtime = None
 
     def _embed_query(self, query: str) -> np.ndarray:
         vec = self.model.encode([query], normalize_embeddings=True)[0]
         return vec.astype(np.float32)
 
-    def _search_single(self, query: str, k: int = 10) -> List[Dict]:
-        """Search FAISS index for a single query"""
-        qvec = self._embed_query(query)
-        
+    def _search_with_vector(self, qvec: np.ndarray, k: int = 10) -> List[Dict]:
+        """Search using a pre-computed query vector"""
         if self.faiss_index is not None:
             scores, indices = self.faiss_index.search(qvec.reshape(1, -1), k)
             results = []
@@ -161,17 +197,57 @@ class DisabilityRAGRetriever:
             ]
         return []
 
+    def _search_keyword(self, query: str, k: int = 10) -> List[Dict]:
+        """Fallback keyword search when embedding search is unavailable."""
+        query_tokens = set(re.findall(r"\w+", query.lower()))
+        scored = []
+        for i, item in enumerate(self.metadata):
+            text_tokens = set(re.findall(r"\w+", item["text"].lower()))
+            overlap = len(query_tokens & text_tokens)
+            scored.append((overlap, i))
+
+        scored.sort(key=lambda x: x[0], reverse=True)
+        results = []
+        for overlap, idx in scored[:k]:
+            if overlap <= 0:
+                break
+            item = self.metadata[idx]
+            results.append({
+                "id": item["id"],
+                "text": item["text"],
+                "metadata": item["metadata"],
+                "score": float(overlap)
+            })
+        return results
+
+    def _search_single(self, query: str, k: int = 10) -> List[Dict]:
+        """Search FAISS index for a single query"""
+        if self.model is None:
+            return self._search_keyword(query, k)
+        qvec = self._embed_query(query)
+        return self._search_with_vector(qvec, k)
+
     def retrieve(self, query: str, k: int = 5) -> List[Dict]:
-        """Multi-query retrieval with RRF"""
+        """Multi-query retrieval with RRF - Optimized"""
         if not self._loaded:
             self.load()
+        
         query_variations = expand_query(query)
-        all_results = []
-        for q in query_variations:
-            results = self._search_single(q, k=k * 2)
-            all_results.append(results)
-        fused = reciprocal_rank_fusion(all_results, k=60)
-        return fused[:k]
+        if len(query_variations) > 1:
+            if self.model is None:
+                all_results = [self._search_keyword(q, k=k * 2) for q in query_variations]
+            else:
+                qvecs = self.model.encode(query_variations, normalize_embeddings=True).astype(np.float32)
+                all_results = []
+                for qvec in qvecs:
+                    all_results.append(self._search_with_vector(qvec, k=k * 2))
+            fused = reciprocal_rank_fusion(all_results, k=60)
+        else:
+            fused = self._search_single(query, k=k * 2)
+            
+        intent = self._detect_intent(query)
+        filtered = self._filter_results_by_intent(fused, intent, k)
+        return filtered[:k]
 
     def format_context(self, docs: List[Dict]) -> str:
         """Format retrieved documents as context string"""
@@ -187,27 +263,70 @@ class DisabilityRAGRetriever:
             context_parts.append(f"{header}\n{doc['text']}")
         return "\n\n---\n\n".join(context_parts)
 
+    def _detect_intent(self, query: str) -> str:
+        q = (query or "").lower()
+        if any(k in q for k in ["locomotor", "mobility", "movement", "limb", "walking", "paralysis", "amputation"]):
+            return "locomotor"
+        if any(k in q for k in ["sensory", "vision", "blind", "deaf", "hearing"]):
+            return "sensory"
+        if any(k in q for k in ["job", "employment", "reservation", "quota", "recruitment"]):
+            return "job_reservation"
+        if any(k in q for k in ["assistive", "technology", "screen reader", "wheelchair", "hearing aid", "prosthetic", "braille"]):
+            return "assistive"
+        if any(k in q for k in ["scheme", "benefit", "pension", "udid", "adip"]):
+            return "schemes"
+        if any(k in q for k in ["rights", "rpwd", "discrimination", "legal", "section"]):
+            return "rights"
+        return "general"
+
+    def _filter_results_by_intent(self, docs: List[Dict], intent: str, k: int) -> List[Dict]:
+        if intent == "general" or not docs:
+            return docs
+
+        intent_keywords = {
+            "locomotor": ["locomotor", "mobility", "movement", "wheelchair", "paralysis", "amputation", "muscle", "rehabilitation", "walking", "physical disability"],
+            "sensory": ["vision", "blindness", "deaf", "hearing", "low vision", "visual impairment", "sensory"],
+            "job_reservation": ["reservation", "quota", "employment", "jobs", "section 34", "govt jobs", "benchmar"],
+            "assistive": ["assistive", "adip", "alimco", "screen reader", "hearing aid", "wheelchair", "prosthetic", "mobility aid"],
+            "schemes": ["scheme", "benefit", "pension", "udid", "national fellowship", "ddrs"],
+            "rights": ["rights", "rpwd act", "discrimination", "legal", "section 3", "access", "non-discrimination"]
+        }
+        keywords = intent_keywords.get(intent, [])
+        if not keywords:
+            return docs
+
+        filtered = []
+        for doc in docs:
+            text_content = " ".join([
+                str(doc.get("text", "")),
+                str(doc.get("metadata", {}).get("source", "")),
+                str(doc.get("metadata", {}).get("chapter", "")),
+                str(doc.get("metadata", {}).get("category", ""))
+            ]).lower()
+            if any(kw in text_content for kw in keywords):
+                filtered.append(doc)
+
+        if filtered:
+            return filtered[:k]
+        return docs
+
 
 # ─── Answer Generation ────────────────────────────────────────────────────────────
 
-DISABILITY_SYSTEM_PROMPT = """You are SAHAY - an expert AI assistant on Disability Rights, Government Schemes, and Accessibility in India.
-You help persons with disabilities understand:
-- Their rights under RPWD Act 2016
-- Government schemes and how to apply
-- Assistive technology recommendations
-- Accessibility standards
-- Education and employment accommodations
+DISABILITY_SYSTEM_PROMPT = """You are SAHAY - a highly advanced AI research assistant specializing in Disability Rights, Government Schemes, and Accessibility in India. 
+Your goal is to provide accurate, comprehensive, and empathetic answers that feel like they come from an expert legal and social consultant.
 
 Guidelines:
-- Always cite the specific law, scheme, or source (e.g., "Under Section 34 of RPWD Act 2016...")
-- Provide practical, actionable information
-- Mention relevant government portals and contact numbers
-- Be empathetic, clear, and accessible
-- If asked in a regional language context, acknowledge it
-- For medical conditions, always recommend consulting a certified doctor
-- Provide step-by-step guidance when explaining processes
+1. **Synthesize & Summarize**: Do not just repeat snippets. Analyze the provided context and provide a structured, synthesized answer.
+2. **Citation**: Always cite the specific sections of the RPWD Act 2016, specific names of schemes, or sources mentioned in the context (e.g., "According to Section 34 of the RPWD Act 2016...").
+3. **Actionable Advice**: Provide step-by-step guidance on how to apply for schemes or where to file complaints.
+4. **Formatting**: Use clear headings, bullet points, and bold text for readability.
+5. **Rich Content**: If the context contains tables or image references (e.g., Markdown tables or image URLs), INCLUDE them in your response to help the user understand better. Use Markdown format for tables.
+6. **Tone**: Professional, authoritative yet deeply empathetic and accessible.
+7. **Multilingual**: If the user asks in a regional language, respond in that language while maintaining technical accuracy.
+8. **Nuance**: Acknowledge when information might be specific to certain states or categories of disability.
 
-Always structure your answers clearly with relevant headings when appropriate."""
+Think like a combination of a legal expert and a compassionate guide."""
 
 LANGUAGE_PROMPTS = {
     "hi": "कृपया हिंदी में उत्तर दें।",
@@ -273,7 +392,7 @@ def translate_local_fallback(key: str, language: str = "en") -> str:
 
 
 def generate_answer_local(query: str, context: str, history: List[Dict] = None, language: str = "en") -> str:
-    """Local extractive answer generation (when Ollama is unavailable)"""
+    """Enhanced Local extractive answer generation with better synthesis"""
     history = history or []
     
     scoring_query = query
@@ -282,47 +401,126 @@ def generate_answer_local(query: str, context: str, history: List[Dict] = None, 
         if translated_query:
             scoring_query = translated_query
 
-    # Extract relevant sentences from context
-    sents = re.split(r'(?<=[.!?])\s+', context)
+    # Split context into paragraphs/documents first
+    docs = context.split("\n\n---\n\n")
+    all_sents = []
+    for doc in docs:
+        # Extract title if present [Source X: Title]
+        match = re.search(r"\[Source \d+: (.*?)\]", doc)
+        source_title = match.group(1) if match else ""
+        
+        # Clean text
+        text = re.sub(r"\[Source \d+:.*?\]", "", doc).strip()
+        sents = re.split(r'(?<=[.!?])\s+', text)
+        for s in sents:
+            if len(s.strip()) > 15:
+                all_sents.append({"text": s.strip(), "source": source_title})
+
     q_tokens = set(re.findall(r"\w+", scoring_query.lower()))
     
-    # Score sentences by relevance to query
-    scores = []
-    for i, sent in enumerate(sents):
-        if len(sent.strip()) < 20:
-            continue
-        toks = set(re.findall(r"\w+", sent.lower()))
+    # Score sentences
+    for item in all_sents:
+        toks = set(re.findall(r"\w+", item["text"].lower()))
         overlap = len(q_tokens & toks)
-        scores.append((i, overlap, len(sent)))
+        # Bonus for shorter, punchier sentences if they have overlap
+        item["score"] = overlap * 10 - (len(item["text"]) / 100)
     
-    scores.sort(key=lambda x: (x[1], x[2]), reverse=True)
+    all_sents.sort(key=lambda x: x["score"], reverse=True)
+    
     selected = []
-    for i, score, _ in scores[:5]:
-        if score > 0:
-            selected.append(sents[i].strip())
+    seen_text = set()
+    for item in all_sents:
+        if item["score"] <= 0:
+            continue
+        # Avoid near-duplicates
+        if any(len(set(item["text"].lower().split()) & set(prev.lower().split())) / max(len(item["text"].split()), 1) > 0.7 for prev in seen_text):
+            continue
+            
+        selected.append(item)
+        seen_text.add(item["text"])
+        if len(selected) >= 4:
+            break
     
     if not selected:
-        selected = [s.strip() for s in sents[:3] if len(s.strip()) > 20]
-    
-    answer = " ".join(selected[:4])
-    
-    if not answer:
-        answer = "I found relevant information in the disability rights database. Please refer to the sources above for detailed information."
-    
+        answer = (
+            "I found relevant sources, but none of the retrieved information directly answered your question. "
+            "Please try a more specific query or review the sources below for detailed guidance."
+        )
+    else:
+        answer_parts = []
+        for item in selected:
+            if item.get("source"):
+                answer_parts.append(f"According to {item['source']}, {item['text']}")
+            else:
+                answer_parts.append(item["text"])
+        answer = " ".join(answer_parts)
+
     # Try to translate the answer to target language
     if language and language.lower() != "en":
         translated = translate_text_with_google(answer, language)
         if translated:
-            logger.info(f"Answer successfully translated to {language}")
             return translated
-        else:
-            # If translation fails, log it but return English answer instead of adding notice
-            lang_name = LANGUAGE_NAMES.get(language, language)
-            logger.warning(f"Translation to {lang_name} could not be completed. Returning English answer.")
-            # Return just the English answer without the notice - user will understand it's from the database
-            return answer
-    
+            
     return answer
+
+
+def generate_answer_openai(query: str, context: str, history: List[Dict] = None,
+                          language: str = "en", api_key: str = None) -> str:
+    """Generate answer using OpenAI API"""
+    import requests
+    
+    if not api_key:
+        return None
+
+    history = history or []
+    lang_instruction = LANGUAGE_PROMPTS.get(language, "")
+    lang_name = LANGUAGE_NAMES.get(language, language)
+
+    messages = [
+        {"role": "system", "content": DISABILITY_SYSTEM_PROMPT}
+    ]
+
+    # Add history
+    for m in history[-6:]:
+        messages.append({"role": m["role"], "content": m["content"]})
+
+    lang_addition = f"\n[Respond in {lang_name}]" if language and language != "en" else ""
+
+    user_content = f"""Use the following context to answer the user's question.
+Only use the context and do not invent facts.
+If the context does not contain the answer, say you don't know the answer instead of guessing.
+
+Context:
+{context}
+
+Question: {query}
+{lang_instruction}{lang_addition}"""
+    
+    messages.append({"role": "user", "content": user_content})
+
+    try:
+        resp = requests.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "model": "gpt-3.5-turbo", # Default to a fast model
+                "messages": messages,
+                "temperature": 0.2,
+                "max_tokens": 800
+            },
+            timeout=15
+        )
+        if resp.status_code == 200:
+            return resp.json()["choices"][0]["message"]["content"].strip()
+        else:
+            logger.warning(f"OpenAI API returned {resp.status_code}: {resp.text}")
+    except Exception as e:
+        logger.error(f"OpenAI API error: {e}")
+
+    return None
 
 
 def generate_answer_ollama(query: str, context: str, history: List[Dict] = None,
@@ -364,7 +562,7 @@ Context from Knowledge Base:
 User Question: {query}
 {lang_instruction}{lang_addition}
 
-Please provide a comprehensive, helpful answer based on the context above:"""
+Only use the provided context to answer. If the answer is not contained in the provided context, say that you don't know rather than hallucinating. Provide a concise and accurate response with citations to the context where possible."""
 
     try:
         resp = requests.post(
@@ -440,7 +638,7 @@ def generate_answer_grok(query: str, context: str, history: List[Dict] = None,
 User Question: {query}
 {lang_instruction}{lang_addition}
 
-Please provide a comprehensive, helpful answer based on the context above:"""
+Only use the information in the context above. If the answer is not contained in the context, say you don't know rather than inventing a response. Please provide a comprehensive, helpful answer based on the context."""
     
     messages.append({"role": "user", "content": user_content})
 
@@ -498,7 +696,9 @@ class DisabilityRAGPipeline:
             return
 
         try:
-            resp = requests.get(f"{self.ollama_url}/api/tags", timeout=1)
+            resp = requests.get(f"{self.ollama_url}/api/models", timeout=1)
+            if resp.status_code != 200:
+                resp = requests.get(f"{self.ollama_url}/api/tags", timeout=1)
             _ollama_available = resp.status_code == 200
             if not _ollama_available:
                 logger.info("Ollama probe returned status %s; local generation will be used.", resp.status_code)
@@ -506,18 +706,93 @@ class DisabilityRAGPipeline:
             _ollama_available = False
             logger.info("Ollama not reachable at startup; local generation will be used.")
 
+    def _condense_question(self, question: str, history: List[Dict]) -> str:
+        """Use history to condense a follow-up question into a standalone query."""
+        if not history:
+            return question
+
+        # Limit history for condensation
+        recent_history = history[-4:]
+        history_str = "\n".join([f"{'User' if m['role'] == 'user' else 'Assistant'}: {m['content']}" for m in recent_history])
+
+        prompt = f"""Given the following conversation history and a follow-up question, rephrase the follow-up question to be a standalone question about disability rights and services in India.
+If the question is already standalone, return it as is. Do NOT answer the question.
+
+Conversation History:
+{history_str}
+
+Follow-up Question: {question}
+Standalone Question:"""
+
+        try:
+            # We use the same LLM logic as generation but with a specific prompt
+            condensed = None
+            if settings.OPENAI_API_KEY:
+                import requests
+                resp = requests.post(
+                    "https://api.openai.com/v1/chat/completions",
+                    headers={"Authorization": f"Bearer {settings.OPENAI_API_KEY}", "Content-Type": "application/json"},
+                    json={
+                        "model": "gpt-3.5-turbo",
+                        "messages": [{"role": "user", "content": prompt}],
+                        "temperature": 0,
+                        "max_tokens": 100
+                    },
+                    timeout=10
+                )
+                if resp.status_code == 200:
+                    condensed = resp.json()["choices"][0]["message"]["content"].strip()
+            
+            if not condensed and settings.GROK_API_KEY:
+                import requests
+                resp = requests.post(
+                    "https://api.x.ai/v1/chat/completions",
+                    headers={"Authorization": f"Bearer {settings.GROK_API_KEY}", "Content-Type": "application/json"},
+                    json={
+                        "model": "grok-beta",
+                        "messages": [{"role": "user", "content": prompt}],
+                        "temperature": 0,
+                        "max_tokens": 100
+                    },
+                    timeout=10
+                )
+                if resp.status_code == 200:
+                    condensed = resp.json()["choices"][0]["message"]["content"].strip()
+
+            if not condensed and _ollama_available:
+                import requests
+                resp = requests.post(
+                    f"{self.ollama_url}/api/generate",
+                    json={"model": self.ollama_model, "prompt": prompt, "stream": False, "options": {"temperature": 0}},
+                    timeout=10
+                )
+                if resp.status_code == 200:
+                    condensed = resp.json().get("response", "").strip()
+
+            if condensed:
+                logger.info(f"Condensed question: '{question}' -> '{condensed}'")
+                return condensed
+        except Exception as e:
+            logger.warning(f"Question condensation failed: {e}")
+
+        return question
+
     def query(self, question: str, session_id: str = "default",
               language: str = "en", k: int = None) -> Dict[str, Any]:
         """Full RAG query: retrieve + generate"""
         history = self.chat_histories.get(session_id, [])
         k = k or settings.TOP_K_RESULTS
 
-        retrieval_question = question
+        # 1. Translate current question to English for retrieval if needed
+        english_question = question
         if settings.TRANSLATION_ENABLED and language and language.lower() != "en":
             translated_question = translate_text_to_english(question, language)
             if translated_question:
-                retrieval_question = translated_question
+                english_question = translated_question
         
+        # 2. Condense the question using history to handle multi-turn queries
+        retrieval_question = self._condense_question(english_question, history)
+
         # Retrieve relevant documents
         docs = self.retriever.retrieve(retrieval_question, k=k)
         if not docs and retrieval_question != question:
@@ -527,16 +802,24 @@ class DisabilityRAGPipeline:
         if not context or not context.strip():
             answer = generate_answer_local(retrieval_question, context, history, language)
         else:
-            # Generate answer - try Ollama first, then Grok, fall back to extractive
-            answer = generate_answer_ollama(
-                retrieval_question, context, history, language,
-                self.ollama_model, self.ollama_url
-            )
-        
+            # Generate answer - try OpenAI first, then Grok, then Ollama, fall back to extractive
+            answer = None
+            if settings.OPENAI_API_KEY:
+                answer = generate_answer_openai(
+                    retrieval_question, context, history, language,
+                    settings.OPENAI_API_KEY
+                )
+
             if not answer and settings.GROK_API_KEY:
                 answer = generate_answer_grok(
                     retrieval_question, context, history, language,
                     settings.GROK_API_KEY
+                )
+
+            if not answer:
+                answer = generate_answer_ollama(
+                    retrieval_question, context, history, language,
+                    self.ollama_model, self.ollama_url
                 )
 
             if not answer:

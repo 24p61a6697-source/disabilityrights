@@ -1,4 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { t, INDIAN_LANGUAGES } from "../languages/languages";
@@ -135,7 +137,9 @@ function Message({ msg, tr, activeSpeakingId, onToggleSpeech }) {
       </div>
       <div className="message-content-wrapper">
         <div className={`message-bubble ${isGreeting ? "greeting-message" : ""}`}>
-          {msg.content}
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            {msg.content}
+          </ReactMarkdown>
         </div>
         
         {!isUser && msg.sources && msg.sources.length > 0 && (

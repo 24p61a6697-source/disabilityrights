@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     OLLAMA_TIMEOUT_SECONDS: int = 10  # ✅ realistic
 
     # ---------------- FEATURES ---------------- #
-    RAG_WARMUP_ON_STARTUP: bool = False
+    RAG_WARMUP_ON_STARTUP: bool = True
     ENABLE_PDF_FALLBACK: bool = False
 
     TRANSLATION_ENABLED: bool = True

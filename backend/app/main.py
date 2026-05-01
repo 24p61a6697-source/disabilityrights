@@ -1,3 +1,11 @@
+import os
+import sys
+# ─── Suppress Unwanted Logs & Warnings ───────────────────────────────────────────
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 try:
     from fastapi import FastAPI, HTTPException, Depends, Body, status  # type: ignore
     from contextlib import asynccontextmanager
@@ -118,6 +126,13 @@ from app.services.auth_service import (
     authenticate_user, create_user, create_access_token,
     get_user_by_email, get_user_by_mobile, require_auth, get_current_user
 )
+from app.rag.retrieval import (
+    DisabilityRAGPipeline, 
+    DisabilityRAGRetriever,
+    generate_answer_local,
+    get_pipeline
+)
+from app.rag.ingestion import DisabilityRAGIngestion, DISABILITY_KNOWLEDGE_BASE
 try:
     # Attempt a runtime import of SQLAlchemy's Session to avoid static analyzer errors when
     # SQLAlchemy isn't installed in the editor environment.
@@ -134,12 +149,17 @@ except Exception:
 logging.getLogger("httpx").setLevel(logging.WARNING)
 logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
 logging.getLogger("pydantic").setLevel(logging.ERROR)
-logging.basicConfig(level=logging.INFO)
+logging.getLogger("transformers").setLevel(logging.ERROR)
+logging.getLogger("sentence_transformers").setLevel(logging.ERROR)
+logging.getLogger("faiss").setLevel(logging.ERROR)
+logging.getLogger("watchfiles").setLevel(logging.WARNING)
+
+logging.basicConfig(level=logging.INFO, format="%(levelname)s:     %(message)s")
 logger = logging.getLogger(__name__)
 
-# Silence HuggingFace Hub unauthenticated warning
-logging.getLogger("huggingface_hub").setLevel(logging.ERROR)
-logging.getLogger("sentence_transformers").setLevel(logging.ERROR)
+_semantic_fallback_model = None
+_semantic_fallback_embeddings = None
+_semantic_fallback_docs = None
 
 # ─── FastAPI App Setup ────────────────────────────────────────────────────────────
 
@@ -371,6 +391,14 @@ CHAT_TRANSLATIONS = {
         "kn": "ಸಂವೇದಿ ಅಂಗವಿಕಲತೆಗಳಲ್ಲಿ ದೃಷ್ಟಿ, ಕೇಳುವಿಕೆ, ಸ್ಪರ್ಶ, ರುಚಿ ಅಥವಾ ವಾಸನೆಯಲ್ಲಿರುವ ಅಶಕ್ತಿ ಸೇರಿವೆ. ಭಾರತದಲ್ಲಿ ಇವುಗಳನ್ನು RPWD ಕಾಯಿದೆಯಡಿ ಒಳಗೊಂಡಿರುತ್ತವೆ ಮತ್ತು ಪ್ರವೇಶ ಪ್ರಯೋಜನಗಳು, ಸಹಾಯಕ ಸಾಧನಗಳು, ಶಿಕ್ಷಣ ಸೌಲಭ್ಯಗಳು ಮತ್ತು ಅಂಗವಿಕಲತೆ ಪ್ರಮಾಣೀಕರಣಕ್ಕಾಗಿ ಅರ್ಹರಾಗಬಹುದು.",
         "ml": "സെൻസറി വൈകല്യങ്ങളിൽ ദൃഷ്ടി, കേൾവ്, സ്പർശം, രുചി അല്ലെങ്കിൽ ഗന്ധത്തിൽ തകരാറുകൾ ഉൾപ്പെടുന്നു. ഭാരതത്തിൽ ഇത് RPWD ആക്ടിന്റെ കീഴിൽ ഉൾപ്പെടുന്നു, പ്രാപ്യതാ ആനുകൂല്യങ്ങൾ, സഹായ ഉപകരണങ്ങൾ, വിദ്യാഭ്യാസ സൗകര്യങ്ങൾ, വൈകല്യമാന്യപത്രക്കാർിക്ക് തർഹത എന്നിവക്ക് അർഹത നൽകാം.",
     },
+    "locomotor": {
+        "en": "Locomotor disability refers to impairments that affect movement, muscle strength, or mobility. Under the RPWD Act 2016, locomotor disability is recognized as a benchmark disability and may qualify individuals for disability certification, assistive mobility devices, education accommodations, and government benefits.",
+        "hi": "लोकोमोटर विकलांगता उन अक्षमताओं को संदर्भित करती है जो गति, मांसपेशी शक्ति या चलने की क्षमता को प्रभावित करती हैं। RPWD अधिनियम 2016 के तहत, लोकोमोटर विकलांगता को मानक विकलांगता के रूप में मान्यता प्राप्त है और यह व्यक्तियों को विकलांगता प्रमाणन, सहायक गतिशीलता सहायक उपकरण, शिक्षा समायोजन और सरकारी लाभ के लिए पात्र बना सकती है।",
+        "ta": "நடனம், மாறுதல் அல்லது இயக்கத்தை பாதிக்கும் குறைபாடுகளாகும் லொகோமோட்டார் மாற்றுத் திறனாளியாக அழைக்கப்படுகிறது. RPWD சட்டம் 2016ன் கீழ், லொகோமோட்டார் மாற்றுத்திறனுக்கு மரபு மாற்றுத்திறனாக அங்கீகாரம் கிடைக்கின்றது மற்றும் இது பயனாளர்களுக்கு சிறப்பு சான்றிதழ், உதவி நடக்க கூடிய சாதனங்கள், கல்வி உதவிகள் மற்றும் அரசுப் பலன்களுக்கு தகுதி அளிக்கலாம்.",
+        "te": "చలనం, కండర బలము లేదా మొబిలిటీని ప్రభావితం చేసే లోకోమోటర్ వికలాంగతలకు ఇది సూచిస్తుంది. RPWD చట్టం 2016 కింద, లోకోమోటర్ వికలాంగతను బెంచ్మార్క్ వికలాంగతగా గుర్తిస్తారు మరియు ఇది వ్యక్తులకు వికలాంగత సర్టిఫికేషన్, సహాయక మొబిలిటీ పరికరాలు, విద్యా సౌకర్యాలు మరియు ప్రభుత్వ ప్రయోజనాలకు అర్హత కలిగించవచ్చు.",
+        "kn": "ಚಲನೆ,عضಕ ಶಕ್ತಿ ಅಥವಾ ಚಲನವಲನವನ್ನು ಪ್ರಭಾವಿಸುವ ಲೊಕೋಮೊಟರ್ ಅಂಗವೈಕಲ್ಯವನ್ನು ಇದು ಸೂಚಿಸುತ್ತದೆ. RPWD ಕಾಯಿದೆ 2016 ರ ಮೂಲಕ, ಲೊಕೋಮೊಟರ್ ಅಂಗವೈಕಲ್ಯವನ್ನು బెಂಚ್ಮಾರ್ಕ್ ಅಂಗವೈಕಲ್ಯವಾಗಿ ಗುರುತಿಸಲಾಗಿದೆ ಮತ್ತು ಇದು ವ್ಯಕ್ತಿಗಳಿಗೆ ಅಂಗವೈಕಲ್ಯ ಪ್ರಮಾಣೀಕರಣ, ಸಹಾಯಕ ಚಲನೆ ಸಾಧನಗಳು, ಶಿಕ್ಷಣ ಹೊಂದಾಣಿಕೆ ಮತ್ತು ಸರ್ಕಾರಿ ಪ್ರಯೋಜನಗಳಿಗೆ ಅರ್ಹತೆಯನ್ನು ನೀಡಬಹುದು.",
+        "ml": "ചലനം, മസിൽ ശക്തി അല്ലെങ്കിൽ നീക്കശേഷി ബാധിക്കുന്ന ലോക്കോമോട്ടർ അവകാശം ഇത് സൂചിപ്പിക്കുന്നു. RPWD ആക്ട് 2016 പ്രകാരം, ലോക്കോമോട്ടർ അവകാശം ഒരു ബെഞ്ച്മാർക്ക് അവകാശമായി അംഗീകരിച്ചിരിക്കുന്നു, ഇത് വ്യക്തികൾക്ക് അംഗലയോഗ്യത സർട്ടിഫിക്കേഷൻ, സഹകരണ മൊബിലിറ്റി ഉപകരണങ്ങൾ, വിദ്യാഭ്യാസ സൗകര്യങ്ങൾ, സർക്കാർ ആശ്വസങ്ങൾ എന്നിവയ്ക്ക് യോഗ്യത നൽകാം.",
+    },
     "general": {
         "en": "I understand you're asking about '{question}'. For comprehensive disability rights information in India, please visit the Department of Empowerment of Persons with Disabilities website or contact your local disability welfare office.",
         "hi": "मैं समझता हूँ कि आप '{question}' के बारे में पूछ रहे हैं। भारत में व्यापक दिव्यांग अधिकार जानकारी के लिए कृपया दिव्यांगजन सशक्तिकरण विभाग की वेबसाइट देखें या अपने स्थानीय विकलांगता कल्याण कार्यालय से संपर्क करें।",
@@ -394,14 +422,15 @@ def _initialize_rag_pipeline_sync():
     started_at = time.perf_counter()
     try:
         from app.rag.retrieval import DisabilityRAGPipeline
-        from app.rag.ingestion import run_ingestion
+        from app.rag.ingestion import DisabilityRAGIngestion
 
         index_path = settings.FAISS_INDEX_PATH
         meta_file = Path(index_path) / "metadata.json"
         if not meta_file.exists():
             logger.info("Building FAISS index from documents...")
             docs_dir = Path(__file__).parent / "data" / "docs"
-            run_ingestion(docs_dir=str(docs_dir), index_path=index_path)
+            ingester = DisabilityRAGIngestion(index_path=index_path)
+            ingester.ingest_all(docs_dir=str(docs_dir), include_knowledge_base=True)
 
         pipeline = DisabilityRAGPipeline(
             index_path=index_path,
@@ -512,6 +541,8 @@ def detect_intent(question: str) -> str:
         return "job_reservation"
     if any(k in q for k in ["assistive", "technology", "screen reader", "wheelchair", "hearing aid", "prosthetic", "braille"]):
         return "assistive"
+    if any(k in q for k in ["locomotor", "mobility", "movement", "physical disability", "limb", "walking", "walking difficulty", "paralysis", "amputation"]):
+        return "locomotor"
     if any(k in q for k in ["sensory", "vision", "hearing", "blind", "deaf"]):
         return "sensory"
     if any(k in q for k in ["scheme", "benefit", "pension", "udid", "adip"]):
@@ -521,16 +552,46 @@ def detect_intent(question: str) -> str:
     return "general"
 
 
-def local_doc_search_semantic(question: str, top_n: int = 3):
-    """Intent-aware lexical semantic fallback over built-in knowledge base."""
+def _ensure_semantic_fallback_index():
+    global _semantic_fallback_model, _semantic_fallback_embeddings, _semantic_fallback_docs
+    if _semantic_fallback_embeddings is not None and _semantic_fallback_docs is not None:
+        return
     try:
+        import numpy as np
+        from sentence_transformers import SentenceTransformer
+
+        docs = [item for item in DISABILITY_KNOWLEDGE_BASE if item.get('text')]
+        if not docs:
+            _semantic_fallback_embeddings = np.empty((0, settings.EMBEDDING_DIM), dtype=np.float32)
+            _semantic_fallback_docs = []
+            return
+
+        texts = [f"{doc['text']} {doc.get('source', '')} {doc.get('chapter', '')}" for doc in docs]
+        _semantic_fallback_model = SentenceTransformer(settings.EMBEDDING_MODEL)
+        embeddings = _semantic_fallback_model.encode(texts, normalize_embeddings=True)
+        _semantic_fallback_embeddings = np.asarray(embeddings, dtype=np.float32)
+        _semantic_fallback_docs = docs
+    except Exception as e:
+        logger.debug(f"Semantic fallback index build failed: {e}")
+        _semantic_fallback_model = None
+        _semantic_fallback_embeddings = None
+        _semantic_fallback_docs = None
+
+
+def local_doc_search_semantic(question: str, top_n: int = 3):
+    """Intent-aware semantic fallback over built-in knowledge base."""
+    try:
+        import numpy as np
         import re
-        from app.rag.ingestion import DISABILITY_KNOWLEDGE_BASE
 
-        q = (question or "").lower()
-        intent = detect_intent(q)
+        q = (question or "").strip()
+        if not q:
+            return []
 
-        query_variants = [q]
+        normalized_question = q.lower()
+        intent = detect_intent(normalized_question)
+
+        query_variants = [normalized_question]
         if intent == "job_reservation":
             query_variants.extend([
                 "section 34 reservation benchmark disability",
@@ -543,6 +604,12 @@ def local_doc_search_semantic(question: str, top_n: int = 3):
                 "screen reader hearing aid wheelchair braille",
                 "rehabilitation devices disability support"
             ])
+        elif intent == "locomotor":
+            query_variants.extend([
+                "locomotor disability movement impairment mobility aids",
+                "physical disability rpwd act mobility wheelchair rehabilitation",
+                "mobility impairment assistive devices rpwd 2016"
+            ])
         elif intent == "rights":
             query_variants.extend(["rpwd rights section", "non discrimination disability rights"])
         elif intent == "schemes":
@@ -552,34 +619,57 @@ def local_doc_search_semantic(question: str, top_n: int = 3):
         for variant in query_variants:
             query_tokens.update(re.findall(r"\w+", variant))
 
-        category_boost = {
-            "job_reservation": {"employment": 5, "legal": 3, "rpwd_act": 2},
-            "assistive": {"assistive_tech": 6, "schemes": 3, "resources": 2},
-            "rights": {"rights": 5, "rpwd_act": 3, "legal": 3},
-            "schemes": {"schemes": 5, "benefits": 3, "resources": 2},
-            "sensory": {"disability_definitions": 5, "benefits": 2},
-            "general": {},
-        }
-
+        _ensure_semantic_fallback_index()
         scored = []
-        for doc in DISABILITY_KNOWLEDGE_BASE:
-            text_content = f"{doc.get('text', '')} {doc.get('source', '')} {doc.get('chapter', '')}".lower()
-            doc_tokens = set(re.findall(r"\w+", text_content))
-            overlap = len(query_tokens & doc_tokens)
-            if overlap <= 0:
-                continue
 
-            cat = doc.get("category", "general")
-            boost = category_boost.get(intent, {}).get(cat, 0)
+        if _semantic_fallback_embeddings is not None and _semantic_fallback_docs:
+            if _semantic_fallback_model is not None:
+                qvec = _semantic_fallback_model.encode([q], normalize_embeddings=True)[0].astype(np.float32)
+                similarities = _semantic_fallback_embeddings @ qvec
+                for score_val, doc in sorted(
+                    [(float(similarities[i]), _semantic_fallback_docs[i]) for i in range(len(_semantic_fallback_docs))],
+                    key=lambda x: x[0], reverse=True
+                )[:top_n * 3]:
+                    text_content = f"{doc.get('text', '')} {doc.get('source', '')} {doc.get('chapter', '')}".lower()
+                    overlap = len(query_tokens & set(re.findall(r"\w+", text_content)))
+                    boost = 0
+                    if intent == "job_reservation" and ("section 34" in text_content or "reservation" in text_content):
+                        boost += 4
+                    if intent == "assistive" and ("assistive technology" in text_content or "adip" in text_content or "alimco" in text_content):
+                        boost += 4
+                    if intent == "locomotor" and any(kw in text_content for kw in ["locomotor", "mobility", "movement", "physical", "muscle", "walking", "wheelchair", "rehabilitation", "paralysis", "amputation"]):
+                        boost += 4
+                    category_penalty = 0
+                    if intent == "locomotor" and not any(kw in text_content for kw in ["locomotor", "mobility", "movement", "physical", "wheelchair", "rehabilitation", "paralysis", "amputation"]):
+                        category_penalty = -1
+                    final_score = score_val + overlap * 0.12 + boost + category_penalty
+                    if final_score > 0:
+                        scored.append((final_score, doc))
 
-            phrase_bonus = 0
-            if intent == "job_reservation" and ("section 34" in text_content or "reservation" in text_content):
-                phrase_bonus = 4
-            if intent == "assistive" and ("assistive technology" in text_content or "adip" in text_content or "alimco" in text_content):
-                phrase_bonus = 4
-
-            score = overlap + boost + phrase_bonus
-            scored.append((score, doc))
+        if not scored:
+            # Fallback to lexical overlap search if embeddings are unavailable or weak
+            for doc in DISABILITY_KNOWLEDGE_BASE:
+                text_content = f"{doc.get('text', '')} {doc.get('source', '')} {doc.get('chapter', '')}".lower()
+                if intent == "locomotor":
+                    if not any(kw in text_content for kw in ["locomotor", "mobility", "movement", "physical", "muscle", "walking", "wheelchair", "assistive", "rehabilitation", "paralysis", "amputation"]):
+                        continue
+                doc_tokens = set(re.findall(r"\w+", text_content))
+                overlap = len(query_tokens & doc_tokens)
+                if overlap <= 0:
+                    continue
+                cat = doc.get("category", "general")
+                boost = {
+                    "job_reservation": {"employment": 5, "legal": 3, "rpwd_act": 2},
+                    "assistive": {"assistive_tech": 6, "schemes": 3, "resources": 2},
+                    "rights": {"rights": 5, "rpwd_act": 3, "legal": 3},
+                    "schemes": {"schemes": 5, "benefits": 3, "resources": 2},
+                    "locomotor": {"definitions": 5, "assistive_tech": 3, "schemes": 2},
+                    "sensory": {"disability_definitions": 5, "benefits": 2},
+                    "general": {},
+                }.get(intent, {})
+                score = overlap + boost.get(cat, 0)
+                if score > 0:
+                    scored.append((score, doc))
 
         scored.sort(key=lambda x: x[0], reverse=True)
         return [doc for _, doc in scored[:top_n]]
@@ -603,18 +693,6 @@ def format_local_sources(docs):
 
 
 def fallback_chat_answer(question: str, language: str = "en"):
-    def localize_answer(text: str) -> str:
-        if not text or not language or language.lower() == "en":
-            return text
-        try:
-            from app.rag.translation import translate_text_with_google
-            translated = translate_text_with_google(text, language)
-            if translated:
-                return translated
-        except Exception as e:
-            logger.warning(f"Fallback answer localization failed: {e}")
-        return text
-
     normalized_question = question
     if settings.TRANSLATION_ENABLED and language and language.lower() != "en":
         try:
@@ -625,44 +703,44 @@ def fallback_chat_answer(question: str, language: str = "en"):
         except Exception as e:
             logger.debug(f"Fallback question normalization skipped: {e}")
 
-    # Fast path: built-in knowledge base is in-memory and much faster than PDF parsing.
-    local_docs = local_doc_search_semantic(normalized_question, top_n=3)
+    # Use the local semantic search
+    local_docs = local_doc_search_semantic(normalized_question, top_n=settings.TOP_K_RESULTS)
     if not local_docs:
-        local_docs = local_doc_search(normalized_question, top_n=3)
+        local_docs = local_doc_search(normalized_question, top_n=settings.TOP_K_RESULTS)
         
     if local_docs:
-        snippets = [doc["text"].strip() for doc in local_docs if doc.get("text")]
-        answer = "\n\n".join(snippets[:2])
-        if answer:
-            return localize_answer(answer), format_local_sources(local_docs), len(local_docs)
+        # Format context for generate_answer_local
+        context_parts = []
+        for i, doc in enumerate(local_docs, 1):
+            source = doc.get("source", "Reference")
+            chapter = doc.get("chapter", "")
+            header = f"[Source {i}: {source} - {chapter}]"
+            context_parts.append(f"{header}\n{doc['text']}")
+        context = "\n\n---\n\n".join(context_parts)
+        
+        answer = generate_answer_local(normalized_question, context, [], language)
+        return answer, format_local_sources(local_docs), len(local_docs)
 
-    if settings.ENABLE_PDF_FALLBACK:
-        pdf_docs = search_pdf_docs(normalized_question, top_n=3)
-        if pdf_docs:
-            snippets = [doc.get("text", "").strip() for doc in pdf_docs if doc.get("text")]
-            answer = "\n\n".join(snippets[:2])
-            if answer:
-                return localize_answer(answer), format_local_sources(pdf_docs), len(pdf_docs)
-
+    # If still no docs, try the hardcoded intent-based fallback
     intent = detect_intent(normalized_question)
-    if intent == "job_reservation":
-        answer = translate_chat_answer("job_reservation", language)
-    elif intent == "assistive":
-        answer = translate_chat_answer("assistive", language)
-    elif intent == "sensory":
-        answer = translate_chat_answer("sensory", language)
-    elif intent == "rights":
-        answer = translate_chat_answer("rights", language)
-    elif intent == "schemes":
-        answer = translate_chat_answer("schemes", language)
-    else:
-        answer = translate_chat_answer("general", language, question=question[:50])
+    answer = translate_chat_answer(intent, language, question=question[:50])
     return answer, [], 0
 
 
 def query_rag_or_fallback(question: str, session_id: str, language: str = "en"):
     if rag_pipeline is None:
-        initialize_rag_pipeline(background=True)
+        if rag_init_in_progress:
+            # Reduced wait time to prevent UI "buffering" feeling
+            logger.info("RAG initializing; waiting briefly before using fallback...")
+            start = time.perf_counter()
+            while rag_init_in_progress and time.perf_counter() - start < 3.5:
+                time.sleep(0.1)
+        
+        # If still not ready, don't block the request with a heavy init.
+        # Fallback to local search is much faster.
+        if rag_pipeline is None and not rag_init_in_progress:
+            # Trigger background init instead of synchronous blocking init
+            initialize_rag_pipeline(background=True)
 
     if rag_pipeline is not None:
         try:

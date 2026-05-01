@@ -1,0 +1,1812 @@
+DISABILITY: A COMPREHENSIVE
+ STUDY
+ 
+ WHO Global Data & India's RPWD Act 2016
+ A Thesis Reference Document
+ 
+Document Type
+Thesis Reference / Literature Review
+Subject
+Disability Studies – Global & Indian Perspectives
+Primary Sources
+WHO World Report on Disability, RPWD Act 2016
+Year of Data
+2011–2024 (Most recent available)
+Prepared For
+Academic Thesis Research
+Note: This document synthesizes data from WHO publications, RPWD Act 2016 (India), and related research
+for academic thesis use. All statistics are sourced from official WHO, UN, and Government of India documents.
+
+TABLE OF CONTENTS
+1.
+Introduction to Disability
+3
+2.
+WHO – Global Disability Overview
+5
+3.
+WHO Key Statistics & Epidemiology
+8
+4.
+Types and Classifications of Disability (WHO/ICF)
+11
+5.
+WHO: Health Inequities and Barriers Faced by PwDs
+15
+6.
+WHO Global Report on Disability – Key Findings
+18
+7.
+WHO Recommendations and Action Framework
+22
+8.
+India's Disability Landscape – Census & Data
+25
+9.
+RPWD Act 2016 – Overview and Background
+28
+10.
+RPWD Act 2016 – The 21 Recognized Disabilities
+31
+11.
+RPWD Act 2016 – Rights, Entitlements & Provisions
+38
+12.
+RPWD Act 2016 – Implementation & Challenges
+43
+13.
+Disability & Education in India
+46
+14.
+Disability & Employment – India & Global
+49
+15.
+Conclusion & Research Gaps
+52
+References & Bibliography
+55
+
+CHAPTER 1: INTRODUCTION TO DISABILITY
+1.1 Defining Disability
+Disability is a complex and multidimensional phenomenon that reflects the interaction
+between features of a person's body and the physical and social environment in which they
+live. It is not merely a medical condition or an individual deficit, but rather a dynamic
+interaction between health conditions and contextual factors – both personal and
+environmental. The understanding of disability has evolved significantly over the past few
+decades, shifting from a purely medical model to a biopsychosocial and human
+rights-based model.
+The World Health Organization (WHO), in its landmark World Report on Disability (2011),
+defines disability as follows:
+"Disability is part of the human condition. Almost everyone will be temporarily
+or permanently " "impaired at some point in life, and those who survive to old
+age will experience increasing " "difficulties in functioning. Most extended
+families have a disabled member, and many non-disabled " "people take
+responsibility for supporting and caring for their relatives and friends with
+disabilities."
+1.2 Models of Disability
+Historically, disability has been understood through different conceptual models, each with
+its own implications for policy and practice:
+ Medical Model: Treats disability as a problem located within the individual, caused by
+disease, trauma, or other health conditions. The focus is on 'curing' or 'normalizing' the
+individual.
+ Social Model: Views disability as created by the social and physical environment that
+fails to accommodate people with impairments. Disability is a form of oppression
+caused by social barriers.
+ Biopsychosocial Model (WHO/ICF): Combines both medical and social perspectives.
+Disability arises from the interaction between an individual's health condition and
+contextual factors (environmental and personal). This is the basis of the International
+Classification of Functioning, Disability and Health (ICF).
+ Human Rights Model: Views people with disabilities as rights holders. Disability is a
+matter of human rights, not charity. This model underpins the UN Convention on the
+Rights of Persons with Disabilities (UNCRPD) and India's RPWD Act 2016.
+1.3 The International Classification of Functioning (ICF)
+
+The International Classification of Functioning, Disability and Health (ICF), developed by
+WHO in 2001, represents the most comprehensive framework for understanding disability.
+It provides a standard language and framework for describing health and health-related
+states. The ICF classifies disability across three dimensions:
+ICF Component
+Definition
+Example
+Body Functions &
+Structures
+Physiological functions of body systems
+and anatomical parts
+Paralysis, visual impairment,
+hearing loss, limb absence
+Activities
+Execution of a task or action by an
+individual
+Difficulty walking, reading,
+or communicating
+Participation
+Involvement in a life situation
+Unable to attend school,
+work, or community events
+Environmental
+Factors
+Physical and social context that
+impact functioning
+Accessible buildings, policy
+support, social attitudes
+Personal Factors
+Individual background not part of
+health condition
+Age, gender, education,
+lifestyle choices
+1.4 Why Disability Matters: A Global Imperative
+Disability is a global health and social issue of enormous magnitude. With approximately
+1.3 billion people – roughly 16% of the world's population – living with some form of
+disability, it represents the world's largest minority group. People with disabilities
+experience disproportionate rates of poverty, social exclusion, and poor health outcomes.
+Despite this, disability often remains invisible in national data systems, policy frameworks,
+and development agendas. Addressing disability is therefore central to achieving the
+Sustainable Development Goals (SDGs) and upholding universal human rights.
+
+CHAPTER 2: WHO – GLOBAL DISABILITY
+OVERVIEW
+2.1 WHO's Role in Disability Policy
+The World Health Organization plays a central role in shaping global disability policy,
+providing technical guidance, generating evidence, and supporting countries to build
+inclusive health systems. WHO's work on disability is organized under its Department of
+Noncommunicable Diseases, Sensory Functions, Disability and Rehabilitation.
+Key WHO milestones on disability include:
+ 1976: First International Classification of Impairments, Disabilities and Handicaps
+(ICIDH) introduced.
+ 2001: International Classification of Functioning, Disability and Health (ICF) published.
+ 2006: UN Convention on the Rights of Persons with Disabilities (UNCRPD) adopted;
+WHO was a key technical contributor.
+ 2011: World Report on Disability – the first comprehensive global analysis of disability,
+published jointly by WHO and the World Bank.
+ 2015: WHO Global Disability Action Plan 2014–2021 launched to improve the health of
+persons with disabilities.
+ 2021: WHO Rehabilitation 2030 Initiative to scale up rehabilitation services globally.
+ 2022: WHO Global Report on Health Equity for Persons with Disabilities published, the
+most recent major WHO flagship report.
+2.2 The WHO World Report on Disability (2011)
+The World Report on Disability (WRD) was the first comprehensive global report on
+disability. It was jointly produced by WHO and the World Bank, drawing on evidence from
+over 100 countries. The report was launched at the United Nations headquarters in New
+York on 9 June 2011 and received widespread media and policy attention globally.
+The WRD examined disability across multiple domains, including healthcare, rehabilitation,
+assistance and support, enabling environments, education, employment, and social
+protection. It documented the circumstances of persons with disabilities across the world
+and explored measures to promote their social participation.
+Key Findings of the WRD (2011):
+✓ Approximately 15% of the world's population – over 1 billion people – lives with
+disability.
+✓ Between 110 million and 190 million adults experience significant difficulties in
+functioning.
+
+✓ People with disabilities face significant barriers to accessing healthcare, education, and
+employment.
+✓ Disability prevalence is higher in developing countries.
+✓ Women with disabilities are particularly vulnerable to discrimination and violence.
+✓ Children with disabilities are less likely to attend school or receive healthcare.
+✓ People with disabilities experience higher rates of poverty than non-disabled persons.
+✓ Majority of barriers faced by persons with disabilities are avoidable.
+2.3 WHO Global Report on Health Equity for Persons with
+Disabilities (2022)
+In December 2022, WHO released its most recent flagship publication on disability – the
+Global Report on Health Equity for Persons with Disabilities. This report focused
+specifically on health disparities and called for urgent action to close the health gap
+between people with and without disabilities.
+The 2022 report highlighted that persons with disabilities:
+ Are twice as likely to have inadequate healthcare skills in their providers.
+ Are nearly three times more likely to be denied healthcare.
+ Are four times more likely to report being treated badly in healthcare settings.
+ Are more than twice as likely to find health-care providers' skills inadequate.
+ Experience 50% higher unmet healthcare needs compared to non-disabled persons.
+ Are more likely to experience catastrophic out-of-pocket health expenditures.
+ Face systematic exclusion from health promotion programs.
+
+CHAPTER 3: WHO KEY STATISTICS &
+EPIDEMIOLOGY
+3.1 Global Prevalence
+The scale of disability globally is staggering. According to the most recent WHO estimates
+(2023), approximately 1.3 billion people – or 16% of the global population – experience
+significant disability. This figure has grown significantly from WHO's earlier 1970s estimate
+of 10%, and even from the 2011 estimate of 15%. This growth is attributed to aging
+populations, the rise of chronic diseases, and improvements in measurement
+methodologies.
+Statistic
+Value
+Source/Year
+Global population with disability
+~1.3 billion (16%)
+WHO, 2023
+Adults with significant disability
+110–190 million
+WHO, 2011 WRD
+People with vision impairment
+2.2 billion
+WHO, 2019
+People with hearing loss
+1.5 billion (430M disabling)
+WHO, 2021
+People with mental disorders
+1 billion+
+WHO, 2022
+People needing rehab services
+2.4 billion
+WHO, 2021
+PwDs in low & middle income countries
+>80% of total PwDs
+WHO/World Bank
+Disability prevalence in older adults
+~46% (aged 60+)
+WHO, 2011
+Children with disabilities worldwide
+~240 million (10%)
+UNICEF, 2021
+PwDs living in poverty
+Disproportionately higher
+WHO/World Bank
+3.2 Disability Prevalence by Region
+Disability prevalence varies significantly across regions, with low- and middle-income
+countries bearing a disproportionate burden due to poorer health infrastructure, higher
+rates of disease, injury, malnutrition, and inadequate access to rehabilitation services.
+Region
+Estimated Disability Prevalence
+Notes
+Sub-Saharan Africa
+15–20%
+High infectious disease burden; limited data
+South Asia (incl. India)
+15–20%
+Census data often underestimates
+East Asia & Pacific
+10–15%
+Aging populations driving increase
+Latin America & Caribbean
+12–18%
+Road traffic injury a major factor
+High-income countries
+10–15%
+More comprehensive data systems
+Globally (overall)
+~16%
+WHO 2023 estimate
+3.3 Disability and Age
+
+Disability is strongly correlated with age. The WHO estimates that approximately 46% of
+people aged 60 years and older have some form of disability, compared to about 15% of
+the general population. This pattern has major implications for healthcare systems as
+global populations age rapidly, particularly in low- and middle-income countries.
+3.4 Disability and Gender
+Disability disproportionately affects women. Women with disabilities face double
+discrimination – first as women in patriarchal societies, and second as persons with
+disabilities in an inaccessible world. Key gender-related disability statistics include:
+ Women with disabilities are more likely to experience gender-based violence than
+non-disabled women.
+ Women with disabilities have higher rates of unmet healthcare needs, including
+reproductive health.
+ In many countries, girls with disabilities are less likely to attend school.
+ In India, female PwDs face compounded disadvantage in employment and marriage.
+ WHO data shows women face unique barriers in rehabilitation service access.
+
+CHAPTER 4: TYPES AND CLASSIFICATIONS OF
+DISABILITY (WHO/ICF)
+The WHO, through the International Classification of Functioning, Disability and Health
+(ICF), provides a comprehensive taxonomy of disability categories. These classifications
+are used globally by health systems, policy makers, and researchers.
+4.1 Physical / Locomotor Disabilities
+Physical disabilities affect mobility, motor functions, and the overall ability to move and
+perform physical tasks. They may be congenital or acquired through illness, injury, or
+aging.
+Locomotor Disability
+Impairment of limbs or musculoskeletal system affecting movement. Includes conditions
+such as paraplegia, quadriplegia, polio, cerebral palsy, clubfoot, and amputation. WHO
+estimates over 450 million people have musculoskeletal conditions globally.
+Cerebral Palsy
+A group of non-progressive neurological disorders affecting movement, muscle tone, and
+motor skills. Caused by damage to the brain before, during, or shortly after birth.
+Prevalence: 2–3 per 1,000 live births globally.
+Muscular Dystrophy
+A group of genetic diseases causing progressive muscle weakness and degeneration.
+Over 30 types are recognized. Duchenne MD is the most common, affecting approximately
+1 in 3,500 male births.
+Dwarfism
+Characterized by short stature resulting from genetic or medical conditions.
+Achondroplasia is the most common cause, occurring in approximately 1 in 25,000 births.
+Acid Attack Injuries
+Permanent physical disability resulting from intentional acid attacks. Disfiguration, vision
+loss, and mobility impairments are common consequences.
+4.2 Sensory Disabilities
+Blindness
+Complete loss of vision. Globally, approximately 43 million people are blind (WHO, 2019).
+Leading causes include cataract (51%), glaucoma (8%), age-related macular degeneration
+(5%), corneal opacity (4%), and diabetic retinopathy (1%). About 80% of global blindness
+is avoidable.
+
+Low Vision
+Visual impairment not correctable to normal vision with standard glasses. Approximately
+2.2 billion people have near or distance vision impairment, of whom at least 1 billion have
+impairment that could have been prevented. Low vision includes tunnel vision, central
+vision loss, and contrast sensitivity impairment.
+Hearing Impairment (Deaf)
+Profound hearing loss of 70dB or more in the better ear. WHO (2021) estimates 1.5 billion
+people have some hearing loss, with 430 million having disabling hearing loss. By 2050,
+over 700 million people may experience disabling hearing loss. Key causes: noise
+exposure, infections, aging.
+Hard of Hearing
+Moderate to severe hearing loss (60–70 dB). These individuals can communicate through
+spoken language with or without hearing aids. Early detection and intervention are critical
+to language development in children.
+Speech and Language Disability
+Impairment in communication, language, or speech production. Includes stuttering,
+aphasia, dysarthria, and voice disorders. Approximately 5% of children have a speech or
+language disorder by age 8.
+4.3 Intellectual and Developmental Disabilities
+Intellectual Disability
+Characterized by significant limitations in both intellectual functioning (reasoning, learning,
+problem solving) and adaptive behavior. IQ below 70. Global prevalence estimated at
+1–3%. Previously termed 'mental retardation'; now replaced with 'intellectual disability' in
+most legislation including RPWD Act 2016.
+Autism Spectrum Disorder (ASD)
+A developmental disorder affecting social interaction, communication, and behavior. WHO
+estimates 1 in 100 children globally has autism. Recent US CDC data suggests 1 in 36
+children. Male:female ratio is approximately 4:1.
+Specific Learning Disabilities (SLD)
+A heterogeneous group of disorders including dyslexia (reading), dyscalculia
+(mathematics), and dysgraphia (writing). Affect 5–15% of school-age children globally. Not
+related to intellectual ability.
+Down Syndrome
+A chromosomal condition caused by trisomy 21. Associated with intellectual disability and
+physical features. Prevalence: approximately 1 in 1,000 live births globally (higher with
+
+advanced maternal age).
+
+4.4 Mental Health Disabilities
+WHO recognizes mental disorders as significant causes of disability. The Global Burden of
+Disease study consistently ranks mental disorders among the leading causes of disability
+worldwide. Depression is the single largest cause of disability globally.
+Mental Illness
+Includes substantial disorders of thinking, mood, perception, and behavior that impair
+judgment and daily functioning. WHO (2022) estimates 1 in 8 people globally lives with a
+mental disorder. Major types include depression, bipolar disorder, schizophrenia, and
+anxiety disorders.
+Depression
+Affects 280 million people globally (WHO, 2021). Leading cause of disability worldwide.
+Characterized by persistent sadness, loss of interest, sleep disturbance, and impaired
+concentration. Treatable but grossly undertreated, especially in LMICs.
+Schizophrenia
+Affects approximately 24 million people globally (WHO). Characterized by hallucinations,
+delusions, and disorganized thinking. Significantly impacts social and occupational
+functioning. Major cause of psychiatric disability.
+Bipolar Disorder
+Affects approximately 45 million people globally. Characterized by alternating episodes of
+mania and depression. Can cause severe disruption to work and relationships.
+Anxiety Disorders
+Most prevalent mental disorders globally. Affect approximately 301 million people
+worldwide (WHO, 2019). Include generalized anxiety disorder, panic disorder, social
+anxiety, PTSD, and OCD.
+4.5 Neurological Disabilities
+Multiple Sclerosis (MS)
+A chronic, inflammatory, demyelinating disease of the central nervous system. Affects
+approximately 2.8 million people worldwide. Can cause progressive disability including
+mobility problems, visual disturbance, fatigue, and cognitive changes.
+Parkinson's Disease
+A progressive neurological disorder affecting movement, with tremors, rigidity, and
+bradykinesia. Affects over 8.5 million people globally (WHO, 2022). Second most common
+neurodegenerative disease after Alzheimer's.
+Epilepsy
+
+Characterized by recurrent seizures. Approximately 50 million people have epilepsy
+globally (WHO). Around 80% live in low- and middle-income countries. A significant cause
+of disability and social stigma.
+Chronic Neurological Conditions
+Includes a range of conditions such as motor neurone disease (ALS), Huntington's
+disease, and other neurodegenerative disorders causing progressive physical and
+cognitive disability.
+4.6 Blood Disorders as Disabilities
+India's RPWD Act 2016 uniquely includes three blood disorders as recognized disabilities,
+reflecting the high burden of these conditions in the Indian population:
+Haemophilia
+An inherited bleeding disorder in which blood doesn't clot properly due to deficiency of
+clotting factors (VIII or IX). Affects approximately 1 in 10,000 births globally. Can cause
+spontaneous bleeding, joint damage, and chronic disability.
+Thalassemia
+A group of inherited blood disorders causing abnormal hemoglobin production. Over
+300,000 affected births annually worldwide, with India having the highest burden. Severe
+forms cause chronic anemia, organ damage, and developmental disability.
+Sickle Cell Disease
+An inherited disorder affecting the shape of red blood cells, causing pain crises, anemia,
+and organ damage. Affects over 20 million people globally, with significant burden in tribal
+populations across India.
+
+CHAPTER 5: WHO – HEALTH INEQUITIES &
+BARRIERS FACED BY PwDs
+5.1 Healthcare Access
+According to WHO, persons with disabilities face significant and systematic barriers to
+accessing health services. These barriers manifest across multiple levels – from physical
+inaccessibility of healthcare facilities to discriminatory attitudes of healthcare providers.
+Barrier/Disparity
+Data Point
+Comparison
+Unable to afford healthcare
+50% of PwDs
+33% of non-disabled
+Denied healthcare
+Nearly 3x more likely
+vs. non-disabled persons
+Treated badly in healthcare
+4x more likely
+vs. non-disabled persons
+Inadequate provider skills
+>2x more likely to report
+vs. non-disabled persons
+Catastrophic health expenditure
+Significantly higher
+WHO 2022 Report
+Unmet rehabilitation needs
+>50% globally
+WHO Rehab 2030
+Mental health service gap
+Treatment gap >70%
+In low-income countries
+5.2 Types of Barriers (WHO Classification)
+ Physical/Environmental Barriers: Inaccessible buildings, transport, information, and
+communication. Lack of ramps, lifts, accessible toilets, and tactile pathways.
+ Attitudinal Barriers: Negative stereotypes, stigma, discrimination, and low expectations
+from family, community, employers, and healthcare providers.
+ Institutional Barriers: Policies, procedures, and organizational structures that fail to
+accommodate persons with disabilities. Absence of reasonable accommodation.
+ Communication Barriers: Lack of sign language interpreters, Braille materials,
+easy-read information, and accessible digital content.
+ Financial Barriers: High cost of assistive devices, healthcare, and transport. Low
+income due to employment exclusion creates a 'disability poverty trap.'
+ Information Barriers: Lack of awareness among PwDs about their rights, available
+services, and how to navigate health and social systems.
+5.3 Disability and Poverty – The Vicious Cycle
+WHO and World Bank data consistently show that disability and poverty are closely linked
+in a self-reinforcing cycle. Disability can cause poverty through reduced employment,
+increased medical costs, reduced productivity, and social exclusion. Conversely, poverty
+can cause disability through poor nutrition, exposure to disease, unsafe living conditions,
+and limited access to healthcare.
+
+Key findings on disability and poverty:
+→ In OECD countries, the employment rate of PwDs (44%) is barely half that of
+non-disabled (75%).
+→ People with disabilities earn 30–40% less than non-disabled workers in many
+countries.
+→ Households with a disabled member spend more on healthcare and support.
+→ In India, 69% of PwDs reside in rural areas with minimal service access.
+→ The 'extra cost of disability' (assistive devices, caregiving, transport) deepens poverty.
+
+CHAPTER 6: WHO WORLD REPORT ON
+DISABILITY – KEY CHAPTER FINDINGS
+6.1 Rehabilitation Services
+Rehabilitation is defined by WHO as 'a set of interventions designed to optimize functioning
+and reduce disability in individuals with health conditions in interaction with their
+environment.' Despite its critical importance, rehabilitation remains severely underfunded
+and underutilized globally.
+ An estimated 2.4 billion people currently need rehabilitation services globally (WHO,
+2021).
+ Only 1 in 3 people who need rehabilitation access it globally.
+ In low-income countries, the gap is far worse – over 90% of needs remain unmet.
+ Rehabilitation reduces hospitalization duration by 25–30% and improves functional
+outcomes.
+ Key rehabilitation services include physiotherapy, occupational therapy, speech therapy,
+prosthetics and orthotics, and psychosocial rehabilitation.
+6.2 Assistive Technology
+Assistive technology (AT) enables persons with disabilities to live independent, productive
+lives. WHO estimates that over 1 billion people need assistive technology, but fewer than
+10% have access globally. This gap is particularly severe in low-income countries.
+Assistive Device
+Estimated Need
+Current Access
+Hearing Aids
+466 million people
+~17% have access
+Wheelchairs
+70+ million people
+<5% in LMICs
+White canes/visual aids
+253 million (vision impaired)
+Low access in LMICs
+Communication devices (AAC)
+Millions with comm. disability
+Very limited globally
+Prosthetics/Orthotics
+30+ million amputees
+3–10% in LMICs
+6.3 Education
+Education is a fundamental right and a key determinant of life outcomes. However, children
+with disabilities face significant barriers to education, despite progress in inclusive
+education policies worldwide.
+ Children with disabilities are less likely to attend school than non-disabled children in
+every country studied by WHO.
+ In Bolivia, 98% of non-disabled children attend school but under 40% of disabled
+children do.
+
+ In Indonesia, over 80% of non-disabled children attend school, but less than 25% of
+disabled children do.
+ Education completion gaps persist across all age groups, with the pattern more
+pronounced in poorer countries.
+ Globally, there are approximately 240 million children with disabilities; most lack
+adequate educational support.
+ Lack of trained teachers, accessible schools, and adapted curricula are the main
+barriers.
+6.4 Employment
+Employment is critical for economic independence and social inclusion. However, persons
+with disabilities face systematic exclusion from the labor market, both in formal and
+informal sectors.
+ In OECD countries, employment rate of PwDs is 44% vs 75% for non-disabled persons.
+ In developing countries, the employment gap is wider, with many PwDs engaged only in
+subsistence activities.
+ Persons with intellectual, psychosocial, or multiple disabilities face the greatest
+employment barriers.
+ Workplace discrimination, inaccessible environments, and employer prejudice are major
+barriers.
+ Supported employment models have shown significant success in integrating PwDs into
+competitive employment.
+
+CHAPTER 7: WHO RECOMMENDATIONS AND
+ACTION FRAMEWORK
+7.1 WHO Global Disability Action Plan 2014–2021
+The WHO Global Disability Action Plan (GDAP) 2014–2021 provided a framework for
+countries to improve health and well-being for persons with disabilities. It was built on three
+intersecting objectives:
+ Objective 1: Remove barriers and improve access to health services and programmes.
+ Objective 2: Strengthen and extend rehabilitation, habilitation, assistive technology,
+assistance and support services, and community-based rehabilitation.
+ Objective 3: Strengthen collection of relevant and internationally comparable data on
+disability and support research on disability and related services.
+7.2 Nine Cross-Cutting WHO Recommendations
+The World Report on Disability (2011) highlighted nine cross-cutting recommendations
+applicable to all sectors and governments:
+1. Enable access to all mainstream systems and services.
+2. Invest in specific programmes and services for people with disabilities.
+3. Adopt a national disability strategy and plan of action.
+4. Involve people with disabilities.
+5. Improve human resource capacity.
+6. Provide adequate funding and improve affordability.
+7. Increase public awareness and understanding of disability.
+8. Improve data collection on disability.
+9. Strengthen and support research on disability.
+7.3 WHO Rehabilitation 2030
+In 2017, WHO launched the Rehabilitation 2030 initiative to address the growing global
+unmet need for rehabilitation. The initiative calls for strong national rehabilitation systems
+and sustainable rehabilitation service delivery integrated into health systems. Key
+strategies include:
+→ Strengthening leadership and governance for rehabilitation at national level.
+→ Developing a sufficient, well-trained, and equitably distributed rehabilitation workforce.
+→ Ensuring financing for rehabilitation through health insurance and social protection.
+
+→ Integrating rehabilitation into all levels of health systems (primary, secondary, tertiary).
+→ Implementing community-based rehabilitation (CBR) approaches.
+→ Expanding access to quality assistive products in countries.
+
+CHAPTER 8: INDIA'S DISABILITY LANDSCAPE –
+CENSUS & DATA
+8.1 Disability Prevalence in India
+India is home to one of the largest populations of persons with disabilities in the world.
+According to the Census of India 2011 – the most recent national census with disability
+data – approximately 26.8 million people (2.21% of the total population) reported having
+some form of disability. However, this figure is widely acknowledged to be a significant
+underestimate, due to definitional limitations, stigma, lack of awareness, and non-inclusion
+of many disability types.
+Note: WHO estimates that disability prevalence in India could be as high as 10–20%,
+consistent with global norms. The significant gap between the Census 2011 figure (2.21%)
+and WHO estimates is a subject of ongoing academic and policy debate.
+Disability Type
+Number (Census 2011)
+% of PwD Population
+In Seeing (Vision)
+50,30,828
+18.8%
+In Hearing
+50,70,914
+18.9%
+In Speech
+19,98,341
+7.5%
+In Movement (Locomotor)
+54,36,459
+20.3%
+Mental Retardation (Intellectual)
+15,05,624
+5.6%
+Mental Illness
+7,22,826
+2.7%
+Multiple Disability
+22,26,075
+8.3%
+Any Other Disability
+47,85,807
+17.9%
+TOTAL
+2,68,10,557
+100%
+8.2 Demographic Characteristics of PwDs in India
+Characteristic
+Data/Statistic
+Gender distribution
+Male: 56% / Female: 44%
+Rural vs Urban
+Rural: 69.4% / Urban: 30.6%
+Literacy rate (PwDs)
+54.5% (vs. national 74%)
+Main worker rate (PwDs)
+34.4% (vs. 39.8% general)
+Children with disability (0–14 yrs)
+~5.3 million
+PwDs receiving disability pension
+Very low coverage (under 20%)
+8.3 Disability in India – Key Policy Context
+India's disability policy landscape has evolved significantly over the past three decades.
+The key milestones include:
+
+ 1992: National Policy for Persons with Disabilities drafted.
+ 1995: Persons with Disabilities (Equal Opportunities, Protection of Rights and Full
+Participation) Act enacted. Recognized 7 types of disability.
+ 1999: National Trust Act – for persons with autism, cerebral palsy, intellectual disability,
+and multiple disabilities.
+ 2007: India ratified the UN Convention on Rights of Persons with Disabilities (UNCRPD).
+ 2012: National Policy on Disability finalized.
+ 2015: Accessible India Campaign (Sugamya Bharat Abhiyan) launched by Government
+of India.
+ 2016: Rights of Persons with Disabilities Act (RPWD Act) enacted, replacing 1995 Act.
+Expanded to 21 disability categories.
+ 2017: RPWD Act came into effect (April 19, 2017).
+
+CHAPTER 9: RPWD ACT 2016 – OVERVIEW AND
+BACKGROUND
+9.1 Introduction to the RPWD Act 2016
+The Rights of Persons with Disabilities Act, 2016 (RPWD Act / RPwD Act) is a landmark
+piece of legislation enacted by the Indian Parliament on December 16, 2016. It received
+Presidential assent on December 27, 2016, was notified in the Gazette of India on
+December 28, 2016, and came into force on April 19, 2017. The Act is also officially
+referred to as 'Act 49 of 2016.'
+The RPWD Act replaces the earlier Persons with Disabilities (Equal Opportunities,
+Protection of Rights and Full Participation) Act of 1995 (PwD Act, 1995), which was
+considered inadequate and out of step with contemporary understandings of disability
+rights.
+9.2 Purpose and Objective
+The primary objective of the RPWD Act 2016 is to give effect to the United Nations
+Convention on the Rights of Persons with Disabilities (UNCRPD, 2006), which India signed
+on March 30, 2007, and ratified on October 1, 2007. The Act aims to:
+✓ Ensure that every person with a disability can live their life with dignity, without
+discrimination, and with equal opportunity.
+✓ Promote, protect, and ensure the full and equal enjoyment of all human rights by
+persons with disabilities.
+✓ Promote respect for their inherent dignity.
+✓ Ensure non-discrimination on the basis of disability.
+✓ Enable full and effective participation in all spheres of society.
+✓ Provide for reasonable accommodation in education and employment.
+9.3 Structure of the Act
+The RPWD Act 2016 is a comprehensive legislation consisting of 102 sections organized
+across 17 chapters, plus a Schedule listing the 21 specified disabilities.
+Chapter
+Title
+Key Sections
+Chapter 1
+Preliminary – Definitions
+Sec. 1–2 (Definitions)
+Chapter 2
+Rights & Entitlements
+Sec. 3–23 (Non-discrimination, healthcare, education, etc.)
+Chapter 3
+Duties of Gov. Establishments
+Sec. 20–22 (Employment, equal opportunity)
+Chapter 4
+Education
+Sec. 16–18 (Inclusive education)
+Chapter 5
+Employment
+Sec. 19–24 (Reservation, grievance)
+
+Chapter 6
+Social Security, Health, Rehab
+Sec. 24–30 (Schemes, insurance)
+Chapter 7
+Community & Recreational Life
+Sec. 30 (Access to culture, sports)
+Chapter 8
+Legal Capacity & Guardianship
+Sec. 14–15 (District Court guardianship)
+Chapter 9–11
+Registration, Certification
+Unique Disability ID (UDID)
+Chapter 12–13
+Regulatory & Advisory Bodies
+Chief Commissioner, Advisory Boards
+Chapter 14–15
+National & State Fund
+Sec. 86–90 (Financial provisions)
+Chapter 16
+Offences & Penalties
+Sec. 91–95 (Criminal provisions)
+Chapter 17
+Miscellaneous
+Sec. 96–102
+
+CHAPTER 10: RPWD ACT 2016 – THE 21
+RECOGNIZED DISABILITIES
+A landmark feature of the RPWD Act 2016 is the expansion of recognized disabilities from
+7 (under the 1995 Act) to 21 specified disabilities. The Central Government is also
+empowered to add more types by notification. These 21 disabilities are organized into five
+broad categories.
+10.1 Overview of 21 Disabilities
+#
+Disability
+Category
+Brief Description
+1
+Blindness
+Physical/Sensory
+Visual acuity <3/60 in better eye after correction
+2
+Low Vision
+Physical/Sensory
+Visual acuity 6/18 to 3/60 or field <40 degrees
+3
+Leprosy Cured
+Physical
+Cured of leprosy but with residual disabilities
+4
+Hearing Impairment (Deaf)
+Physical/Sensory
+Hearing loss 70dB+ in better ear
+5
+Hard of Hearing
+Physical/Sensory
+Hearing loss 60–70dB in better ear
+6
+Speech & Language Disability
+Physical/Sensory
+Impairment of speech/language/voice (new in 2016)
+7
+Locomotor Disability
+Physical
+Bones/joints/muscles impairment affecting movement
+8
+Dwarfism
+Physical
+Medical/genetic condition causing short stature
+9
+Intellectual Disability
+Intellectual/Developmental
+Significant limitation in intellectual functioning
+10
+Specific Learning Disabilities
+Intellectual/Developmental
+Dyslexia, dyscalculia, dysgraphia (new in 2016)
+11
+Autism Spectrum Disorder
+Intellectual/Developmental
+Social/communication impairment
+12
+Mental Illness
+Mental Health
+Substantial disorder of thinking/mood/behavior
+13
+Cerebral Palsy
+Neurological
+Neurological condition affecting movement/posture
+14
+Muscular Dystrophy
+Neurological/Physical
+Progressive muscle weakness (new as separate category)
+15
+Chronic Neurological Conditions
+Neurological
+MS, motor neurone disease, etc.
+16
+Specific Learning Disabilities
+Neurological/Cognitive
+Learning impairment from neurological basis
+17
+Multiple Sclerosis
+Neurological
+Demyelinating CNS disease
+18
+Haemophilia
+Blood Disorders
+Hereditary bleeding disorder (new in 2016)
+19
+Thalassemia
+Blood Disorders
+Hereditary blood disorder (new in 2016)
+20
+Sickle Cell Disease
+Blood Disorders
+Hereditary red blood cell disorder (new in 2016)
+21
+Acid Attack Victims
+Physical/Acquired
+Permanent disability from acid attack (new in 2016)
+10.2 New Additions Compared to 1995 Act
+✦ Speech and Language Disability (First time added in 2016)
+✦ Specific Learning Disabilities – Dyslexia, Dyscalculia, Dysgraphia (First time added)
+✦ Acid Attack Victims (First time included – recognizing acquired disability from violence)
+
+✦ Dwarfism – included as a separate and independent category
+✦ Muscular Dystrophy – recognized as a distinct disability category
+✦ Thalassemia, Haemophilia, Sickle Cell Disease – Three blood disorders added
+✦ Chronic Neurological Conditions – broad category for neurological disorders
+✦ Parkinson's Disease – recognized separately
+
+10.3 Detailed Profiles of Each Disability Under RPWD Act
+1. BLINDNESS
+Definition under RPWD Act: A condition where a person has any of the following
+conditions: (a) total absence of sight; (b) visual acuity not exceeding 3/60 or 10/200
+(Snellen) in the better eye with best possible spectacle correction; (c) limitation of field of
+vision subtending an angle of less than 10 degrees.
+Causes: Cataract (most common in India), glaucoma, diabetic retinopathy, trachoma,
+retinitis pigmentosa, corneal opacity, vitamin A deficiency.
+India Data: Over 12 million persons are blind in India. India accounts for nearly 20% of the
+global blind population. National Programme for Control of Blindness (NPCB) is the key
+government initiative.
+2. LOW VISION
+Definition: A condition where a person has any of the following conditions after best
+correction: (a) visual acuity not exceeding 6/18 or less than 10/60 up to 3/60; (b) limitation
+of field of vision between 10 and 40 degrees.
+Low vision requires specialized rehabilitation including optical devices (magnifiers,
+telescopes), non-optical aids, and environmental modifications. Unlike blindness, low
+vision can often be functionally improved with proper aids.
+3. LEPROSY CURED
+Leprosy (Hansen's Disease) is caused by Mycobacterium leprae. Despite being cured
+medically, many individuals retain permanent disabilities including clawing of fingers,
+absorption of digits, foot drop, lagophthalmos (inability to close eyes), and skin changes.
+India Context: India accounts for approximately 60% of global new leprosy cases annually.
+The RPWD Act explicitly protects persons cured of leprosy from discrimination, a
+significant step as they face severe social stigma.
+4 & 5. HEARING IMPAIRMENT
+Hearing Impairment in RPWD Act covers two sub-categories:  Deaf: 70 dB or more
+hearing loss in the better ear in conversational range of frequencies.  Hard of Hearing:
+60–70 dB hearing loss in the better ear.
+Causes: Congenital (maternal rubella, birth asphyxia), infections (meningitis, chronic ear
+infections), noise-induced, ototoxic drugs, aging.
+India Data: ~50.7 lakh persons with hearing impairment (Census 2011). National
+Programme for Prevention and Control of Deafness (NPPCD) provides free hearing aids.
+
+6. SPEECH AND LANGUAGE DISABILITY
+New in RPWD 2016. Defined as a permanent disability arising out of conditions such as
+laryngectomy or aphasia affecting one or more components of speech and language due
+to organic or neurological causes.
+Types: Aphasia (language disorder after brain injury), dysarthria (motor speech disorder),
+stuttering, voice disorders (dysphonia, laryngectomy).
+This was added recognizing that inability to communicate effectively is a significant
+disability impacting education, employment, and social participation.
+7. LOCOMOTOR DISABILITY
+Defined as a person's inability to execute distinctive activities associated with moving
+oneself and objects resulting from affliction of musculoskeletal or nervous system.
+India Census 2011: Largest disability group – ~54.36 lakh persons (20.3% of all PwDs).
+Causes: Polio (historically major in India; now near-elimination post-eradication), paralysis,
+stroke, spinal cord injury, accidents, congenital conditions, arthritis/bone disorders.
+This category also includes partial or complete loss of limbs (amputation).
+8. DWARFISM
+Defined as a medical or genetic condition resulting in an adult height of 4 feet 10 inches
+(147 cm) or less. More than 200 medical conditions can cause dwarfism. Achondroplasia is
+the most common (approximately 70% of cases). Average height of a person with
+achondroplasia is 4 feet (122 cm). The inclusion recognizes unique mobility, healthcare,
+and social challenges.
+9. INTELLECTUAL DISABILITY
+Defined as a condition characterized by significant limitation in both intellectual functions
+(reasoning, learning, problem solving) and adaptive behavior (conceptual, social and
+practical skills) that originate before the age of 18 years.
+Types under RPWD Act: (a) Specific intellectual disability; (b) Autism Spectrum Disorder.
+Causes: Genetic (Down syndrome, Fragile X), prenatal infections, birth complications,
+severe malnutrition, lead poisoning, meningitis.
+India Data: ~15 lakh persons (Census 2011), significant underestimate.
+10. SPECIFIC LEARNING DISABILITIES (SLD)
+
+New in RPWD 2016. A heterogeneous group of conditions wherein there is a deficit in
+processing language, spoken or written, that may manifest itself as a difficulty to
+comprehend, speak, read, write, spell, or to do mathematical calculations and includes
+such conditions as perceptual disabilities, dyslexia, dyscalculia, dysgraphia, dyspraxia, and
+developmental aphasia.
+Key Types: Dyslexia (reading/writing), Dyscalculia (math), Dysgraphia (writing), Dyspraxia
+(movement coordination).
+India: Estimated 10–15% of school children may have some form of SLD.
+11. AUTISM SPECTRUM DISORDER (ASD)
+A neuro-developmental condition characterized by challenges with social interaction,
+communication, and restricted/repetitive behaviors. Spectrum ranges from mildly affected
+to severely disabled.
+RPWD Act recognizes ASD as a distinct disability eligible for all protections including
+reservation in education and employment. This was a significant advance over the 1995
+Act.
+12. MENTAL ILLNESS
+Defined as a substantial disorder of thinking, mood, perception, orientation, or memory that
+grossly impairs judgment, behavior, capacity to recognize reality or ability to meet the
+ordinary demands of life, but does not include retardation which is a condition of arrested
+or incomplete development of mind.
+Key conditions: Schizophrenia, major depression, bipolar disorder, severe anxiety
+disorders, OCD, PTSD, personality disorders.
+India: ~150 million people need active mental health interventions (NMHS 2015–16). Only
+3–4 psychiatrists per million population (WHO norm: 10+).
+13. CEREBRAL PALSY
+A group of permanent disorders of the development of movement and posture, causing
+activity limitations attributed to non-progressive disturbances in the developing fetal or
+infant brain.
+Types: Spastic (most common), Athetoid/Dyskinetic, Ataxic, Mixed.
+India: Prevalence ~3 per 1,000 live births. Approximately 25 lakh children in India have
+cerebral palsy. Closely linked to birth asphyxia (hypoxic ischaemic encephalopathy).
+18. HAEMOPHILIA
+
+An inherited bleeding disorder caused by deficiency of clotting factor VIII (Haemophilia A)
+or factor IX (Haemophilia B). Causes spontaneous or trauma-induced bleeding into joints
+and muscles, leading to chronic joint disease and locomotor disability.
+India: ~1 in 10,000 males affected. The Haemophilia Federation of India estimates ~1.5
+lakh individuals with haemophilia in India, though many are undiagnosed.
+19. THALASSEMIA
+An inherited hemoglobin disorder caused by mutations affecting globin chain production.
+Beta-thalassemia major requires lifelong blood transfusions causing chronic disability.
+India Context: India has the highest number of thalassemia major patients globally (~1 lakh
+children). 10,000–15,000 children with thalassemia major born in India annually. An
+estimated 4.4 crore Indians are carriers (thalassemia trait/minor).
+20. SICKLE CELL DISEASE
+An inherited hemoglobin disorder where red blood cells become sickle-shaped, causing
+vaso-occlusive crises, severe pain, chronic anemia, and organ damage.
+India: High prevalence in tribal populations of Central India (Maharashtra, MP, Odisha,
+Chhattisgarh, Jharkhand, Gujarat). National Mission on Sickle Cell Anaemia launched
+2023. Estimated 20 million carriers and 2 lakh patients in India.
+21. ACID ATTACK VICTIMS
+Persons who are disfigured due to violent assaults by throwing of acid on their faces or
+body. The RPWD Act 2016 uniquely includes acid attack victims recognizing the
+permanent physical, sensory (vision loss, hearing loss), and psychological disabilities they
+acquire.
+India Context: India has one of the highest rates of acid attacks globally. 300+ cases
+reported annually (National Crime Records Bureau), with significant underreporting.
+Supreme Court has directed stricter regulation of acid sale.
+
+CHAPTER 11: RPWD ACT 2016 – RIGHTS,
+ENTITLEMENTS & PROVISIONS
+11.1 Fundamental Rights Provided
+ Right to Equality and Non-Discrimination (Sec. 3): No person with disability shall be
+discriminated on ground of disability unless the act is a proportionate means of
+achieving a legitimate aim. Women and children with disabilities shall have equal
+rights.
+ Right to Life with Dignity: Appropriate Government shall ensure PwDs enjoy right to
+equality, life with dignity and respect for integrity equally with others.
+ Protection from Cruelty and Inhuman Treatment: No PwD shall be subject to torture
+or cruel, inhuman or degrading treatment. Protection from abuse, violence and
+exploitation.
+ Right to Community Inclusion: Appropriate Government to take steps to enable PwDs
+to live in the community. This includes access to housing, social services, and support.
+ Reproductive Rights: PwDs have right to decide freely the number, spacing, and timing
+of children. Right to retain fertility. This was a landmark recognition in India.
+ Right to Legal Capacity: PwDs have legal capacity on equal basis with others in all
+aspects of life (Sec. 14). District Court may appoint limited guardian only as last resort.
+ Right to Vote: Election Commission to ensure all polling stations are accessible.
+Facilities for voting to be provided including assistance.
+ Right to Own Property: PwDs have right to equal ownership of property and right to
+inherit movable and immovable property.
+11.2 Education – Key Provisions (Sec. 16–18)
+→ Right to free and compulsory education for children with disabilities in neighborhood
+school.
+→ Special schools to be established for those who cannot be accommodated in
+mainstream.
+→ Reservation of seats in higher educational institutions (minimum 5% seats).
+→ Scholarship to students with benchmark disabilities in higher education.
+→ Appointment of 'Special Educators' in schools.
+→ Accommodation in examinations – extra time, scribe, assistive devices.
+→ Barrier-free accessible school buildings mandated.
+→ Home-based education option for those unable to attend school.
+
+→ Recognition and promotion of sign language; development of curriculum in sign
+language.
+11.3 Employment – Key Provisions (Sec. 19–24)
+Provision
+Details
+Reservation in Government Jobs
+Minimum 4% of total vacancies reserved for PwDs
+(increased from 3% under 1995 Act)
+Benchmark Disability
+Threshold of 40% disability for eligibility for reservations
+Equal Opportunity Policy
+Every employer to prepare & notify Equal Opportunity Policy
+Grievance Redressal
+Appointment of Liaison Officer by all establishments
+Training Programs
+Vocational training and self-employment schemes
+Private Sector Incentives
+Government to provide incentives to private employers
+hiring PwDs
+UDID Requirement
+Unique Disability ID required for job reservation benefits
+11.4 Social Security and Healthcare
+ PwDs with benchmark disability to be given insurance scheme (Sec. 24).
+ Rehabilitation Council of India to maintain minimum standards in rehabilitation services.
+ Early intervention services for children with disabilities.
+ Comprehensive rehabilitation services in government hospitals.
+ Reproductive healthcare and birth spacing for women with disabilities.
+ National and State Funds for PwD welfare and financial assistance.
+ Indira Gandhi National Disability Pension Scheme for below poverty line PwDs.
+11.5 Accessibility Provisions (Sec. 40–46)
+The RPWD Act places strong emphasis on accessibility as a prerequisite for inclusion.
+These provisions align with the Accessible India Campaign (Sugamya Bharat Abhiyan)
+launched by the Government of India in 2015.
+→ Physical accessibility standards for all government buildings within prescribed
+timeframe.
+→ Accessible roads, transport, and infrastructure.
+→ Accessible information and communication including websites, documents, and
+signage.
+→ All public and private service providers must comply with accessibility standards.
+→ Access to judiciary – accessible courts and legal processes.
+→ Development and implementation of Standards for Accessibility.
+
+CHAPTER 12: RPWD ACT 2016 –
+IMPLEMENTATION & CHALLENGES
+12.1 Institutional Mechanisms
+The RPWD Act establishes a multi-level institutional framework for implementation:
+ Chief Commissioner for PwDs (National): Regulatory and grievance redressal body.
+Monitors implementation; hears complaints from PwDs. To be supported by 2
+Commissioners and an Advisory Committee.
+ State Commissioners for PwDs: Equivalent body at the state level. Monitor state
+implementation, address local grievances.
+ District Level Committees: Address local concerns; constituted by State Governments.
+ Central Advisory Board on Disability: Apex policy body with representatives from
+ministries, experts, disabled persons' organizations.
+ State Advisory Boards: Equivalent bodies at state level for policy guidance.
+ National and State Funds: Financial mechanisms to support PwD welfare programs.
+Existing funds subsumed under the new National Fund.
+12.2 Unique Disability ID (UDID)
+A major implementation initiative is the Unique Disability ID (UDID) card system, a national
+database of persons with disabilities. UDID provides:
+ Standardized disability certificate across the country.
+ Digital database enabling tracking of benefits and services.
+ Technology-enabled monitoring of implementation.
+ Prevention of duplicate certificates and fraudulent claims.
+ Smart card with embedded chip containing disability information.
+12.3 Challenges and Gaps in Implementation
+Despite the progressive provisions of the RPWD Act 2016, implementation has faced
+numerous challenges. The Supreme Court of India, in Seema Girija Lal & Anr Vs Union of
+India & Ors (2022–2023), expressed strong disappointment at inadequate implementation
+across states including Andhra Pradesh, Chhattisgarh, Uttar Pradesh, Punjab, Tripura, and
+UT of Chandigarh.
+■ Data Deficit: Census 2011 (the most recent national disability data) significantly
+underestimates disability prevalence. New census and specialized disability survey
+needed.
+
+■ Rural-Urban Gap: 69% of PwDs reside in rural areas where services, assistive
+devices, rehabilitation centers, and awareness are severely lacking.
+■ Inadequate Funding: SIPDA (Scheme for Implementation of Persons with Disabilities
+Act) budget increased by less than 9% over five years (2016–2021) despite growing
+need.
+■ Pension Inadequacy: Indira Gandhi National Disability Pension of Rs. 300–500/month
+is grossly insufficient given inflation.
+■ Limited Private Sector Compliance: Reservations in private sector employment are
+voluntary. Most private employers do not implement accessibility or equal opportunity
+policies.
+■ State Inaction: Many states have not constituted District-Level Committees, Advisory
+Boards, or State Funds as mandated by the Act.
+■ Social Audit Gap: Section 48 mandating social audit of disability schemes has not
+been implemented on priority basis.
+■ Coordination Failure: Non-receipt of Utilization Certificates from states results in
+non-release of central funds for disability initiatives.
+■ Awareness Deficit: Majority of PwDs and their families are unaware of their rights,
+entitlements, and available schemes under RPWD Act 2016.
+
+CHAPTER 13: DISABILITY AND EDUCATION IN
+INDIA
+13.1 Education Policy and Disability
+Education is both a fundamental right (Article 21A of the Constitution) and a key pathway
+to social inclusion for persons with disabilities. India's disability-education landscape is
+governed by multiple policy frameworks including the RPWD Act 2016, Right to Education
+Act 2009, National Education Policy 2020 (NEP 2020), and Samagra Shiksha scheme.
+13.2 Key Education Statistics for PwDs in India
+Indicator
+Statistic
+Comparison (General)
+Literacy rate of PwDs
+54.5%
+National: 74.04%
+School enrollment (disabled children)
+Low – significant out-of-school population
+RTE guarantees universal enrollment
+Dropout rate
+Higher than national average
+Particularly after Class 5
+Access to mainstream school
+Improving but barriers remain
+Majority prefer integrated education
+Higher education enrollment of PwDs
+Less than 1% of total enrollment
+5% reservation mandated
+Special schools (NIOS, State run)
+Limited in number and geographic reach
+Urban concentration
+13.3 National Education Policy (NEP) 2020 and Disability
+The National Education Policy 2020 emphasizes inclusive education for children with
+disabilities. Key provisions include:
+ Foundational literacy and numeracy programs adapted for all learners including PwDs.
+ National Curriculum Framework to include disability-inclusive content.
+ Teacher education programs to include compulsory module on inclusive education.
+ Universal Design for Learning (UDL) to be adopted across educational institutions.
+ NIOS (National Institute of Open Schooling) to be strengthened for PwDs.
+ Sign Language as a language of learning to be promoted.
+ Assistive technology in education to be expanded.
+13.4 Samagra Shiksha and Inclusive Education
+Samagra Shiksha (2018) is the flagship integrated school education scheme that includes
+a strong inclusive education component. Under Samagra Shiksha:
+→ Assessment camps and Individualized Education Plans (IEPs) for children with
+disabilities.
+→ Resource rooms and home-based education programs.
+
+→ Therapeutic and corrective equipment and aids to children with disabilities.
+→ Orientation and mobility training; Braille kits for visually impaired.
+→ Appointment of special educators in cluster resource centers.
+→ Teacher sensitization and training on inclusive education.
+
+CHAPTER 14: DISABILITY AND EMPLOYMENT –
+INDIA & GLOBAL
+14.1 Global Employment Scenario
+Employment is critical for economic independence, self-worth, and social inclusion of
+persons with disabilities. However, globally, PwDs face significant labor market exclusion.
+Employment Indicator
+PwDs
+Non-disabled
+Employment rate (OECD avg.)
+44%
+75%
+Part-time employment
+Disproportionately higher
+Lower
+Average earnings
+30–40% lower
+Baseline
+Working poverty rate
+Higher
+Lower
+Informal employment
+Much higher in LMICs
+Lower proportion
+14.2 Employment in India – RPWD Act Provisions and Reality
+The RPWD Act 2016 mandates 4% reservation in government jobs for PwDs (up from 3%
+under 1995 Act). Despite this legal provision, actual employment of PwDs in government
+establishments remains far below targets.
+ Only 34.4% of PwDs are 'main workers' vs 39.8% in general population (Census 2011).
+ Employment opportunities in rural areas for PwDs are predominantly limited to
+agriculture.
+ Government has introduced National Career Service Centres (NCSCs) for PwDs.
+ Vocational rehabilitation centers (VRCs) established under MSJE to provide training.
+ NHFDC (National Handicapped Finance and Development Corporation) provides loans
+for self-employment.
+ Scheme for Rehabilitation of Persons with Disability (under DDRS) provides training.
+ Corporate sector has begun to hire PwDs under ESG mandates – still early-stage.
+ Mental illness and intellectual disability face the highest barriers to employment.
+14.3 Supported Employment and Best Practices
+International evidence strongly supports the 'supported employment' model as the most
+effective approach to integrating PwDs – especially those with intellectual disabilities and
+psychosocial conditions – into competitive employment.
+ Job Matching: Careful assessment of individual's skills and interests matched to
+appropriate jobs.
+ Job Coach Support: Intensive on-site job coaching during initial employment period.
+
+ Employer Sensitization: Training and support for employers to create inclusive
+workplaces.
+ Natural Supports: Building peer support networks in workplace.
+ Follow-Along Support: Long-term, as-needed support after initial placement.
+
+CHAPTER 15: CONCLUSION AND RESEARCH
+GAPS
+15.1 Summary of Key Findings
+This comprehensive reference document has synthesized data from WHO global
+publications and India's RPWD Act 2016 framework. The following key themes emerge:
+✓ Disability is a universal human experience affecting approximately 1.3 billion people
+globally (16% of the world's population).
+✓ The WHO's biopsychosocial and human rights-based frameworks have fundamentally
+transformed how disability is understood and addressed.
+✓ India, with one of the world's largest disability populations, has made significant
+legislative progress through the RPWD Act 2016.
+✓ The expansion from 7 to 21 recognized disabilities under RPWD Act 2016 is a major
+advancement aligned with international standards.
+✓ Healthcare, education, and employment disparities for PwDs persist globally and in
+India, requiring sustained multi-sectoral interventions.
+✓ Implementation gaps – financial, institutional, and attitudinal – remain the primary
+challenge in translating rights into reality.
+✓ Data quality and availability on disability in India remain critical barriers to effective
+policy and program monitoring.
+15.2 Identified Research Gaps
+For thesis purposes, the following research gaps represent significant opportunities for
+original contribution to the disability studies field in India:
+→ Up-to-date national disability prevalence data (Census 2011 is over a decade old; new
+census data awaited).
+→ Impact evaluation of RPWD Act 2016 on actual outcomes for PwDs across the 21
+disability categories.
+→ Comparative analysis of implementation across different states – gaps and success
+factors.
+→ Specific outcome data on newly recognized disabilities (SLD, ASD, blood disorders)
+under RPWD.
+→ Gender-disaggregated analysis of RPWD Act implementation – women with
+disabilities.
+→ Effectiveness of UDID (Unique Disability ID) system in service delivery.
+
+→ Mental health and psychosocial disability – the most neglected category under RPWD
+implementation.
+→ Intersectionality of disability with caste, class, and geography in India.
+→ Private sector compliance with RPWD Act provisions and reasons for low adoption.
+→ Community-based rehabilitation effectiveness in rural Indian settings.
+15.3 Policy Recommendations
+ Conduct a dedicated National Disability Survey to update prevalence data (not
+dependent on census).
+ Implement RPWD Act Section 48 – mandatory social audit of all disability schemes.
+ Increase SIPDA budget allocation commensurate with scale of disability burden.
+ Strengthen National and State Advisory Boards on Disability with time-bound action
+plans.
+ Expand rural disability services through integrated community health and rehabilitation
+workers.
+ Mandate disability-disaggregated data collection in all government schemes and reports.
+ Develop awareness campaigns targeting families, communities, employers, and
+healthcare providers.
+ Introduce disability-competency training in all healthcare professional curricula.
+ Enforce accessibility standards through third-party audits and public reporting.
+ Establish a National Disability Data Observatory for real-time monitoring.
+
+REFERENCES AND BIBLIOGRAPHY
+Primary Sources
+1. World Health Organization & World Bank. (2011). World Report on Disability. Geneva: WHO Press. ISBN
+978 92 4 156418 2.
+2. World Health Organization. (2022). Global Report on Health Equity for Persons with Disabilities. Geneva:
+WHO.
+3. World Health Organization. (2021). World Report on Hearing. Geneva: WHO.
+4. World Health Organization. (2019). World Report on Vision. Geneva: WHO.
+5. World Health Organization. (2021). Rehabilitation 2030: Meeting the Needs. Geneva: WHO.
+6. World Health Organization. (2023). Disability Fact Sheet. Geneva: WHO.
+[https://www.who.int/news-room/fact-sheets/detail/disability-and-health]
+7. Government of India. (2016). The Rights of Persons with Disabilities Act, 2016 (Act No. 49 of 2016). New
+Delhi: Ministry of Law and Justice.
+8. Ministry of Social Justice & Empowerment, Government of India. (2016). The Rights of Persons with
+Disabilities Act – Gazette Notification, December 28, 2016.
+9. Office of the Registrar General & Census Commissioner, India. (2011). Census of India 2011 – Disabled
+Population Data. New Delhi: Government of India.
+10. Ministry of Health & Family Welfare, Government of India. (2015-16). National Mental Health Survey of
+India. New Delhi: GoI.
+11. UN General Assembly. (2006). Convention on the Rights of Persons with Disabilities (CRPD). New York:
+United Nations.
+Secondary Sources
+1. Bhargava, G., & Saxena, S. (2017). The Rights of Persons with Disabilities Act, 2016: Does it address the
+needs of persons with mental illness and their families? Indian Journal of Psychiatry, 59(1), 17–22.
+2. Mitra, S., & Sambamoorthi, U. (2014). Disability prevalence among adults: Estimates for 54 countries and
+progress toward a global estimate. Disability and Rehabilitation, 36(11), 940–947.
+3. Shogren, K. A., et al. (2017). Supported Decision-Making: Theory, Research and Practice. Washington:
+American Association on Intellectual and Developmental Disabilities.
+4. Saxena, S., et al. (2007). Resources for mental health: Scarcity, inequity, and inefficiency. The Lancet,
+370(9590), 878–889.
+5. Deshpande, S. (2019). Disability and Caste in India. Economic and Political Weekly, 54(36), 23–27.
+6. National Centre for Promotion of Employment for Disabled People (NCPEDP). (2023). Annual Report on
+Disability Employment in India. New Delhi: NCPEDP.
+7. UNICEF. (2021). Seen, Counted, Included: Using data to shed light on the well-being of children with
+disabilities. New York: UNICEF.
+8. International Labour Organization (ILO). (2015). Disability-inclusive policies and programmes in the world of
+work: A collection of good practices. Geneva: ILO.
+9. Department of Empowerment of Persons with Disabilities (DEPwD). (2021). Annual Report 2020-21. New
+Delhi: MSJE.
+
+10. National Trust Act, 1999 (Act No. 44 of 1999) – for welfare of persons with Autism, Cerebral Palsy, Mental
+Retardation and Multiple Disabilities. Government of India.
+Online Resources
+1. WHO Disability Homepage: https://www.who.int/health-topics/disability
+2. WHO ICF Browser: https://icd.who.int/dev11
+3. Department of Empowerment of Persons with Disabilities (DEPwD): https://depwd.gov.in
+4. Unique Disability ID (UDID) Portal: https://www.swavlambancard.gov.in
+5. National Trust for Welfare of Persons with Autism, CP, ID & Multiple Disabilities:
+https://thenationaltrust.gov.in
+6. Rights of Persons with Disabilities Act Full Text: https://disabilityaffairs.gov.in
+7. Chief Commissioner for Persons with Disabilities: https://ccdisabilities.nic.in
+8. Rehabilitation Council of India: https://www.rehabcouncil.nic.in
+9. National Handicapped Finance & Development Corporation: https://nhfdc.nic.in
+10. WHO World Report on Disability Full PDF: https://www.who.int/publications/i/item/9789241564182
+
+APPENDIX A: CASE STUDIES IN DISABILITY
+INCLUSION
+A.1 Case Study: Disability Inclusion in Primary Healthcare –
+Kerala
+Kerala is widely regarded as India's best-performing state in disability inclusion, driven by
+its high literacy, strong public health infrastructure, and progressive welfare policies. The
+Kerala Social Security Mission (KSSM) and Kerala Viklangam Welfare Corporation have
+been instrumental in implementing disability rights.
+Key Features of Kerala's Disability Inclusion Model:
+ Comprehensive disability database maintained at Panchayat level.
+ Door-to-door identification and enrollment of PwDs in welfare schemes.
+ Kanivu – a rehabilitation scheme providing free assistive devices and therapy.
+ Accessible healthcare facilities across all government hospitals.
+ Disability pension linked to Aadhaar for direct benefit transfer.
+ Special schools and rehabilitation centers in every district.
+ Strong disabled persons' organizations (DPOs) participating in governance.
+Outcome Indicators for Kerala (vs. national average):
+Indicator
+Kerala
+National Average
+Disability literacy rate
+~72%
+54.5%
+Access to disability pension
+Relatively comprehensive
+Under 20% nationally
+Assistive device access
+Higher through Kanivu scheme
+Low (especially rural)
+School enrollment (disabled children)
+Higher than national average
+Significant out-of-school population
+Healthcare access for PwDs
+Better infrastructure
+Significant barriers
+A.2 Case Study: Autism Spectrum Disorder – Policy and Practice
+in India
+ASD was first formally recognized in India through the National Trust Act 1999, which
+included autism among its four target disabilities alongside cerebral palsy, intellectual
+disability, and multiple disabilities. Its inclusion in the RPWD Act 2016 further strengthened
+legal protections.
+→ India has no national epidemiological survey on ASD prevalence. Small-scale studies
+suggest 1–1.5% prevalence.
+
+→ Services for ASD are concentrated in urban areas and private sector, creating access
+inequities.
+→ National Trust provides SAMARTH scheme – early intervention and respite care for
+children with ASD.
+→ Government has established National Institute of Mental Health & Neurosciences
+(NIMHANS) as a national referral center.
+→ RPWD Act 2016 guarantees education, employment, and social security for persons
+with ASD.
+→ Research gap: Population-based ASD survey in India urgently needed.
+→ Parent organizations like Action for Autism and AAPC play critical advocacy roles.
+A.3 Case Study: Thalassemia – India's Blood Disorder Challenge
+India faces the world's highest burden of thalassemia, making its inclusion in RPWD Act
+2016 particularly significant. The human, economic, and social impact of thalassemia in
+India underscores the need for integrated disability, prevention, and treatment policies.
+ India has approximately 100,000 children living with thalassemia major.
+ 10,000–15,000 new thalassemia major children are born each year in India.
+ Approximately 4.4 crore (44 million) Indians carry the thalassemia trait – the highest
+globally.
+ Regular blood transfusions (every 2–4 weeks) are required for thalassemia major
+patients.
+ Bone marrow transplant is the only cure but is expensive (Rs. 10–15 lakh) and not
+universally accessible.
+ Chelation therapy (iron removal) is required alongside transfusions, adding to cost
+burden.
+ RPWD Act recognition means thalassemia patients now have access to 4% reservation
+in government employment.
+ Thalassemia India and Thalassemia International Federation advocate for universal
+neonatal screening.
+
+APPENDIX B: KEY GLOBAL CONVENTIONS AND
+FRAMEWORKS
+B.1 UN Convention on Rights of Persons with Disabilities
+(UNCRPD)
+The UNCRPD (2006) is the most comprehensive international human rights treaty on
+disability. It entered into force on May 3, 2008, and has been signed by 164 countries and
+ratified by 185 parties (as of 2023). India ratified the UNCRPD on October 1, 2007.
+Key Articles of the UNCRPD Relevant to India's RPWD Act:
+Article
+Subject
+Corresponding RPWD Provision
+Article 3
+General Principles (dignity, non-discrimination, inclusion)
+Preamble & Sec. 3
+Article 5
+Equality and Non-discrimination
+Sec. 3 (Non-discrimination)
+Article 9
+Accessibility
+Sec. 40–46 (Accessibility)
+Article 12
+Equal recognition before the law
+Sec. 14 (Legal Capacity)
+Article 13
+Access to justice
+Sec. 12 (Access to Justice)
+Article 19
+Living independently in the community
+Sec. 5 (Community Inclusion)
+Article 24
+Education
+Sec. 16–18 (Inclusive Education)
+Article 27
+Work and employment
+Sec. 19–24 (Employment)
+Article 28
+Adequate standard of living & social protection
+Sec. 24–30 (Social Security)
+Article 33
+National implementation and monitoring
+Sec. 60–73 (Chief Commissioner)
+B.2 Sustainable Development Goals (SDGs) and Disability
+The 2030 Agenda for Sustainable Development (SDGs) explicitly includes persons with
+disabilities through the principle of 'leave no one behind.' Disability is mentioned explicitly
+in 11 of the 17 SDGs.
+SDG
+Goal Title
+Disability Relevance
+SDG 1
+No Poverty
+PwDs disproportionately in poverty
+SDG 3
+Good Health
+Health equity for PwDs; rehabilitation
+SDG 4
+Quality Education
+Inclusive and equitable education
+SDG 8
+Decent Work
+Employment for PwDs (target 8.5)
+SDG 10
+Reduced Inequalities
+Non-discrimination (target 10.2)
+SDG 11
+Sustainable Cities
+Accessible urban environments
+SDG 16
+Peace, Justice, Institutions
+Access to justice for PwDs
+SDG 17
+Partnerships
+Disability-inclusive data systems
+
+B.3 Incheon Strategy 2013–2022
+The Incheon Strategy 'Make the Right Real' for Persons with Disabilities in Asia and the
+Pacific (2013–2022) provided a regional disability policy framework for the Asia-Pacific
+region, including India. It set 10 disability-specific goals with measurable targets.
+ Goal 1: Reduce poverty and enhance work and employment prospects.
+ Goal 2: Promote participation in political processes and decision-making.
+ Goal 3: Enhance access to the physical environment, public transportation, knowledge,
+and communications.
+ Goal 4: Strengthen social protection.
+ Goal 5: Expand early intervention and education.
+ Goal 6: Ensure gender equality and women's empowerment.
+ Goal 7: Ensure disability-inclusive disaster risk reduction.
+ Goal 8: Improve reliability and comparability of disability data.
+ Goal 9: Accelerate the ratification and implementation of UNCRPD.
+ Goal 10: Advance regional and international cooperation.
+
+APPENDIX C: MAJOR GOVERNMENT SCHEMES
+FOR PwDs IN INDIA
+C.1 Central Government Schemes
+Scheme
+Ministry/Department
+Key Benefit
+Accessible India Campaign
+(Sugamya Bharat Abhiyan)
+MSJE/DEPwD
+Physical and digital accessibility in public buildings, transport, websites
+ADIP Scheme
+(Assistance to Disabled for
+Purchase of Devices)
+DEPwD
+Free/subsidized assistive devices to PwDs below income threshold
+SIPDA
+(Scheme for Implementation
+of PwD Act)
+DEPwD
+Funds to states for implementing RPWD Act provisions
+DDRS
+(Deendayal Disabled
+Rehabilitation Scheme)
+DEPwD
+Financial support to NGOs providing vocational rehabilitation
+NHFDC
+(National Handicapped
+Finance Corporation)
+DEPwD
+Loans for self-employment and entrepreneurship
+NPCB
+(National Programme for
+Control of Blindness)
+MoHFW
+Eye health services; detection and treatment of cataract
+NPPCD
+(National Programme for
+Prevention & Control of Deafness)
+MoHFW
+Free hearing aids; newborn hearing screening
+National Mental Health Programme
+MoHFW
+Mental health services; District Mental Health Programme
+National Trust
+MSJE
+Services for autism, cerebral palsy, intellectual disability, multiple disabilities
+Indira Gandhi National Disability
+Pension Scheme (IGNDPS)
+Ministry of Rural Development
+Monthly pension of Rs. 300–500 for BPL PwDs
+UDID
+(Unique Disability ID)
+DEPwD
+Digital disability certificates; single database for tracking
+Samagra Shiksha
+Ministry of Education
+Inclusive education – special educators, aids, devices, accessible schools
+PM Accessible India (ongoing)
+DEPwD
+Making airports, railway stations, tourist sites accessible
+National Mission on Sickle Cell Anaemia
+MoHFW
+Screening, prevention, treatment of sickle cell disease
+Note: MSJE = Ministry of Social Justice & Empowerment; DEPwD = Department of Empowerment of Persons with
+Disabilities; MoHFW = Ministry of Health and Family Welfare; BPL = Below Poverty Line.
+C.2 National Institutes Under DEPwD
+The Department of Empowerment of Persons with Disabilities operates several National
+Institutes for training, research, and service delivery across specific disability categories:
+Institute
+Location
+Focus Area
+
+NIEPMD (National Institute for Empowerment of Persons with Multiple Disabilities)
+Chennai
+Multiple disabilities
+SVNIRTAR (Swami Vivekanand National Institute of Rehabilitation Training and Research)
+Olatpur, Odisha
+Locomotor/multiple disabilities
+NILD (National Institute for Locomotor Disabilities)
+Kolkata
+Locomotor disability
+NIHH (National Institute for the Hearing Handicapped)
+Mumbai
+Hearing impairment
+NAB (National Association for the Blind)
+New Delhi
+Visual impairment
+AYJNIHH (Ali Yavar Jung National Institute of Speech and Hearing Disabilities)
+Mumbai & regional
+Speech, hearing impairment
+NIEPVD (National Institute for Empowerment of Persons with Visual Disabilities)
+Dehradun
+Visual impairment
+NIMHR (National Institute for Mentally Handicapped)
+Secunderabad
+Intellectual disability
+NIEPID (National Institute for Empowerment of Persons with Intellectual Disabilities)
+Secunderabad
+Intellectual disability
+
+APPENDIX D: GLOSSARY OF KEY TERMS
+Accessibility: The degree to which an environment, product, or service is available and
+usable by people with disabilities without barriers. Governed by universal design principles.
+Adaptive Behavior: Conceptual, social, and practical skills learned and performed by
+people in everyday life. Used in diagnosing intellectual disability.
+Assistive Technology (AT): Any device, software, or equipment that helps people with
+disabilities perform functions that might otherwise be difficult or impossible.
+Benchmark Disability: Under RPWD Act 2016 – a person with not less than 40% of a
+specified disability as certified by a medical authority.
+Community-Based Rehabilitation (CBR): A strategy within community development for
+rehabilitation, equalization of opportunities, poverty reduction, and social inclusion of
+people with disabilities.
+Disability: Under RPWD Act 2016 – a person with long-term physical, mental, intellectual
+or sensory impairment which, in interaction with barriers, hinders full and effective
+participation in society equally with others.
+Disabled Persons Organizations (DPOs): Organizations controlled by persons with
+disabilities (at least 51% of membership) advocating for disability rights and inclusion.
+Durable Functional Limitation: A long-term or permanent limitation in physical, mental, or
+sensory functioning.
+Equal Opportunity Policy (EOP): A document required from all government
+establishments under RPWD Act specifying measures for employment of PwDs.
+Habilitation: Helping a person with disability develop skills and abilities they were never
+able to perform (vs. rehabilitation which restores abilities).
+ICF (International Classification of Functioning, Disability and Health): WHO's
+universal framework for describing health and disability, using a biopsychosocial approach.
+Inclusion: The process of improving the terms of participation in society for people who
+are disadvantaged. In disability – ensuring PwDs are part of mainstream society.
+Locomotor Disability: Disability resulting from affliction of musculoskeletal or nervous
+system affecting movement, strength, endurance, mobility, or coordination.
+Participation Restriction: Problems a person with disability may experience when
+involved in life situations.
+Reasonable Accommodation: Necessary and appropriate modifications to ensure
+persons with disabilities can enjoy equal rights on an equal basis.
+
+Rehabilitation: A set of interventions designed to optimize functioning and reduce
+disability in individuals with health conditions in interaction with their environment.
+RPWD Act 2016: Rights of Persons with Disabilities Act 2016 (Act 49 of 2016) – India's
+landmark disability legislation enacted December 2016, in force April 2017.
+Specified Disability: One of the 21 disabilities listed in the Schedule to the RPWD Act
+2016 that are legally recognized disabilities in India.
+UDID: Unique Disability Identity Card – a government-issued digital disability certificate in
+India under the Swavalamban Card scheme.
+UNCRPD: United Nations Convention on the Rights of Persons with Disabilities (2006) –
+the international human rights treaty on disability rights.
+Universal Design: Design of products, environments, programs, and services usable by
+all people to the greatest extent possible, without need for adaptation.
+
+APPENDIX E: SUPPLEMENTARY DATA TABLES
+E.1 WHO Global Burden of Disease – Top Disability Causes
+The Global Burden of Disease (GBD) study, co-led by WHO and IHME, provides the most
+comprehensive data on causes of disability-adjusted life years (DALYs) globally.
+Rank
+Condition
+DALYs (millions)
+Category
+1
+Low back pain
+84.7 million
+Musculoskeletal
+2
+Major depressive disorder
+76.4 million
+Mental health
+3
+Iron deficiency anaemia
+74.4 million
+Nutritional
+4
+Neck pain
+42.0 million
+Musculoskeletal
+5
+Hearing loss
+36.0 million
+Sensory
+6
+Migraine
+35.7 million
+Neurological
+7
+Diabetes mellitus (type 2)
+33.4 million
+NCD
+8
+Falls
+25.0 million
+Injury
+9
+Anxiety disorders
+24.7 million
+Mental health
+10
+Chronic obstructive pulmonary disease
+22.1 million
+Respiratory
+11
+Vision loss (age-related)
+20.6 million
+Sensory
+12
+Ischemic stroke
+18.2 million
+Neurological
+13
+Asthma
+17.4 million
+Respiratory
+14
+Bipolar disorder
+14.2 million
+Mental health
+15
+Schizophrenia
+13.3 million
+Mental health
+E.2 Comparison: PwD Act 1995 vs RPWD Act 2016
+Provision
+PwD Act 1995
+RPWD Act 2016
+Disabilities recognized
+7
+21 (expandable)
+Job reservation (govt.)
+3%
+4%
+Higher education reservation
+3%
+5%
+Legal basis
+ESCAP Proclamation (regional)
+UNCRPD (international)
+Legal capacity of PwDs
+Not recognized
+Recognized (Sec. 14)
+Reproductive rights
+Not covered
+Explicitly covered
+Acid attack victims
+Not included
+Included
+Mental illness
+Basic mention
+Comprehensive provisions
+Chief Commissioner's role
+Limited
+Strengthened (2 Commissioners)
+Private sector obligations
+Minimal
+Incentives + Equal Opp. Policy
+Penalties for violations
+Weak
+Stronger criminal provisions
+National Fund
+Not mandatory
+Mandatory National & State Fund
+
+UDID system
+Absent
+Mandated
+Social audit
+Absent
+Sec. 48 – social audit required
+Accessibility standards
+Limited
+Comprehensive Sec. 40–46
+
+E.3 State-Wise Disability Statistics – India (Census 2011 Top 10
+States)
+State
+Total PwD Population
+% of State Pop.
+Largest Disability Type
+Uttar Pradesh
+41,56,100
+2.16%
+Locomotor
+Maharashtra
+29,05,955
+2.65%
+Locomotor
+Rajasthan
+20,87,001
+2.87%
+Locomotor
+Andhra Pradesh
+19,54,598
+2.37%
+Locomotor
+Bihar
+19,09,421
+1.86%
+Locomotor
+West Bengal
+17,85,569
+1.97%
+Locomotor
+Madhya Pradesh
+17,42,371
+2.46%
+Locomotor
+Karnataka
+15,64,823
+2.58%
+Locomotor
+Tamil Nadu
+15,38,730
+2.13%
+Locomotor
+Gujarat
+12,57,617
+2.14%
+Locomotor
+India (Total)
+2,68,10,557
+2.21%
+Locomotor (20.3%)
+Source: Census of India 2011, Office of Registrar General. Note: Data represents persons who reported disability at
+the time of census. WHO estimates actual disability prevalence in India is significantly higher (10–20% using
+ICF-based methodology).
+E.4 WHO Disability and Health – Selected Fast Facts (2023)
+WHO Fast Fact
+Data
+People with disability globally
+1.3 billion (16% of world population)
+People in poverty AND disability
+Highest overlap in low-income countries
+PwDs who cannot afford healthcare
+50% (vs 33% non-disabled)
+PwDs denied healthcare
+3x more likely than non-disabled
+Global hearing loss burden
+1.5 billion with hearing loss
+People with vision impairment
+2.2 billion globally
+Persons needing mental health care
+1 in 8 people globally
+Rehabilitation unmet need
+2.4 billion need rehabilitation services
+Assistive technology access
+<10% of those needing AT globally
+Disability in elderly (60+)
+~46% have some form of disability
+Children with disability
+~240 million children (10% globally)
+Low-income country AT access
+<3% have access to needed AT
+Treatment gap – mental health
+>75% in low-income countries
+Global cost of vision loss
+$411 billion annually (WHO)
+PwDs out of labor market (OECD)
+56% compared to 25% non-disabled
+
+This document was compiled for academic thesis research purposes. Data sourced from WHO publications, Government of
+ India official documents, and peer-reviewed academic literature. Last data reference: 2023–2024.
+ 

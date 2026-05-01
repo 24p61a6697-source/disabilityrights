@@ -2,12 +2,21 @@
 
 import json
 import logging
+import os
 import uuid
+import warnings
 from pathlib import Path
 from typing import List, Dict, Any, Optional
 
+os.environ["TRANSFORMERS_VERBOSITY"] = "error"
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["TQDM_DISABLE"] = "true"
+os.environ["DISABLE_TQDM"] = "1"
+warnings.filterwarnings("ignore", category=FutureWarning, module="tqdm")
+warnings.filterwarnings("ignore", category=FutureWarning, module="sentence_transformers")
+
 import numpy as np
-from sentence_transformers import SentenceTransformer
 
 from app.core.config import settings
 
@@ -19,81 +28,80 @@ CHUNK_SIZE = 512
 # Disability Knowledge Base - Multilingual Content
 DISABILITY_KNOWLEDGE_BASE = [
     {
-        "text": "In India, disability rights are protected under the Rights of Persons with Disabilities Act, 2016 (RPWD Act). Key rights include equality, access to public spaces, education and employment, healthcare, and social security.",
-        "source": "RPWD Act 2016",
-        "chapter": "Rights Overview",
+        "text": "Disability is a complex and multidimensional phenomenon that reflects the interaction between features of a person's body and the physical and social environment in which they live. It is not merely a medical condition or an individual deficit, but rather a dynamic interaction between health conditions and contextual factors – both personal and environmental. The World Health Organization (WHO) defines disability as: 'Disability is part of the human condition. Almost everyone will be temporarily or permanently impaired at some point in life, and those who survive to old age will experience increasing difficulties in functioning.'",
+        "source": "WHO World Report on Disability, 2011",
+        "chapter": "Introduction to Disability",
+        "category": "definition",
         "language": "en"
     },
     {
-        "text": "भारत में, दिव्यांग अधिकार 2016 के अधिकारों के अधिनियम (RPWD एक्ट) के तहत संरक्षित हैं। मुख्य अधिकारों में समानता, सार्वजनिक स्थानों तक पहुंच, शिक्षा और रोजगार, स्वास्थ्य सेवाएं, और सामाजिक सुरक्षा शामिल हैं।",
-        "source": "RPWD अधिनियम 2016",
-        "chapter": "अधिकार अवलोकन",
-        "language": "hi"
+        "text": "WHO and World Bank data consistently show that disability and poverty are closely linked in a self-reinforcing cycle. Disability can cause poverty through reduced employment, increased medical costs, reduced productivity, and social exclusion. Conversely, poverty can cause disability through poor nutrition, exposure to disease, unsafe living conditions, and limited access to healthcare. Key findings include: employment rates of PwDs in OECD countries are about 44% versus 75% for non-disabled people; people with disabilities often earn 30–40% less; households with a disabled member spend more on healthcare and support; 69% of PwDs in India live in rural areas with low service access; and the extra costs of disability deepen poverty.",
+        "source": "WHO / World Bank / Disability_WHO_RPWD_Thesis_Reference__1_.pdf",
+        "chapter": "Disability and Poverty",
+        "category": "poverty",
+        "language": "en"
     },
     {
-        "text": "இந்தியாவில், மாற்றுத் திறனாளர்களின் உரிமைகள் 2016 ஆம் ஆண்டு வெளியான RPWD சட்டத்தின் கீழ் பாதுகாக்கப்படுகின்றன. முக்கிய உரிமைகள் சமத்துவம், பொதுமக்கள் இடங்களுக்கு அணுகுதல், கல்வி மற்றும் வேலைவாய்ப்பு, சுகாதார சேவைகள் மற்றும் சமூக பாதுகாப்பைக் கொண்டுள்ளன.",
-        "source": "RPWD சட்டம் 2016",
-        "chapter": "உரிமைகள் கண்ணோட்டம்",
-        "language": "ta"
+        "text": "In India, disability rights are protected under the Rights of Persons with Disabilities Act, 2016 (RPWD Act). Key rights include equality, access to public spaces, education and employment, healthcare, and social security.",
+        "source": "RPWD Act 2016",
+        "chapter": "Rights Overview",
+        "category": "rights",
+        "language": "en"
     },
     {
-        "text": "భారతదేశంలో, వికారుల హక్కులు 2016 యొక్క RPWD చట్టం క్రింద రక్షించబడ్డాయి. ప్రధాన హక్కులలో సమానత్వం, పౌర స్థలాలకు ప్రవేశం, విద్య మరియు ఉద్యోగం, ఆరోగ్య సంరక్షణ, మరియు సామాజిక భద్రత ఉన్నాయి.",
-        "source": "RPWD చట్టం 2016",
-        "chapter": "హక్కుల అవలోకనం",
-        "language": "te"
+        "text": "Blindness is a visual impairment in which a person has very low vision or no usable vision even after best correction. Under the RPWD Act 2016, blindness is recognized as a disability and may qualify for disability certification, assistive devices, education accommodations, and government benefits.",
+        "source": "RPWD Act 2016",
+        "chapter": "Blindness Definition",
+        "category": "definitions",
+        "language": "en"
     },
     {
-        "text": "ಭಾರತದಲ್ಲಿ, ಅಂಗವಿಕಲರ ಹಕ್ಕುಗಳು 2016 ರ RPWD ಕಾಯಿದೆ ಅಡಿಯಲ್ಲಿ ರಕ್ಷಿಸಲ್ಪಟ್ಟಿವೆ. ಪ್ರಮುಖ ಹಕ್ಕುಗಳಲ್ಲಿ ಸಮಾನತೆ, ಸಾರ್ವಜನಿಕ ಸ್ಥಳಗಳಿಗೆ ಪ್ರವೇಶ, ಶಿಕ್ಷಣ ಮತ್ತು ಉದ್ಯೋಗ, ಆರೋಗ್ಯಸೇವೆಗಳು ಮತ್ತು ಸಾಮಾಜಿಕ ಭದ್ರತೆ ಸೇರಿವೆ.",
-        "source": "RPWD ಕಾಯಿದೆ 2016",
-        "chapter": "ಹಕ್ಕುಗಳ ಅವಲೋಕನ",
-        "language": "kn"
+        "text": "Locomotor disability refers to impairments that affect movement, muscle strength, or mobility. Under the RPWD Act 2016, locomotor disability is recognized as a benchmark disability and may qualify individuals for disability certification, assistive mobility devices, education accommodations, and government benefits.",
+        "source": "RPWD Act 2016",
+        "chapter": "Locomotor Disability",
+        "category": "definitions",
+        "language": "en"
     },
     {
-        "text": "ഇന്ത്യയിൽ, വികലാംഗാവകാശങ്ങൾ 2016ലെ RPWD ആക്ടിന്റെ കീഴിൽ സംരക്ഷിതമാണ്. പ്രധാന അവകാശങ്ങളിൽ സമത്വം, പൊതു സ്ഥലങ്ങളിൽ പ്രവേശനം, വിദ്യാഭ്യാസം മറ്റും തൊഴിൽ, ആരോഗ്യപരിപാലനം, സാമൂഹ്യസുരക്ഷ എന്നിവയുണ്ട്.",
-        "source": "RPWD നിയമം 2016",
-        "chapter": "അവകാശങ്ങളുടെ അവലോകനം",
-        "language": "ml"
+        "text": "Visual disabilities include blindness and low vision. In India, visual disability is covered under the RPWD Act 2016 and persons with visual impairment can access disability certification, assistive technology, education support, and reservations in employment and education.",
+        "source": "RPWD Act Visual Disabilities",
+        "chapter": "Visual Disability",
+        "category": "definitions",
+        "language": "en"
+    },
+    {
+        "text": "Persons with disabilities can file complaints regarding discrimination or violation of rights with the Chief Commissioner for Persons with Disabilities (CCPD) at the National level or State Commissioners at the State level. You can file a complaint online through the CCPD website (ccpdisabilities.nic.in) or by writing to the Commissioner. The Commissioners have powers of a civil court to hear grievances.",
+        "source": "RPWD Act Section 75",
+        "chapter": "Grievance Redressal",
+        "category": "complaint",
+        "language": "en"
+    },
+    {
+        "text": "Under Section 32 of the RPWD Act 2016, all government and government-aided higher education institutions must reserve at least 5% seats for persons with benchmark disabilities. Furthermore, children with disabilities aged 6 to 18 years have the right to free education in a neighborhood school or a special school of their choice, as per Section 16 of the Act.",
+        "source": "RPWD Act Section 32",
+        "chapter": "Education Rights",
+        "category": "education",
+        "language": "en"
     },
     {
         "text": "Assistive technology includes tools like screen readers (NVDA/JAWS), hearing aids, wheelchairs, prosthetics, Braille kits, communication devices, and mobility aids. In India, support is available through ADIP Scheme, ALIMCO, and national institutes. Eligibility and device type depend on disability assessment and income criteria.",
         "source": "ADIP Scheme",
         "chapter": "Assistive Technology",
+        "category": "assistive",
         "language": "en"
-    },
-    {
-        "text": "सहायक तकनीक में स्क्रीन रीडर (NVDA/JAWS), हियरिंग एड, व्हीलचेयर, कृत्रिम अंग, ब्रेल किट, संचार उपकरण और चलने-फिरने की सहायक सामग्री शामिल हैं। भारत में ADIP योजना, ALIMCO और राष्ट्रीय संस्थानों के माध्यम से सहायता उपलब्ध है। पात्रता और उपकरण का प्रकार विकलांगता आकलन और आय मानदंड पर निर्भर करता है।",
-        "source": "ADIP योजना",
-        "chapter": "सहायक तकनीक",
-        "language": "hi"
-    },
-    {
-        "text": "உதவி தொழில்நுட்பத்தில் ஸ்கிரீன் ரீடர்கள் (NVDA/JAWS), கேட்கும் கருவிகள், சக்கர நாற்காலிகள், செயற்கை உறுப்புகள், பிரெயில் கருவிகள், தொடர்பு சாதனங்கள் மற்றும் இயக்க உதவிகள் அடங்கும். இந்தியாவில் ADIP திட்டம், ALIMCO மற்றும் தேசிய நிறுவனங்கள் மூலம் உதவி கிடைக்கிறது. தகுதி மற்றும் கருவி வகை மாற்றுத்திறன் மதிப்பீடு மற்றும் வருமான நிபந்தனைகளைப் பொறுத்தது.",
-        "source": "ADIP திட்டம்",
-        "chapter": "உதவி தொழில்நுட்பம்",
-        "language": "ta"
-    },
-    {
-        "text": "సహాయక సాంకేతికతలో స్క్రీన్ రీడర్లు (NVDA/JAWS), హియరింగ్ ఎయిడ్స్, వీల్‌చెయర్లు, కృత్రిమ అవయవాలు, బ్రెయిల్ కిట్లు, కమ్యూనికేషన్ పరికరాలు, మొబిలిటీ సహాయక పరికరాలు ఉంటాయి. భారతదేశంలో ADIP పథకం, ALIMCO మరియు జాతీయ సంస్థల ద్వారా సహాయం లభిస్తుంది. అర్హత మరియు పరికరం రకం వికలాంగత అంచనా మరియు ఆదాయ ప్రమాణాలపై ఆధారపడతాయి.",
-        "source": "ADIP పథకం",
-        "chapter": "సహాయక సాంకేతికత",
-        "language": "te"
-    },
-    {
-        "text": "ಸಹಾಯಕ ತಂತ್ರಜ್ಞಾನದಲ್ಲಿ ಸ್ಕ್ರೀನ್ ರೀಡರ್‌ಗಳು (NVDA/JAWS), ಹೇರಿಂಗ್ ಏಡ್ಸ್, ವೀಲ್ಚೇರ್‌ಗಳು, ಕೃತಕ ಅಂಗಗಳು, ಬ್ರೈಲ್ ಕಿಟ್‌ಗಳು, ಸಂವಹನ ಸಾಧನಗಳು ಮತ್ತು ಚಲನೆ ಸಹಾಯಕ ಸಾಧನಗಳು ಸೇರಿವೆ. ಭಾರತದಲ್ಲಿ ADIP ಯೋಜನೆ, ALIMCO ಮತ್ತು ರಾಷ್ಟ್ರೀಯ ಸಂಸ್ಥೆಗಳ ಮೂಲಕ ಸಹಾಯ ಲಭ್ಯವಿದೆ. ಅರ್ಹತೆ ಮತ್ತು ಸಾಧನದ ವಿಧವು ಅಂಗವೈಕಲ್ಯ ಮೌಲ್ಯಮಾಪನ ಹಾಗೂ ಆದಾಯ ಮಾನದಂಡಗಳ ಮೇಲೆ ಅವಲಂಬಿತವಾಗಿದೆ.",
-        "source": "ADIP ಯೋಜನೆ",
-        "chapter": "ಸಹಾಯಕ ತಂತ್ರಜ್ಞಾನ",
-        "language": "kn"
-    },
-    {
-        "text": "സഹായ സാങ്കേതികവിദ്യയിൽ സ്ക്രീൻ റീഡറുകൾ (NVDA/JAWS), കേൾവി ഉപകരണങ്ങൾ, വീൽചെയറുകൾ, കൃത്രിമ അവയവങ്ങൾ, ബ്രെയിൽ കിറ്റുകൾ, ആശയവിനിമയ ഉപകരണങ്ങൾ, ചലന സഹായങ്ങൾ എന്നിവ ഉൾപ്പെടുന്നു. ഇന്ത്യയിൽ ADIP പദ്ധതി, ALIMCO, ദേശീയ സ്ഥാപനങ്ങൾ എന്നിവ വഴി സഹായം ലഭ്യമാണ്. യോഗ്യതയും ഉപകരണ തരംവും വൈകല്യ നിർണയവും വരുമാന മാനദണ്ഡവും ആശ്രയിച്ചിരിക്കും.",
-        "source": "ADIP പദ്ധതി",
-        "chapter": "സഹായ സാങ്കേതികവിദ്യ",
-        "language": "ml"
     },
     {
         "text": "Under Section 34 of the RPWD Act, 2016, at least 4% reservation is provided in government establishments for persons with benchmark disabilities. This includes identified posts across disability categories. You can apply through regular recruitment notifications and claim applicable relaxation/support under RPWD rules.",
         "source": "RPWD Act Section 34",
         "chapter": "Employment Reservation",
+        "category": "job_reservation",
+        "language": "en"
+    },
+    {
+        "text": "The UDID (Unique Disability ID) card is a single document for identification and verification of persons with disabilities for availing various government benefits and schemes. It is valid across India and eliminates the need for multiple certificates for different purposes.",
+        "source": "UDID Project",
+        "chapter": "Disability Identity",
+        "category": "schemes",
         "language": "en"
     },
     {
@@ -130,6 +138,27 @@ DISABILITY_KNOWLEDGE_BASE = [
         "text": "Sensory disabilities include impairments in vision, hearing, touch, taste, or smell. In India these are covered under the RPWD Act and may qualify for access benefits, assistive devices, education accommodations, and disability certification.",
         "source": "RPWD Act Sensory Disabilities",
         "chapter": "Disability Definitions",
+        "language": "en"
+    },
+    {
+        "text": "Reservation Percentages for Benchmark Disabilities in Government Jobs (Section 34 of RPWD Act 2016):\n\n| Category of Disability | Reservation Percentage |\n| :--- | :--- |\n| (a) Blindness and low vision | 1% |\n| (b) Deaf and hard of hearing | 1% |\n| (c) Locomotor disability including cerebral palsy, leprosy cured, dwarfism, acid attack victims and muscular dystrophy | 1% |\n| (d) Autism, intellectual disability, specific learning disability and mental illness; (e) Multiple disabilities from amongst persons under clauses (a) to (d) including deaf-blindness | 1% |\n| **Total Reservation** | **4%** |",
+        "source": "RPWD Act 2016 Section 34",
+        "chapter": "Employment Reservation Table",
+        "category": "job_reservation",
+        "language": "en"
+    },
+    {
+        "text": "The UDID card contains vital information for persons with disabilities. Below is a visual representation of the UDID Card features:\n![UDID Card Features](https://www.swavlambancard.gov.in/images/udid-card-sample.png)\nThe card includes the name, photo, disability type, percentage of disability, and a unique 18-digit enrollment number.",
+        "source": "UDID Portal",
+        "chapter": "UDID Card Visual Guide",
+        "category": "schemes",
+        "language": "en"
+    },
+    {
+        "text": "Assistive Devices available under ADIP Scheme:\n\n| Disability Category | Type of Assistive Device |\n| :--- | :--- |\n| Visual Impairment | Braille kits, Smart Canes, Screen Reading Software |\n| Hearing Impairment | Digital Hearing Aids, TDD/TTY devices |\n| Locomotor Disability | Tricycles, Wheelchairs, Crutches, Artificial Limbs |\n| Leprosy Cured | ADL Kits, Protective Footwear |",
+        "source": "ADIP Scheme Guidelines",
+        "chapter": "Assistive Devices Table",
+        "category": "assistive",
         "language": "en"
     },
     {
@@ -180,8 +209,13 @@ class DisabilityRAGIngestion:
     def load_embedding_model(self):
         if self.model:
             return
-        logger.info(f"Loading model: {EMBEDDING_MODEL_NAME}")
-        self.model = SentenceTransformer(EMBEDDING_MODEL_NAME)
+        try:
+            from sentence_transformers import SentenceTransformer
+            logger.info(f"Loading model: {EMBEDDING_MODEL_NAME}")
+            self.model = SentenceTransformer(EMBEDDING_MODEL_NAME)
+        except Exception as e:
+            logger.warning(f"Unable to load embedding model for ingestion: {e}")
+            self.model = None
 
     # ---------------- SAFE CHUNKING ---------------- #
 

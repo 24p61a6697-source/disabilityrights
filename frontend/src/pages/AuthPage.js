@@ -4,8 +4,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { t, INDIAN_LANGUAGES } from "../languages/languages";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
-  User, Mail, Lock, Phone, MapPin, 
-  Activity, AlertCircle, 
+  AlertCircle, 
   ArrowLeft
 } from "lucide-react";
 import useDomScreenReader from "../hooks/useDomScreenReader";
@@ -31,7 +30,7 @@ const DISABILITY_TYPES = [
 ];
 
 export default function AuthPage() {
-  const { login, register, language, selectLanguage, resetLanguage } = useAuth();
+  const { login, register, language, selectLanguage } = useAuth();
   const navigate = useNavigate();
   const [mode, setMode] = useState("login"); // login | register
   const [error, setError] = useState("");
@@ -98,7 +97,7 @@ export default function AuthPage() {
           </div>
 
           <div className="header-tools header-tools-auth">
-            <button onClick={() => { resetLanguage(); navigate("/"); }} className="header-pill">
+            <button onClick={() => navigate("/")} className="header-pill">
               <ArrowLeft size={16} />
               <span>{tr("home")}</span>
             </button>
@@ -175,7 +174,7 @@ export default function AuthPage() {
                   <h2 className="auth-form-title">{tr("welcomeBack")}</h2>
                   <p className="auth-form-subtitle">Sign in to access your disability rights dashboard</p>
                   <div className="input-field">
-                    <label><Mail size={16} /> {tr("email")} *</label>
+                    <label>{tr("email")} *</label>
                     <input 
                       type="email" 
                       placeholder={tr("email")}
@@ -185,7 +184,7 @@ export default function AuthPage() {
                     />
                   </div>
                   <div className="input-field">
-                    <label><Lock size={16} /> {tr("password")} *</label>
+                    <label>{tr("password")} *</label>
                     <input 
                       type="password" 
                       placeholder={tr("password")}
@@ -210,7 +209,7 @@ export default function AuthPage() {
                   <h2 className="auth-form-title">{tr("createAccount")}</h2>
                   <div className="form-grid">
                     <div className="input-field">
-                      <label><User size={16} /> {tr("fullName")}</label>
+                      <label>{tr("fullName")}</label>
                       <input 
                         type="text" 
                         placeholder={tr("fullName")}
@@ -220,7 +219,7 @@ export default function AuthPage() {
                       />
                     </div>
                     <div className="input-field">
-                      <label><Mail size={16} /> {tr("email")}</label>
+                      <label>{tr("email")}</label>
                       <input 
                         type="email" 
                         placeholder={tr("email")}
@@ -230,7 +229,7 @@ export default function AuthPage() {
                       />
                     </div>
                     <div className="input-field">
-                      <label><Phone size={16} /> {tr("mobile")}</label>
+                      <label>{tr("mobile")}</label>
                       <input 
                         type="tel" 
                         placeholder={tr("mobile")}
@@ -241,7 +240,7 @@ export default function AuthPage() {
                       />
                     </div>
                     <div className="input-field">
-                      <label><MapPin size={16} /> {tr("state")}</label>
+                      <label>{tr("state")}</label>
                       <select 
                         value={regForm.state}
                         onChange={e => setRegForm(f => ({...f, state: e.target.value}))}
@@ -251,7 +250,7 @@ export default function AuthPage() {
                       </select>
                     </div>
                     <div className="input-field full">
-                      <label><Activity size={16} /> {tr("disabilityType")}</label>
+                      <label>{tr("disabilityType")}</label>
                       <select 
                         value={regForm.disability_type}
                         onChange={e => setRegForm(f => ({...f, disability_type: e.target.value}))}
@@ -261,7 +260,7 @@ export default function AuthPage() {
                       </select>
                     </div>
                     <div className="input-field">
-                      <label><Lock size={16} /> {tr("password")}</label>
+                      <label>{tr("password")}</label>
                       <input 
                         type="password" 
                         placeholder={tr("password")}
@@ -272,7 +271,7 @@ export default function AuthPage() {
                       />
                     </div>
                     <div className="input-field">
-                      <label><Lock size={16} /> {tr("confirmPassword")}</label>
+                      <label>{tr("confirmPassword")}</label>
                       <input 
                         type="password" 
                         placeholder={tr("confirmPassword")}
