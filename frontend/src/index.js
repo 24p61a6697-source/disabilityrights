@@ -1,14 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import './styles/variables.css';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./styles/variables.css";
+import "./index.css";
 
-// Set lang attribute for screen readers
-document.documentElement.lang = "en";
+/* ---------------- SAFE ROOT ---------------- */
+
+const container = document.getElementById("root");
+
+if (!container) {
+  throw new Error("Root element not found");
+}
+
+const root = ReactDOM.createRoot(container);
+
+/* ---------------- INITIAL ACCESSIBILITY ---------------- */
+
+// Set safe defaults (will be overridden by app)
+document.documentElement.lang = navigator.language || "en";
 document.title = "Disability Rights";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+/* ---------------- RENDER ---------------- */
+
 root.render(
   <React.StrictMode>
     <App />

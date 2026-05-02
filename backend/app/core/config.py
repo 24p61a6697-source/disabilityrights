@@ -28,8 +28,9 @@ class Settings(BaseSettings):
 
     # ---------------- LLM ---------------- #
     OLLAMA_BASE_URL: str = "http://localhost:11434"
-    OLLAMA_MODEL: str = "llama2"
+    OLLAMA_MODEL: str = "llama2-mini"
     OLLAMA_TIMEOUT_SECONDS: int = 10  # ✅ realistic
+    GROK_MODEL: str = "grok-1.0"
 
     # ---------------- FEATURES ---------------- #
     RAG_WARMUP_ON_STARTUP: bool = True
@@ -39,6 +40,7 @@ class Settings(BaseSettings):
 
     # ---------------- API KEYS ---------------- #
     OPENAI_API_KEY: Optional[str] = None
+    GROQ_API_KEY: Optional[str] = None  # alias for GROK_API_KEY
     GROK_API_KEY: Optional[str] = None
 
     # ---------------- RAG CONFIG ---------------- #
@@ -69,8 +71,16 @@ class Settings(BaseSettings):
         # even when LLM API keys are not present. Keep the user's setting as-is.
         return bool(v)
 
+    @field_validator("GROK_API_KEY", mode="before")
+    @classmethod
+    def alias_groq_api_key(cls, v, info):
+        if v:
+            return v
+        return info.data.get("GROQ_API_KEY")
+
     class Config:
-        env_file = ".env"
+        env_file = str(BACKEND_ROOT / ".env")
+        env_file_encoding = "utf-8"
         extra = "ignore"
 
 

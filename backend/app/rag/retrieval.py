@@ -50,6 +50,45 @@ logger = logging.getLogger(__name__)
 _ollama_available = True
 _ollama_fallback_logged = False
 
+GROK_MODEL_FALLBACKS = [
+    "grok",
+    "grok-1.0",
+    "grok-1.0-mini",
+    "grok-1.0-large",
+    "grok-2.0",
+    "grok-2.0-mini",
+    "grok-2.0-large"
+]
+
+
+def _is_groq_key(api_key: str) -> bool:
+    return isinstance(api_key, str) and api_key.startswith("gsk_")
+
+
+def _get_groq_api_base(api_key: str) -> str:
+    if _is_groq_key(api_key):
+        return "https://api.groq.com/openai/v1"
+    return "https://api.x.ai/v1"
+
+
+def _get_grok_model_candidates(model: Optional[str] = None, api_key: str = None) -> List[str]:
+    candidates = []
+    if model:
+        candidates.append(model)
+
+    if _is_groq_key(api_key):
+        # Groq uses OpenAI-compatible model names and a single configured model.
+        if not candidates:
+            candidates.append("openai/gpt-oss-20b")
+        return candidates
+
+    if settings.GROK_MODEL and settings.GROK_MODEL not in candidates:
+        candidates.append(settings.GROK_MODEL)
+    for fallback in GROK_MODEL_FALLBACKS:
+        if fallback not in candidates:
+            candidates.append(fallback)
+    return candidates
+
 EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
 
 # ─── Category-based query expansion ─────────────────────────────────────────────
@@ -318,10 +357,11 @@ Your goal is to provide accurate, comprehensive, and empathetic answers that fee
 
 Guidelines:
 1. **Synthesize & Summarize**: Do not just repeat snippets. Analyze the provided context and provide a structured, synthesized answer.
-2. **Citation**: Always cite the specific sections of the RPWD Act 2016, specific names of schemes, or sources mentioned in the context (e.g., "According to Section 34 of the RPWD Act 2016...").
+2. **Citation**: Always cite the specific source once at the start of your answer when referencing the same law section, scheme, or document. Do not repeat the source after every sentence.
 3. **Actionable Advice**: Provide step-by-step guidance on how to apply for schemes or where to file complaints.
-4. **Formatting**: Use clear headings, bullet points, and bold text for readability.
-5. **Rich Content**: If the context contains tables or image references (e.g., Markdown tables or image URLs), INCLUDE them in your response to help the user understand better. Use Markdown format for tables.
+4. **Simple Language**: Use everyday words, short sentences, and explain things in a clear sequence. When possible, present processes as numbered steps so people can follow them easily.
+5. **Formatting**: Use clear headings, bullet points, and bold text for readability.
+6. **Rich Content**: If the context contains tables or image references (e.g., Markdown tables or image URLs), INCLUDE them in your response to help the user understand better. Use Markdown format for tables.
 6. **Tone**: Professional, authoritative yet deeply empathetic and accessible.
 7. **Multilingual**: If the user asks in a regional language, respond in that language while maintaining technical accuracy.
 8. **Nuance**: Acknowledge when information might be specific to certain states or categories of disability.
@@ -447,13 +487,23 @@ def generate_answer_local(query: str, context: str, history: List[Dict] = None, 
             "Please try a more specific query or review the sources below for detailed guidance."
         )
     else:
-        answer_parts = []
-        for item in selected:
-            if item.get("source"):
-                answer_parts.append(f"According to {item['source']}, {item['text']}")
+        sources = [item["source"] for item in selected if item.get("source")]
+        unique_sources = []
+        for src in sources:
+            if src not in unique_sources:
+                unique_sources.append(src)
+
+        answer_texts = [item["text"] for item in selected]
+        answer_body = " ".join(answer_texts)
+
+        if unique_sources:
+            if len(unique_sources) == 1:
+                answer = f"According to {unique_sources[0]}, {answer_body}"
             else:
-                answer_parts.append(item["text"])
-        answer = " ".join(answer_parts)
+                source_list = "; ".join(unique_sources)
+                answer = f"Sources: {source_list}. {answer_body}"
+        else:
+            answer = answer_body
 
     # Try to translate the answer to target language
     if language and language.lower() != "en":
@@ -562,7 +612,7 @@ Context from Knowledge Base:
 User Question: {query}
 {lang_instruction}{lang_addition}
 
-Only use the provided context to answer. If the answer is not contained in the provided context, say that you don't know rather than hallucinating. Provide a concise and accurate response with citations to the context where possible."""
+Only use the provided context to answer. If the answer is not contained in the provided context, say that you don't know rather than hallucinating. Provide a concise and accurate response with citations to the context where possible. Use simple words and short sentences, and explain any process in a clear sequence or numbered steps when appropriate."""
 
     try:
         resp = requests.post(
@@ -605,14 +655,82 @@ Only use the provided context to answer. If the answer is not contained in the p
     return None
 
 
+def _get_grok_model_candidates(model: Optional[str] = None, api_key: str = None) -> List[str]:
+    candidates = []
+    if model:
+        candidates.append(model)
+
+    if _is_groq_key(api_key):
+        if not candidates:
+            candidates.append("openai/gpt-oss-20b")
+        return candidates
+
+    if settings.GROK_MODEL and settings.GROK_MODEL not in candidates:
+        candidates.append(settings.GROK_MODEL)
+    for fallback in GROK_MODEL_FALLBACKS:
+        if fallback not in candidates:
+            candidates.append(fallback)
+    return candidates
+
+
+def _discover_grok_models(api_key: str) -> List[str]:
+    import requests
+    if _is_groq_key(api_key):
+        endpoints = [
+            "https://api.groq.com/openai/v1/models"
+        ]
+    else:
+        endpoints = [
+            "https://api.x.ai/v1/models",
+            "https://api.x.ai/v1/chat/models"
+        ]
+    discovered = []
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json"
+    }
+
+    for endpoint in endpoints:
+        try:
+            resp = requests.get(endpoint, headers=headers, timeout=10)
+            if resp.status_code != 200:
+                continue
+
+            body = resp.json()
+            models = []
+            if isinstance(body, dict):
+                if "data" in body and isinstance(body["data"], list):
+                    models = [item.get("id") or item.get("name") for item in body["data"] if isinstance(item, dict)]
+                elif "models" in body and isinstance(body["models"], list):
+                    models = [item.get("id") or item.get("name") for item in body["models"] if isinstance(item, dict)]
+            elif isinstance(body, list):
+                models = [item.get("id") or item.get("name") for item in body if isinstance(item, dict)]
+
+            for name in models:
+                if name and "grok" in name.lower() and name not in discovered:
+                    discovered.append(name)
+
+            if discovered:
+                logger.info(f"Discovered Grok models: {discovered}")
+                return discovered
+        except Exception as e:
+            logger.warning(f"Failed to discover Grok models from {endpoint}: {e}")
+    return discovered
+
+
 def generate_answer_grok(query: str, context: str, history: List[Dict] = None,
-                         language: str = "en", api_key: str = None) -> str:
-    """Generate answer using Grok API (X.AI)"""
+                         language: str = "en", api_key: str = None,
+                         model: str = None) -> str:
+    """Generate answer using Grok/Groq API."""
     import requests
     from requests.exceptions import RequestException
 
     if not api_key:
         return None
+
+    models = _get_grok_model_candidates(model, api_key)
+    base_url = _get_groq_api_base(api_key)
+    endpoint = f"{base_url}/chat/completions"
 
     history = history or []
     lang_instruction = LANGUAGE_PROMPTS.get(language, "")
@@ -638,34 +756,88 @@ def generate_answer_grok(query: str, context: str, history: List[Dict] = None,
 User Question: {query}
 {lang_instruction}{lang_addition}
 
-Only use the information in the context above. If the answer is not contained in the context, say you don't know rather than inventing a response. Please provide a comprehensive, helpful answer based on the context."""
+Only use the information in the context above. If the answer is not contained in the context, say you don't know rather than inventing a response. Please provide a comprehensive, helpful answer based on the context. Use simple words and short sentences, and explain any process in a clear sequence or numbered steps when appropriate."""
     
     messages.append({"role": "user", "content": user_content})
 
-    try:
-        resp = requests.post(
-            "https://api.x.ai/v1/chat/completions",
-            headers={
-                "Authorization": f"Bearer {api_key}",
-                "Content-Type": "application/json"
-            },
-            json={
-                "model": "grok-beta", # Or appropriate grok model
-                "messages": messages,
-                "temperature": 0.1,
-                "max_tokens": 1000
-            },
-            timeout=15
-        )
-        if resp.status_code == 200:
-            answer = resp.json()["choices"][0]["message"]["content"].strip()
-            if answer:
-                logger.info(f"Grok generated answer in language: {language}")
-                return answer
-        else:
-            logger.warning(f"Grok API returned {resp.status_code}: {resp.text}")
-    except Exception as e:
-        logger.error(f"Grok API error: {e}")
+    for candidate in models:
+        try:
+            resp = requests.post(
+                endpoint,
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "model": candidate,
+                    "messages": messages,
+                    "temperature": 0.1,
+                    "max_tokens": 1000
+                },
+                timeout=15
+            )
+            if resp.status_code == 200:
+                answer = resp.json()["choices"][0]["message"]["content"].strip()
+                if answer:
+                    logger.info(f"Grok generated answer with model {candidate} in language: {language}")
+                    return answer
+            else:
+                body = resp.text or ""
+                if resp.status_code == 400 and "Model not found" in body:
+                    if _is_groq_key(api_key):
+                        logger.warning(f"Groq model {candidate} not found; stopping retries")
+                        break
+                    logger.warning(f"Grok model {candidate} not found; trying next fallback")
+                    continue
+                logger.warning(f"Grok API returned {resp.status_code} for model {candidate}: {body}")
+                break
+        except RequestException as e:
+            logger.error(f"Grok API request error for model {candidate}: {e}")
+            break
+        except Exception as e:
+            logger.error(f"Grok API error for model {candidate}: {e}")
+            break
+
+    discovered = _discover_grok_models(api_key)
+    for candidate in discovered:
+        if candidate in models:
+            continue
+        try:
+            resp = requests.post(
+                "https://api.x.ai/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json"
+                },
+                json={
+                    "model": candidate,
+                    "messages": messages,
+                    "temperature": 0.1,
+                    "max_tokens": 1000
+                },
+                timeout=15
+            )
+            if resp.status_code == 200:
+                answer = resp.json()["choices"][0]["message"]["content"].strip()
+                if answer:
+                    logger.info(f"Grok generated answer with discovered model {candidate} in language: {language}")
+                    return answer
+            else:
+                body = resp.text or ""
+                if resp.status_code == 400 and "Model not found" in body:
+                    if _is_groq_key(api_key):
+                        logger.warning(f"Groq model {candidate} not valid; stopping retries")
+                        break
+                    logger.warning(f"Discovered Grok model {candidate} not valid; trying next")
+                    continue
+                logger.warning(f"Grok API returned {resp.status_code} for discovered model {candidate}: {body}")
+                break
+        except RequestException as e:
+            logger.error(f"Grok API request error for discovered model {candidate}: {e}")
+            break
+        except Exception as e:
+            logger.error(f"Grok API error for discovered model {candidate}: {e}")
+            break
 
     return None
 
@@ -725,49 +897,58 @@ Follow-up Question: {question}
 Standalone Question:"""
 
         try:
-            # We use the same LLM logic as generation but with a specific prompt
+            # We use Grok only for question condensation when available.
             condensed = None
-            if settings.OPENAI_API_KEY:
+            if settings.GROK_API_KEY:
                 import requests
-                resp = requests.post(
-                    "https://api.openai.com/v1/chat/completions",
-                    headers={"Authorization": f"Bearer {settings.OPENAI_API_KEY}", "Content-Type": "application/json"},
-                    json={
-                        "model": "gpt-3.5-turbo",
-                        "messages": [{"role": "user", "content": prompt}],
-                        "temperature": 0,
-                        "max_tokens": 100
-                    },
-                    timeout=10
-                )
-                if resp.status_code == 200:
-                    condensed = resp.json()["choices"][0]["message"]["content"].strip()
-            
-            if not condensed and settings.GROK_API_KEY:
-                import requests
-                resp = requests.post(
-                    "https://api.x.ai/v1/chat/completions",
-                    headers={"Authorization": f"Bearer {settings.GROK_API_KEY}", "Content-Type": "application/json"},
-                    json={
-                        "model": "grok-beta",
-                        "messages": [{"role": "user", "content": prompt}],
-                        "temperature": 0,
-                        "max_tokens": 100
-                    },
-                    timeout=10
-                )
-                if resp.status_code == 200:
-                    condensed = resp.json()["choices"][0]["message"]["content"].strip()
+                candidates = _get_grok_model_candidates(settings.GROK_MODEL)
+                for candidate in candidates:
+                    resp = requests.post(
+                        f"{_get_groq_api_base(settings.GROK_API_KEY)}/chat/completions",
+                        headers={"Authorization": f"Bearer {settings.GROK_API_KEY}", "Content-Type": "application/json"},
+                        json={
+                            "model": candidate,
+                            "messages": [{"role": "user", "content": prompt}],
+                            "temperature": 0,
+                            "max_tokens": 100
+                        },
+                        timeout=10
+                    )
+                    if resp.status_code == 200:
+                        condensed = resp.json()["choices"][0]["message"]["content"].strip()
+                        break
+                    body = resp.text or ""
+                    if resp.status_code == 400 and "Model not found" in body:
+                        logger.warning(f"Grok model {candidate} not found during condensation; trying next fallback")
+                        continue
+                    logger.warning(f"Grok condensation returned {resp.status_code} for model {candidate}: {body}")
+                    break
 
-            if not condensed and _ollama_available:
-                import requests
-                resp = requests.post(
-                    f"{self.ollama_url}/api/generate",
-                    json={"model": self.ollama_model, "prompt": prompt, "stream": False, "options": {"temperature": 0}},
-                    timeout=10
-                )
-                if resp.status_code == 200:
-                    condensed = resp.json().get("response", "").strip()
+                if not condensed:
+                    discovered = _discover_grok_models(settings.GROK_API_KEY)
+                    for candidate in discovered:
+                        if candidate in candidates:
+                            continue
+                        resp = requests.post(
+                            f"{_get_groq_api_base(settings.GROK_API_KEY)}/chat/completions",
+                            headers={"Authorization": f"Bearer {settings.GROK_API_KEY}", "Content-Type": "application/json"},
+                            json={
+                                "model": candidate,
+                                "messages": [{"role": "user", "content": prompt}],
+                                "temperature": 0,
+                                "max_tokens": 100
+                            },
+                            timeout=10
+                        )
+                        if resp.status_code == 200:
+                            condensed = resp.json()["choices"][0]["message"]["content"].strip()
+                            break
+                        body = resp.text or ""
+                        if resp.status_code == 400 and "Model not found" in body:
+                            logger.warning(f"Discovered Grok model {candidate} not found during condensation; trying next")
+                            continue
+                        logger.warning(f"Grok condensation returned {resp.status_code} for discovered model {candidate}: {body}")
+                        break
 
             if condensed:
                 logger.info(f"Condensed question: '{question}' -> '{condensed}'")
@@ -802,24 +983,13 @@ Standalone Question:"""
         if not context or not context.strip():
             answer = generate_answer_local(retrieval_question, context, history, language)
         else:
-            # Generate answer - try OpenAI first, then Grok, then Ollama, fall back to extractive
+            # Generate answer using Grok only, then fall back to local generation.
             answer = None
-            if settings.OPENAI_API_KEY:
-                answer = generate_answer_openai(
-                    retrieval_question, context, history, language,
-                    settings.OPENAI_API_KEY
-                )
-
-            if not answer and settings.GROK_API_KEY:
+            if settings.GROK_API_KEY:
                 answer = generate_answer_grok(
                     retrieval_question, context, history, language,
-                    settings.GROK_API_KEY
-                )
-
-            if not answer:
-                answer = generate_answer_ollama(
-                    retrieval_question, context, history, language,
-                    self.ollama_model, self.ollama_url
+                    settings.GROK_API_KEY,
+                    settings.GROK_MODEL
                 )
 
             if not answer:

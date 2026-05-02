@@ -46,11 +46,12 @@ async function main() {
   });
 
   console.log(`Starting frontend using REACT_APP_API_URL=http://127.0.0.1:${port}`);
-  const frontend = spawn('npm', ['--prefix', './frontend', 'start'], {
+  const npmCmd = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+  const frontend = spawn(npmCmd, ['--prefix', './frontend', 'start'], {
     cwd: projectRoot,
     env,
     stdio: 'inherit',
-    shell: true,
+    shell: false,
   });
 
   const shutdown = (code) => {
